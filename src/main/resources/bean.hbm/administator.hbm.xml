@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yueserver.bean.Administator" table="Administator" schema="YueZhuang">
+        <id name="admno" type="java.lang.Integer" column="AdmNo">
+            <generator class="identity" />
+        </id>
+        <property name="admaccount" type="java.lang.String" column="AdmAccount" />
+        <property name="admpassword" type="java.lang.String" column="AdmPassword" />
+        <property name="admauthcode" type="java.lang.String" column="AdmAuthcode" />
+    </class>
+</hibernate-mapping>

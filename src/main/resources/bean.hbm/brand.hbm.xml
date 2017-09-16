@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yueserver.bean.Brand" table="Brand" schema="YueZhuang">
+        <id name="brdno" type="java.lang.Integer" column="brdno">
+            <generator class="identity" />
+        </id>
+        <property name="brdname" type="java.lang.String" column="BrdName" />
+        <property name="brdlogo" type="java.lang.String" column="BrdLogo" />
+        <property name="brdintro" type="java.lang.String" column="BrdIntro" />
+        <property name="mctno" type="java.lang.Integer" column="MctNo" />
+        <!--品牌与商品的多对一映射-->
+        <set name="products" table="Product" cascade="delete" schema="YueZhuang" lazy="false">
+            <key column="BrdNo" />
+            <one-to-many class="com.yueserver.bean.Product" />
+        </set>
+        <query name="querySingleBrand">
+            <![CDATA[
+                SELECT b FROM Brand b WHERE b.brdname=:brdName
+            ]]>
+            <query-param name="brdName" type="java.lang.String" />
+        </query>
+    </class>
+</hibernate-mapping>

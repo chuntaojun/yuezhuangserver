@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yueserver.bean.Merchant" table="Merchant" schema="YueZhuang" dynamic-update="true">
+        <id name="mctno" type="java.lang.Integer" column="MctNo">
+            <generator class="identity" />
+        </id>
+        <property name="mctaccount" type="java.lang.String" column="MctAccount" />
+        <property name="mctpassword" type="java.lang.String" column="MctPassword" />
+        <property name="mctauthcode" type="java.lang.String" column="MctAuthcode" />
+        <property name="mcttime" type="java.util.Date" insert="true" update="false">
+            <column name="MctTime" sql-type="datetime" />
+        </property>
+        <property name="mctstate" type="java.lang.Integer" column="MctState" />
+    </class>
+    <query name="queryMerchantInfo">
+        <![CDATA[
+                FROM Merchant
+            ]]>
+    </query>
+    <query name="resigterMerchant">
+        <![CDATA[
+            SELECT m FROM Merchant m WHERE m.mctaccount=:mctaccount
+        ]]>
+    </query>
+</hibernate-mapping>
