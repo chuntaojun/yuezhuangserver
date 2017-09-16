@@ -1,4 +1,4 @@
-package com.yueserver.service.impl;
+package com.yueserver.service.file;
 
 import com.yueserver.service.EmailInterface;
 import org.springframework.scheduling.annotation.Async;

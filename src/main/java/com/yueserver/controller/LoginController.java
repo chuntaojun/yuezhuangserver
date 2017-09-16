@@ -41,7 +41,7 @@ public class LoginController {
     private EmailInterface emailinterface;
 
     @Autowired
-    @Resource(name = "LoginProcess")
+    @Resource(name = "LoginProcessService")
     private LoginInterface loginInterface;
 
     /**
@@ -55,7 +55,7 @@ public class LoginController {
         boolean isOK =loginInterface.AddNewMerchant(resigterLogin.getMctaccount(), resigterLogin.getPassword());
         if (!isOK){
             model.addAttribute("errors", "用户已存在，请重新输入用户名");
-            return "/registered";
+            return "Registered";
         }
         model.addAttribute("username", resigterLogin.getMctaccount());
         emailinterface.SendRegistere(resigterLogin.getEmail());
@@ -157,7 +157,7 @@ public class LoginController {
         }
         else {
             modelAndView.addObject("retrievepas", "找回密码失败");
-            modelAndView.setViewName("/retrievepas");
+            modelAndView.setViewName("RetrievepasPassword");
             return modelAndView;
         }
     }

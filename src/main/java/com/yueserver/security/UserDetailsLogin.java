@@ -25,7 +25,7 @@ import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 public class UserDetailsLogin implements UserDetailsService {
 
     @Autowired
-    @Resource(name = "LoginProcess")
+    @Resource(name = "LoginProcessService")
     private LoginInterface loginservice;
 
     @Override

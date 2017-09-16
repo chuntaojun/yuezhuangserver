@@ -71,19 +71,19 @@
                     <span class="glyphicon glyphicon-list"></span> 消息发布 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
-                    <li>
+                    <li class="active">
                         <a class="" href="/admin/superhuman">
-                            <span class="glyphicon glyphicon-share-alt"></span> 达人
+                            <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
                     <li>
                         <a class="" href="/admin/hot">
-                            <span class="glyphicon glyphicon-share-alt"></span> 热门
+                            <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
                         <a class="" href="/admin/notic">
-                            <span class="glyphicon glyphicon-share-alt"></span> 通知
+                            <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>
                 </ul>

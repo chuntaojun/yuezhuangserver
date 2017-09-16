@@ -1,4 +1,4 @@
-package com.yueserver.service.impl;
+package com.yueserver.service.data;
 
 import com.yueserver.bean.Brand;
 import com.yueserver.bean.Merchant;

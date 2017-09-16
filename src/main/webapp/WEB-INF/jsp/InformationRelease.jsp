@@ -52,18 +52,18 @@
 </nav>
 
 <sec:authorize access="hasRole('ADMIN')">
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <form role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-        </div>
-    </form>
-    <ul class="nav menu">
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <ul class="nav menu">
             <li><a href="/admin/show"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
             <li><a href="/admin/businessmen"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
-        <li><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
-        <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-        <li><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+            <li><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
+            <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
             <li class="parent ">
                 <a href="#">
                     <span class="glyphicon glyphicon-list"></span> 消息发布 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
@@ -71,70 +71,91 @@
                 <ul class="children collapse" id="sub-item-1">
                     <li class="active">
                         <a class="" href="/admin/superhuman">
-                            <span class="glyphicon glyphicon-share-alt"></span> 达人
+                            <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a class="" href="/admin/hot">
-                            <span class="glyphicon glyphicon-share-alt"></span> 热门
+                            <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
                         <a class="" href="/admin/notic">
-                            <span class="glyphicon glyphicon-share-alt"></span> 通知
+                            <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>
                 </ul>
             </li>
-        <li role="presentation" class="divider"></li>
-        <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> 登录页面</a></li>
-    </ul>
-</div>
-<!--/.sidebar-->
-
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-    <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">热门</li>
-        </ol>
+            <li role="presentation" class="divider"></li>
+            <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> 登录页面</a></li>
+        </ul>
     </div>
-    <!--/.row-->
+    <!--/.sidebar-->
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">今日热门</h1>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">通知</li>
+            </ol>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">今日抢试</h1>
+                <form id="todayTry" action="/gettodaytry" method="post" onsubmit="return todaytrySubmit();">
+                    <fieldset>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
-    </div>
-    <!--/.row-->
+        <!--/.row-->
 
-    <!--/.row-->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">热门品牌</h1>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
+        <!--/.row-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">通知</h1>
+                <form id="notice" action="/getnotice" method="post" onsubmit="return false">
+                    <fieldset>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>通知标题</label>
+                                            <input name="ncttitle" type="text" class="form-control" placeholder="通知标题">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>通知内容</label>
+                                            <div class="form-group has-feedback">
+                                                <textarea name="ntcmain" class="form-control" rows="5" style="resize: none" placeholder="通知内容"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-default" onclick="noticeSubmit()">发布</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
+        <!--/.row-->
     </div>
-    <!--/.row-->
-
-</div>
 </sec:authorize>
-
 <!--/.main-->
 
 

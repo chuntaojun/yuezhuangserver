@@ -71,17 +71,17 @@
                 <ul class="children collapse" id="sub-item-1">
                     <li class="active">
                         <a class="" href="/admin/superhuman">
-                            <span class="glyphicon glyphicon-share-alt"></span> 达人
+                            <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
                     <li>
                         <a class="" href="/admin/hot">
-                            <span class="glyphicon glyphicon-share-alt"></span> 热门
+                            <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
                         <a class="" href="/admin/notic">
-                            <span class="glyphicon glyphicon-share-alt"></span> 通知
+                            <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>
                 </ul>

@@ -1,4 +1,4 @@
-package com.yueserver.service.impl;
+package com.yueserver.service.login;
 
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
@@ -19,7 +19,7 @@ import java.util.Date;
 import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 
 @Service("LoginProcess")
-public class LoginProcess implements LoginInterface {
+public class LoginProcessService implements LoginInterface {
 
     @Autowired
     @Resource(name = "LoginSql")
