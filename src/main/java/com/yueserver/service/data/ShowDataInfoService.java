@@ -3,7 +3,7 @@ package com.yueserver.service.data;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.conver.JsonConverter;
 import com.yueserver.adaper.conver.ListConverter;
-import com.yueserver.bean.nodao.Login;
+import com.yueserver.enity.nodao.Login;
 import com.yueserver.service.ShowInterface;
 import com.yueserver.sql.AdminSqlInterface;
 import com.yueserver.sql.MerchantSqlInterface;

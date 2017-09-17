@@ -1,9 +1,9 @@
 package com.yueserver.service.data;
 
-import com.yueserver.bean.Brand;
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.Product;
-import com.yueserver.bean.User;
+import com.yueserver.enity.Brand;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.Product;
+import com.yueserver.enity.User;
 import com.yueserver.service.EditInterface;
 import com.yueserver.sql.AdminSqlInterface;
 

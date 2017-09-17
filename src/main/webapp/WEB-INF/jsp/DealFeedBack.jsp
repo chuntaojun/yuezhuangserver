@@ -105,7 +105,7 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">达人</li>
+            <li class="active">反馈处理</li>
         </ol>
     </div>
     <!--/.row-->
@@ -113,7 +113,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 商家信息管理</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 商家反馈管理</div>
                 <div class="panel-body">
                     <div class="panel-heading">商家反馈</div>
                     <div id="feed-mct" class="btn-group">
@@ -130,9 +130,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 商家信息管理</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 用户反馈管理</div>
                 <div class="panel-body">
-                    <div class="panel-heading">用户管理</div>
+                    <div class="panel-heading">用户反馈</div>
                     <div id="feed-usr" class="btn-group">
                         <button id="btn_delete" type="button" class="btn btn-default" onclick="deleInfo($('#feed-usr-table'),'/delete/admin/feedback/user');">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
