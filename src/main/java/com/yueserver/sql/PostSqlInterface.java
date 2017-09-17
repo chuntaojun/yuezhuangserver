@@ -1,6 +1,6 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Post;
+import com.yueserver.enity.Post;
 
 import java.util.List;
 import java.util.Map;

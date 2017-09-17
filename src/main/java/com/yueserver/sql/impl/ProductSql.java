@@ -1,12 +1,13 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.Product;
+import com.yueserver.enity.Product;
 import com.yueserver.sql.ProductSqlInterface;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,22 @@ public class ProductSql implements ProductSqlInterface {
     @Autowired(required = false)
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
+
+    @Override
+    public List queryPrdName() {
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            Query query = session.getNamedQuery("com.yueserver.enity.Product.queryPrdName");
+            tx.commit();
+            return query.list();
+        } catch (HibernateException e) {
+            tx.rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
 
     @Override
     public boolean saveSinglePrd(Product product) {

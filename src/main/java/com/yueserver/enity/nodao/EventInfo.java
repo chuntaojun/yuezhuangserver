@@ -1,4 +1,4 @@
-package com.yueserver.bean.nodao;
+package com.yueserver.enity.nodao;
 
 public class EventInfo {
 }

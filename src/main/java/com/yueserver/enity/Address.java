@@ -1,4 +1,4 @@
-package com.yueserver.bean;
+package com.yueserver.enity;
 
 public class Address {
 

@@ -1,6 +1,6 @@
 $(function () {
-    feedbackformct()
-    feedbackforusr()
+    feedbackformct();
+    feedbackforusr();
 })
 
 function feedbackformct() {
@@ -17,6 +17,9 @@ function feedbackformct() {
             field: 'no',
             title: '编号',
         },{
+            field: 'issuetype',
+            title: '分类'
+        },{
             field: 'mctname',
             title: '商户名称',
         },{
@@ -31,28 +34,14 @@ function feedbackformct() {
         },{
             field: 'solve',
             title: '解决疑问',
-            editable: {
-                type: 'text',
-                title: '解决疑问',
-                validate: function (v) {
-                }
+            formatter:function(value,row,index){
+                document.getElementById("mctemail").value = row['mctemail'];
+                document.getElementById("account").value = row['mctname'];
+                document.getElementById("quesname").value = row['quesname'];
+                $("#form_data").attr('action', "/admin/feed/solve/merchant?ID=" + row['no']);
+                return '<button class="btn btn-default issue" data-toggle="modal" data-target="#issueModal">反馈</button> ';
             }
         }],
-        onEditableSave:function (field, row, oldValue, $el) {
-            $.ajax({
-                type: 'post',
-                url: '/solve/issue/merchant?ID=' + row['no'],
-                data: JSON.stringify(row),
-                dataType: 'json',
-                contentType: "application/json;charset=UTF-8",
-                success: function (data) {
-                    if (data.judge == true)
-                        alert("ok");
-                },
-                compile: function () {
-                }
-            });
-        },
         data: [],
         method: 'post',
         url: '/feed/merchant',
@@ -100,6 +89,9 @@ function feedbackforusr() {
             field: 'no',
             title: '编号',
         },{
+            field: 'issuetype',
+            title: '分类'
+        },{
             field: 'usrname',
             title: '用户名称',
         },{
@@ -114,28 +106,14 @@ function feedbackforusr() {
         },{
             field: 'solve',
             title: '解决疑问',
-            editable: {
-                type: 'text',
-                title: '解决疑问',
-                validate: function (v) {
-                }
+            formatter:function (value, row, index) {
+                document.getElementById("mctemail").value = row['useraccount'];
+                document.getElementById("account").value = row['username'];
+                document.getElementById("quesname").value = row['quesname'];
+                $("#form_data").attr('action', "/admin/feed/solve/user?ID=" + row['no']);
+                return '<button class="btn btn-default issue" data-toggle="modal" data-target="#issueModal">反馈</button> ';
             }
         }],
-        onEditableSave:function (field, row, oldValue, $el) {
-            $.ajax({
-                type: 'post',
-                url: '/solve/issue/usr?ID=' + row['no'],
-                data: JSON.stringify(row),
-                dataType: 'json',
-                contentType: "application/json;charset=UTF-8",
-                success: function (data) {
-                    if (data.judge == true)
-                        alert("ok");
-                },
-                compile: function () {
-                }
-            });
-        },
         data: [],
         method: 'post',
         url: '/feed/user',
@@ -166,5 +144,15 @@ function feedbackforusr() {
         checkboxHeader: true,
         sortable: true,
         maintainSelected: false,
+    })
+}
+
+
+function IssueSolve() {
+    $("#form_data").ajaxSubmit(function (message) {
+        if (message == false)
+            alert("回复反馈失败，请与后台人员联系")
+        else
+            alert("回复反馈成功，已发送通知给改商户")
     })
 }

@@ -2,9 +2,9 @@ package com.yueserver.security;
 
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
-import com.yueserver.bean.Administator;
-import com.yueserver.bean.nodao.Login;
-import com.yueserver.bean.Merchant;
+import com.yueserver.enity.Administator;
+import com.yueserver.enity.nodao.Login;
+import com.yueserver.enity.Merchant;
 import com.yueserver.security.excption.AccountNotFoundException;
 import com.yueserver.security.excption.PendingReviewException;
 import com.yueserver.security.excption.ProhibitLandingException;

@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="sessionFactory/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="YueZhuang">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="ITCrowd"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="Address"/>
+    <table id="9" parent="2" name="Administator"/>
+    <table id="10" parent="2" name="Brand"/>
+    <table id="11" parent="2" name="BrdFav"/>
+    <table id="12" parent="2" name="Friend"/>
+    <table id="13" parent="2" name="Manage"/>
+    <table id="14" parent="2" name="Memo"/>
+    <table id="15" parent="2" name="Merchant"/>
+    <table id="16" parent="2" name="Message"/>
+    <table id="17" parent="2" name="Notice"/>
+    <table id="18" parent="2" name="Post"/>
+    <table id="19" parent="2" name="PostComment"/>
+    <table id="20" parent="2" name="PostFav"/>
+    <table id="21" parent="2" name="PostLike"/>
+    <table id="22" parent="2" name="PostPic"/>
+    <table id="23" parent="2" name="PostType"/>
+    <table id="24" parent="2" name="PostVideo"/>
+    <table id="25" parent="2" name="Poster"/>
+    <table id="26" parent="2" name="PrdFav"/>
+    <table id="27" parent="2" name="PrdPic"/>
+    <table id="28" parent="2" name="PrdType"/>
+    <table id="29" parent="2" name="PrdVideo"/>
+    <table id="30" parent="2" name="Product"/>
+    <table id="31" parent="2" name="Skin"/>
+    <table id="32" parent="2" name="TctGet"/>
+    <table id="33" parent="2" name="TctType"/>
+    <table id="34" parent="2" name="Ticket"/>
+    <table id="35" parent="2" name="User"/>
+    <column id="36" parent="8" name="AdsNo">
+      <Position>1</Position>
+      <Comment>地区编号</Comment>
+      <DataType>int(9) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="8" name="AdsName">
+      <Position>2</Position>
+      <Comment>地区名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="38" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AdsNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="9" name="AdmNo">
+      <Position>1</Position>
+      <Comment>管理员编号</Comment>
+      <DataType>int(2) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="9" name="AdmAccount">
+      <Position>2</Position>
+      <Comment>管理员账号</Comment>
+      <DataType>varchar(24)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="9" name="AdmPassword">
+      <Position>3</Position>
+      <Comment>管理员密码</Comment>
+      <DataType>varchar(48)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="9" name="AdmAuthcode">
+      <Position>4</Position>
+      <Comment>管理员验证码</Comment>
+      <DataType>char(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="43" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AdmNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="10" name="BrdNo">
+      <Position>1</Position>
+      <Comment>品牌编号</Comment>
+      <DataType>int(6) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="10" name="BrdName">
+      <Position>2</Position>
+      <Comment>品牌名</Comment>
+      <DataType>varchar(28)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="10" name="BrdIntro">
+      <Position>3</Position>
+      <Comment>品牌介绍</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="47" parent="10" name="BrdLogo">
+      <Position>4</Position>
+      <Comment>品牌徽标</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="48" parent="10" name="MctNo">
+      <Position>5</Position>
+      <Comment>商户编号</Comment>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="49" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BrdNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="11" name="BrdFavNo">
+      <Position>1</Position>
+      <Comment>品牌收藏编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="11" name="BrdFavTime">
+      <Position>2</Position>
+      <Comment>品牌收藏时间</Comment>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="52" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BrdFavNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="12" name="FrdNo">
+      <Position>1</Position>
+      <Comment>好友编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="12" name="FrdTime">
+      <Position>2</Position>
+      <Comment>好友确立时间</Comment>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="55" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>FrdNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="56" parent="13" name="MngNo">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="13" name="MngTime">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="58" parent="13" name="MctNo">
+      <Position>3</Position>
+      <DataType>int(8)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="BrdNo">
+      <Position>4</Position>
+      <DataType>int(8)|0</DataType>
+    </column>
+    <key id="60" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MngNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="14" name="MemoNo">
+      <Position>1</Position>
+      <Comment>备忘编号</Comment>
+      <DataType>int(12) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="14" name="MemoTime">
+      <Position>2</Position>
+      <Comment>备忘创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="14" name="MemoDeadline">
+      <Position>3</Position>
+      <Comment>备忘截止日期</Comment>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="14" name="MemoMain">
+      <Position>4</Position>
+      <Comment>备忘正文</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="65" parent="14" name="MemoPrdTime">
+      <Position>5</Position>
+      <Comment>备忘商品购买时间</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="66" parent="14" name="MomoPrdPrice">
+      <Position>6</Position>
+      <Comment>备忘商品购买价格</Comment>
+      <DataType>decimal(65)|0</DataType>
+    </column>
+    <column id="67" parent="14" name="MomoPrdBuildtime">
+      <Position>7</Position>
+      <Comment>备忘商品生产日期</Comment>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="14" name="MomoPrdHoldtime">
+      <Position>8</Position>
+      <Comment>备忘商品保质时长</Comment>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="69" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MemoNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="70" parent="15" name="MctNo">
+      <Position>1</Position>
+      <Comment>商户编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="71" parent="15" name="MctAccount">
+      <Position>2</Position>
+      <Comment>商户账号</Comment>
+      <DataType>varchar(24)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="15" name="MctPassword">
+      <Position>3</Position>
+      <Comment>商户密码</Comment>
+      <DataType>varchar(48)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="15" name="MctAuthcode">
+      <Position>4</Position>
+      <Comment>商户验证码</Comment>
+      <DataType>char(12)|0</DataType>
+    </column>
+    <column id="74" parent="15" name="MctTime">
+      <Position>5</Position>
+      <Comment>商户账户建立时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="15" name="MctState">
+      <Position>6</Position>
+      <Comment>商户账户状态</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="76" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MctNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="77" parent="16" name="MsgNo">
+      <Position>1</Position>
+      <Comment>消息编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="78" parent="16" name="MsgType">
+      <Position>2</Position>
+      <Comment>消息类型</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="79" parent="16" name="MsgMain">
+      <Position>3</Position>
+      <Comment>消息内容</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="16" name="MsgTime">
+      <Position>4</Position>
+      <Comment>消息发送时间</Comment>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="16" name="MsgState">
+      <Position>5</Position>
+      <Comment>消息接收状态</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="82" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MsgNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="83" parent="17" name="NtcNo">
+      <Position>1</Position>
+      <Comment>系统通知编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="84" parent="17" name="NtcMain">
+      <Position>2</Position>
+      <Comment>系统通知内容</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="85" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NtcNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="86" parent="18" name="PostNo">
+      <Position>1</Position>
+      <Comment>帖子编号</Comment>
+      <DataType>int(12) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="87" parent="18" name="PostTitle">
+      <Position>2</Position>
+      <Comment>帖子标题</Comment>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="18" name="PostMain">
+      <Position>3</Position>
+      <Comment>帖子正文</Comment>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="18" name="PostTime">
+      <Position>4</Position>
+      <Comment>帖子发送时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="90" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="91" parent="19" name="PostComNo">
+      <Position>1</Position>
+      <Comment>帖子评论编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="92" parent="19" name="PostComMain">
+      <Position>2</Position>
+      <Comment>帖子评论内容</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="19" name="PostComTime">
+      <Position>3</Position>
+      <Comment>帖子评论时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="19" name="PostComPic">
+      <Position>4</Position>
+      <Comment>帖子评论图片链接</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="95" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostComNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="96" parent="20" name="PostFavNo">
+      <Position>1</Position>
+      <Comment>帖子收藏编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="97" parent="20" name="PostFavTime">
+      <Position>2</Position>
+      <Comment>帖子收藏时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="98" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostFavNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="99" parent="21" name="PostLikeNo">
+      <Position>1</Position>
+      <Comment>帖子点赞编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="100" parent="21" name="PostLikeTime">
+      <Position>2</Position>
+      <Comment>帖子点赞时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="101" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostLikeNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="102" parent="22" name="PostPicNo">
+      <Position>1</Position>
+      <Comment>帖子图片编号</Comment>
+      <DataType>int(16) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="103" parent="22" name="PostPicUrl">
+      <Position>2</Position>
+      <Comment>帖子图片路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="22" name="PostPicLoc">
+      <Position>3</Position>
+      <Comment>帖子图片所在文中位置</Comment>
+      <DataType>int(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="105" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostPicNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="106" parent="23" name="PostTypeNo">
+      <Position>1</Position>
+      <Comment>帖子类型编号</Comment>
+      <DataType>int(1) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="107" parent="23" name="PostTypeName">
+      <Position>2</Position>
+      <Comment>帖子类型名</Comment>
+      <DataType>varchar(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="108" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostTypeNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="24" name="PostVidNo">
+      <Position>1</Position>
+      <Comment>帖子视频编号</Comment>
+      <DataType>int(12) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="110" parent="24" name="PostVidUrl">
+      <Position>2</Position>
+      <Comment>帖子视频链接</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="24" name="PostVidLocation">
+      <Position>3</Position>
+      <Comment>帖子视频所在文中位置</Comment>
+      <DataType>int(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="112" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PostVidNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="113" parent="25" name="PsrNo">
+      <Position>1</Position>
+      <Comment>海报编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="114" parent="25" name="PsrTitle">
+      <Position>2</Position>
+      <Comment>海报标题</Comment>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="115" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PsrNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="116" parent="26" name="PrdFavNo">
+      <Position>1</Position>
+      <Comment>产品收藏编号</Comment>
+      <DataType>int(12) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="117" parent="26" name="PrdFavTime">
+      <Position>2</Position>
+      <Comment>产品收藏时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="118" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PrdFavNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="119" parent="27" name="PrdPicNo">
+      <Position>1</Position>
+      <Comment>产品图片编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="120" parent="27" name="PrdPicUrl">
+      <Position>2</Position>
+      <Comment>产品图片链接</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="27" name="PrdNo">
+      <Position>3</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="122" parent="27" name="PrdPicUrl_UNIQUE">
+      <ColNames>PrdPicUrl</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="123" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PrdPicNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="124" parent="27" name="PrdPicUrl_UNIQUE">
+      <ColNames>PrdPicUrl</ColNames>
+      <UnderlyingIndexName>PrdPicUrl_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="125" parent="28" name="PrdTypeNo">
+      <Position>1</Position>
+      <Comment>产品类型编号</Comment>
+      <DataType>int(2) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="126" parent="28" name="PrdTypeName">
+      <Position>2</Position>
+      <Comment>产品类型名</Comment>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="28" name="PrdTypeIntro">
+      <Position>3</Position>
+      <Comment>产品类型简介</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="128" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PrdTypeNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="129" parent="29" name="PrdVidNo">
+      <Position>1</Position>
+      <Comment>产品视频编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="130" parent="29" name="PrdVidUrl">
+      <Position>2</Position>
+      <Comment>产品视频链接</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="131" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PrdVidNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="132" parent="30" name="PrdNo">
+      <Position>1</Position>
+      <Comment>产品编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="133" parent="30" name="PrdName">
+      <Position>2</Position>
+      <Comment>产品名</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="30" name="PrdCode">
+      <Position>3</Position>
+      <Comment>产品一维码</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="30" name="PrdIntro">
+      <Position>4</Position>
+      <Comment>产品简介</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="30" name="PrdPrice">
+      <Position>5</Position>
+      <Comment>产品标价</Comment>
+      <DataType>decimal(65)|0</DataType>
+    </column>
+    <column id="137" parent="30" name="PrdCapacity">
+      <Position>6</Position>
+      <Comment>产品容量</Comment>
+      <DataType>double(65,2)|0</DataType>
+    </column>
+    <column id="138" parent="30" name="BrdNo">
+      <Position>7</Position>
+      <Comment>品牌编号</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="30" name="PrdTypeNo">
+      <Position>8</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <key id="140" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PrdNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="141" parent="31" name="SkinNo">
+      <Position>1</Position>
+      <Comment>肤质编号</Comment>
+      <DataType>int(4) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="142" parent="31" name="SkinName">
+      <Position>2</Position>
+      <Comment>肤质名</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="31" name="SkinIntro">
+      <Position>3</Position>
+      <Comment>肤质简介</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="144" parent="31" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SkinNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="145" parent="32" name="TctGetNo">
+      <Position>1</Position>
+      <Comment>券获得编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="146" parent="32" name="TctGetTime">
+      <Position>2</Position>
+      <Comment>券获得时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="147" parent="32" name="TctGetWay">
+      <Position>3</Position>
+      <Comment>券获得途径</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="148" parent="32" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TctGetNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="149" parent="33" name="TctTypeNo">
+      <Position>1</Position>
+      <Comment>券类型编号</Comment>
+      <DataType>int(1) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="150" parent="33" name="TctTypeName">
+      <Position>2</Position>
+      <Comment>券类型名称</Comment>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="151" parent="33" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TctTypeNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="152" parent="34" name="TctNo">
+      <Position>1</Position>
+      <Comment>券编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="153" parent="34" name="TctDiscount">
+      <Position>2</Position>
+      <Comment>券折扣</Comment>
+      <DataType>double(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="154" parent="34" name="TctTime">
+      <Position>3</Position>
+      <Comment>券发布时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="155" parent="34" name="TctDeadline">
+      <Position>4</Position>
+      <Comment>券截止时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="156" parent="34" name="TctSum">
+      <Position>5</Position>
+      <Comment>券总数</Comment>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="157" parent="34" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TctNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="158" parent="35" name="UsrNo">
+      <Position>1</Position>
+      <Comment>用户编号</Comment>
+      <DataType>int(8) unsigned zerofill|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="159" parent="35" name="UsrPhone">
+      <Position>2</Position>
+      <Comment>用户手机号</Comment>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="160" parent="35" name="UsrName">
+      <Position>3</Position>
+      <Comment>用户昵称</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="161" parent="35" name="UsrPassword">
+      <Position>4</Position>
+      <Comment>用户密码</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="162" parent="35" name="UsrSex">
+      <Position>5</Position>
+      <Comment>用户性别</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="35" name="UsrImage">
+      <Position>6</Position>
+      <Comment>用户头像</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="35" name="UsrBirthday">
+      <Position>7</Position>
+      <Comment>用户生日</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="165" parent="35" name="UsrAge">
+      <Position>8</Position>
+      <Comment>用户年龄</Comment>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="166" parent="35" name="UsrTime">
+      <Position>9</Position>
+      <Comment>用户注册时间</Comment>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="167" parent="35" name="UsrQQ">
+      <Position>10</Position>
+      <Comment>用户QQ号</Comment>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="168" parent="35" name="UsrWechat">
+      <Position>11</Position>
+      <Comment>用户微信号</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="169" parent="35" name="UsrFriendway">
+      <Position>12</Position>
+      <Comment>加好友方式</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="170" parent="35" name="UsrIntro">
+      <Position>13</Position>
+      <Comment>用户简介</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="171" parent="35" name="UserStatus">
+      <Position>14</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="172" parent="35" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UsrNo</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

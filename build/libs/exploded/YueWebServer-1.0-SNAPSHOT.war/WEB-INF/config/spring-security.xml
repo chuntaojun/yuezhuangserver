@@ -1,0 +1,53 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http auto-config="true">
+
+        <security:anonymous enabled="true" />
+        <security:csrf disabled="true" />
+
+        <!--登录成功后的执行方法 /logincheck-->
+        <!--页面访问权限控制-->
+        <security:form-login login-page="/login.jsp"
+                             authentication-success-forward-url="/login_check"
+                             username-parameter="username" password-parameter="password"
+                             authentication-failure-forward-url="/login_false" />
+
+        <security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/login.jsp" />
+
+        <security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/registered" access="permitAll()" />
+        <security:intercept-url pattern="/yue/uploads" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/yue/report" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/yue/query" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+
+        <!--配置单点登录-->
+        <security:session-management>
+            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/loginSingle" />
+        </security:session-management>
+
+    </security:http>
+
+    <!--登录密码验证-->
+    <security:authentication-manager>
+        <!--处理用户数据源-->
+        <security:authentication-provider user-service-ref="customUserDetailsService">
+            <!--开启密码MD5加密-->
+            <security:password-encoder ref="passwordEncoder" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+    <!--用户登录数据源-->
+    <bean id="customUserDetailsService" class="com.yueserver.security.UserDetailsLogin" />
+    <bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" id="passwordEncoder"/>
+
+    <!--开启方法用户权限-->
+    <security:global-method-security secured-annotations="enabled"/>
+
+</beans>

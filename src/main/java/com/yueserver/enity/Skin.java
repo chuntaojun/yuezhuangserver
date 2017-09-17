@@ -1,4 +1,4 @@
-package com.yueserver.bean;
+package com.yueserver.enity;
 
 /**
  * Created by liaochuntao on 17-7-12.

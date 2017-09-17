@@ -10,19 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class JspViewController {
 
-    @RequestMapping(value = "/yue/uploads/{account}")
+    @RequestMapping(value = "/yue/uploads/user/{account}")
     public  String UploadBrandedItems(){
         return "UploadBrandedItems";
     }
 
-    @RequestMapping(value = "/yue/query/{account}")
+    @RequestMapping(value = "/yue/query/user/{account}")
     public String ManageBrdPrd(){
         return "ManageBrdPrd";
     }
 
-    @RequestMapping(value = "/yue/report/{account}")
+    @RequestMapping(value = "/yue/report/user/{account}")
     public String DataReport(){
         return "DataReport";
+    }
+
+    @RequestMapping(value = "/yue/issue/user/{account}")
+    public String Issue() {
+        return "PushFeedBack";
     }
 
     @RequestMapping(value = "/admin/show")
@@ -30,24 +35,24 @@ public class JspViewController {
         return "SalesData";
     }
 
-    @RequestMapping(value = "/admin/businessmen")
+    @RequestMapping(value = "/admin/merchant")
     public String perosnalCenter(){
         return "ManageMerchants";
     }
 
-    @RequestMapping(value = "/admin/notic")
+    @RequestMapping(value = "/admin/notice")
     public String InformationRelease() {
         return "InformationRelease";
     }
 
-    @RequestMapping(value = "/admin/superhuman")
+    @RequestMapping(value = "/admin/sportInfo")
     public String ActivityInformation() {
         return "ActivityInformation";
     }
 
-    @RequestMapping(value = "/feedback")
+    @RequestMapping(value = "/admin/deal/feedback")
     public String FeedBack() {
-        return "FeedBack";
+        return "DealFeedBack";
     }
 
     @RequestMapping(value = "/registered")

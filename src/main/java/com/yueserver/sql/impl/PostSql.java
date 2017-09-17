@@ -1,6 +1,6 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.Post;
+import com.yueserver.enity.Post;
 import com.yueserver.sql.PostSqlInterface;
 
 import org.hibernate.HibernateException;

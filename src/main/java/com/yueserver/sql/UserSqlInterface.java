@@ -1,6 +1,6 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.User;
+import com.yueserver.enity.User;
 
 import java.util.List;
 

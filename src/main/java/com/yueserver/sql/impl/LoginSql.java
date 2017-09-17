@@ -1,8 +1,8 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.nodao.ForgotPassword;
+import com.yueserver.enity.nodao.ForgotPassword;
 import com.yueserver.sql.LoginSqlInterface;
-import com.yueserver.bean.Merchant;
+import com.yueserver.enity.Merchant;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -59,10 +59,10 @@ public class LoginSql implements LoginSqlInterface {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            String hql = "FROM Administator a, Merchant m WHERE a.admaccount=? or m.mctaccount=?";
+            String hql = "FROM Administator a, Merchant m WHERE a.admaccount=:adminaccount or m.mctaccount=:mctaccount";
             Query query = session.createQuery(hql);
-            query.setString(0, adminaccount);
-            query.setString(1, mctaccount);
+            query.setParameter("adminaccount", adminaccount);
+            query.setParameter("mctaccount", mctaccount);
             return query.list();
         } catch (HibernateException e) {
             transaction.rollback();

@@ -21,7 +21,7 @@ import java.util.List;
 import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 
 @Service
-public class ShowDataInfo implements ShowInterface {
+public class ShowDataInfoService implements ShowInterface {
 
     @Autowired
     @Resource(name = "MerchantSql")

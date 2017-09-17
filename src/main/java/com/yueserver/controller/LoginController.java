@@ -6,9 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import com.yueserver.adaper.MethodNourtFoundException;
-import com.yueserver.bean.nodao.ForgotPassword;
-import com.yueserver.bean.nodao.Login;
-import com.yueserver.bean.nodao.ResigterLogin;
+import com.yueserver.enity.nodao.ForgotPassword;
+import com.yueserver.enity.nodao.Login;
+import com.yueserver.enity.nodao.ResigterLogin;
 import com.yueserver.service.EmailInterface;
 import com.yueserver.service.LoginInterface;
 
@@ -37,7 +37,7 @@ import java.text.ParseException;
 public class LoginController {
 
     @Autowired
-    @Resource(name = "emailservice")
+    @Resource(name = "Emailservice")
     private EmailInterface emailinterface;
 
     @Autowired

@@ -1,9 +1,9 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Brand;
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.Product;
-import com.yueserver.bean.User;
+import com.yueserver.enity.Brand;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.Product;
+import com.yueserver.enity.User;
 
 import java.util.List;
 import java.util.Map;

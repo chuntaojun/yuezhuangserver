@@ -1,6 +1,6 @@
 package com.yueserver.service;
 
-import com.yueserver.bean.nodao.Login;
+import com.yueserver.enity.nodao.Login;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpSession;

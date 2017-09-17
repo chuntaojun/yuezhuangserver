@@ -1,20 +1,18 @@
 package com.yueserver.controller;
 
-import com.yueserver.bean.Brand;
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.Product;
-import com.yueserver.bean.User;
+import com.yueserver.enity.Brand;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.Product;
+import com.yueserver.enity.User;
 
-import com.yueserver.bean.nodao.EventInfo;
+import com.yueserver.enity.nodao.EventInfo;
 import com.yueserver.service.EditInterface;
 import com.yueserver.service.EmailInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -23,6 +21,7 @@ import java.util.HashMap;
  * 管理员进行增改相关信息的controller
  */
 @Controller
+@RequestMapping(value = "/admin/edit")
 public class AdminEditController {
 
     @Autowired
@@ -30,7 +29,7 @@ public class AdminEditController {
     private EditInterface editInterface;
 
     @Autowired
-    @Resource(name = "emailservice")
+    @Resource(name = "Emailservice")
     private EmailInterface emailInterface;
 
     /**
@@ -39,8 +38,8 @@ public class AdminEditController {
      * @param product
      * @return
      */
-    @RequestMapping(value = "/editforProduct", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
+    @RequestMapping(value = "/Product", method = {RequestMethod.POST})
     public HashMap<String, Boolean> EditForProduct(int ID, @RequestBody Product product) {
         System.out.println(ID + "," + product);
         product.setPrdno(ID);
@@ -58,8 +57,8 @@ public class AdminEditController {
      * @param user
      * @return responesHashmap
      */
-    @RequestMapping(value = "/editforUser", method = RequestMethod.POST)
     @ResponseBody
+    @RequestMapping(value = "/User", method = RequestMethod.POST)
     public HashMap<String, Boolean> EditForUser(int ID, @RequestBody User user) {
         System.out.println(user);
         user.setUserno(ID);
@@ -77,8 +76,8 @@ public class AdminEditController {
      * @param merchant Merchant
      * @return
      */
-    @RequestMapping(value = "/editforMerchant", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
+    @RequestMapping(value = "/Merchant", method = {RequestMethod.POST})
     public HashMap<String, Boolean> EditForSelller(int ID, @RequestBody Merchant merchant) {
         merchant.setMctno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
@@ -99,8 +98,8 @@ public class AdminEditController {
      * @param brand
      * @return
      */
-    @RequestMapping(value = "/editforBrand", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
+    @RequestMapping(value = "/Brand", method = {RequestMethod.POST})
     public HashMap<String, Boolean> EditForBrand(int ID, @RequestBody Brand brand) {
         brand.setBrdno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
@@ -115,6 +114,7 @@ public class AdminEditController {
      *
      * @param eventInfo
      */
-    @RequestMapping(value = "/editforEventinfo", method = RequestMethod.POST)
+    @ResponseBody
+    @RequestMapping(value = "/EventInfo", method = RequestMethod.POST)
     public void EditForEventInfo(@RequestBody EventInfo eventInfo) {}
 }

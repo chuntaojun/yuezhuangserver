@@ -1,6 +1,6 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.User;
+import com.yueserver.enity.User;
 import com.yueserver.sql.UserSqlInterface;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

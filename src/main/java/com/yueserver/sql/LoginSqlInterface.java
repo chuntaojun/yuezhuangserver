@@ -1,7 +1,7 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.nodao.ForgotPassword;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.nodao.ForgotPassword;
 
 import java.util.List;
 

@@ -1,12 +1,11 @@
 package com.yueserver.service;
 
 import com.yueserver.adaper.MethodNourtFoundException;
-import com.yueserver.bean.Brand;
-import com.yueserver.bean.Product;
+import com.yueserver.enity.Brand;
+import com.yueserver.enity.Product;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 
 /**
  * Merchant 相关操作接口

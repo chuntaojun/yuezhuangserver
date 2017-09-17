@@ -1,6 +1,6 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Notice;
+import com.yueserver.enity.Notice;
 
 public interface NoticeSqlInterface {
 

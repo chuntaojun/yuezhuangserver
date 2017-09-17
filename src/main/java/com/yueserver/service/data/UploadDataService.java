@@ -30,7 +30,7 @@ import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 import static com.yueserver.controller.LoginController.getPrincipal;
 
 @Service("UploadData")
-public class UploadData implements UploadInterface {
+public class UploadDataService implements UploadInterface {
 
     @Autowired
     @Resource(name = "MerchantSql")
@@ -43,7 +43,7 @@ public class UploadData implements UploadInterface {
     private  UrlConverter urlConverter = (UrlConverter) getSingleAdaperFactory().getConverter("URL");
     private Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
 
-    public UploadData() throws MethodNourtFoundException {
+    public UploadDataService() throws MethodNourtFoundException {
     }
 
     /**

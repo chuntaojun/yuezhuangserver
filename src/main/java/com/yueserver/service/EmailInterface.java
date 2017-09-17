@@ -7,6 +7,9 @@ public interface EmailInterface {
     void SendVerificationCodeEmail(String address, boolean cansend, HttpSession session);
     void SendRegistere(String address);
     void SendMerchantCanLogin(String address);
-    String setVerificationCode();
     void VerificationCodeExpired(HttpSession session);
+
+    boolean SendIssueFeedBack(String address, String context);
+
+    String setVerificationCode();
 }

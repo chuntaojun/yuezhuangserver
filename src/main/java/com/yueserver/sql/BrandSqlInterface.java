@@ -1,6 +1,6 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Brand;
+import com.yueserver.enity.Brand;
 
 import java.util.List;
 import java.util.Map;
@@ -9,6 +9,7 @@ public interface BrandSqlInterface {
 
     Brand getBrand(String brdname);
     List queryBrd_PrdInfo();
+    List queryBrdName();
 
     boolean saveSingleBrand(Brand brand);
     boolean saveBatchBrand();

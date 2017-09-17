@@ -57,27 +57,27 @@
         </form>
         <ul class="nav menu">
             <li class="active"><a href="/admin/show"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
-            <li><a href="/admin/businessmen"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
-            <li><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
-            <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-            <li><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+            <li><a href="/admin/merchant"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+            <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
+            <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
             <li class="parent ">
                 <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> 消息发布 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                    <span class="glyphicon glyphicon-list"></span> 更多功能 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                     <li class="active">
-                        <a class="" href="/admin/superhuman">
+                        <a class="" href="/admin/sportInfo">
                             <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/admin/hot">
+                        <a class="" href="/admin/notic">
                             <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/admin/notic">
+                        <a class="" href="/admin/deal/feedback">
                             <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>

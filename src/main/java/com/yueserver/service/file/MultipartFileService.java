@@ -95,7 +95,7 @@ public class MultipartFileService implements MultipartFileIntereface {
     }
 
     private UrlConverter CreateUrlConverter() {
-        if (getPrincipal().getRole(getPrincipal().getAuthorities()).equals("ROLE_ADMIN"))
+        if (getPrincipal().getAuthorities().equals("ROLE_ADMIN"))
             return new UrlConverter(new AdminPic());
         else
             return new UrlConverter(new MctPic());

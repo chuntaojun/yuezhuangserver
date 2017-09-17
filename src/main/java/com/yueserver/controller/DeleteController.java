@@ -2,6 +2,7 @@ package com.yueserver.controller;
 
 import com.yueserver.service.DeleteInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +16,7 @@ import java.util.HashMap;
  * 管理员与商家删除相关数据的controller
  */
 @Controller
+@RequestMapping(value = {"/admin/delete", "/user/delete"})
 public class DeleteController {
 
     @Autowired
@@ -26,7 +28,7 @@ public class DeleteController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "/Product", method = RequestMethod.POST)
     public HashMap DeleteProduct(int[] no){
         if (deleteservice.DelePrdInfo(no)){
             HashMap hashMap = new HashMap();
@@ -42,8 +44,9 @@ public class DeleteController {
      * 管理员删除帖子信息
      * @return
      */
+    @Secured("ROLE_ADMIN")
     @ResponseBody
-    @RequestMapping(value = "/admindeletePost", method = RequestMethod.POST)
+    @RequestMapping(value = "/Post", method = RequestMethod.POST)
     public HashMap DeletePost(int[] no){
         if (deleteservice.DelePostInfo(no)){
             HashMap hashMap = new HashMap();
@@ -56,11 +59,12 @@ public class DeleteController {
     }
 
     /**
-     * 管理员删除品牌信息
+     * 删除品牌信息
      * @return
      */
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
-    @RequestMapping(value = "/admindeleteBrand", method = RequestMethod.POST)
+    @RequestMapping(value = "/Brand", method = RequestMethod.POST)
     public HashMap DeleteBrand(int[] no){
         if (deleteservice.DeleBrandInfo(no)){
             HashMap hashMap = new HashMap();
@@ -70,12 +74,6 @@ public class DeleteController {
         HashMap hashMap = new HashMap();
         hashMap.put("data", new HashMap<>().put("stats", 500));
         return hashMap;
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/admindeleteUser", method = RequestMethod.POST)
-    public HashMap DeleteUser(int[] no){
-        return null;
     }
 
 }

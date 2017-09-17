@@ -1,4 +1,4 @@
-package com.yueserver.service.file;
+package com.yueserver.service.feedback;
 
 import com.yueserver.service.EmailInterface;
 import org.springframework.scheduling.annotation.Async;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpSession;
 import java.util.*;
 
 @EnableAsync
-@Service("emailservice")
+@Service("Emailservice")
 public class EmailToMerchant implements EmailInterface {
 
-    private void setEmail(String subject, String context, String address) {
+    private boolean setEmail(String subject, String context, String address) {
         try {
             Properties properties = new Properties();
             properties.setProperty("mail.host", "smtp.qq.com");
@@ -40,8 +40,10 @@ public class EmailToMerchant implements EmailInterface {
             //设置邮件正文与编码
             message.setContent(context, "text/html;charset=UTF-8");
             Transport.send(message);
+            return true;
         } catch (MessagingException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -87,6 +89,12 @@ public class EmailToMerchant implements EmailInterface {
     public void SendMerchantCanLogin(String address) {
         String context = "您现在已近可以登录了";
         setEmail("审核成功", context, address);
+    }
+
+    @Async
+    @Override
+    public boolean SendIssueFeedBack(String address, String context) {
+        return setEmail("问题反馈",context, address);
     }
 
     /**

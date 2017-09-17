@@ -1,11 +1,13 @@
 package com.yueserver.sql;
 
-import com.yueserver.bean.Product;
+import com.yueserver.enity.Product;
 
 import java.util.List;
 import java.util.Map;
 
 public interface ProductSqlInterface {
+
+    List queryPrdName();
 
     boolean saveSinglePrd(Product product);
     boolean saveBatchPrd(List<Product> prdList);

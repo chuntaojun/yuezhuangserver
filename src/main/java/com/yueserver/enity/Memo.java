@@ -1,4 +1,4 @@
-package com.yueserver.bean;
+package com.yueserver.enity;
 
 import java.sql.Date;
 import java.sql.Timestamp;

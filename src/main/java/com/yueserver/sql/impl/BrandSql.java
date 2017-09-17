@@ -1,6 +1,6 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.Brand;
+import com.yueserver.enity.Brand;
 import com.yueserver.sql.BrandSqlInterface;
 
 import org.hibernate.HibernateException;
@@ -31,7 +31,7 @@ public class BrandSql implements BrandSqlInterface {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            Query query = session.getNamedQuery("com.yueserver.bean.Brand.querySingleBrand");
+            Query query = session.getNamedQuery("com.yueserver.enity.Brand.querySingleBrand");
             query.setParameter("brdName", brdname);
             Brand brand = (Brand) query.list().iterator().next();
             transaction.commit();
@@ -75,6 +75,22 @@ public class BrandSql implements BrandSqlInterface {
     }
 
     @Override
+    public List queryBrdName() {
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            Query query = session.getNamedQuery("com.yueserver.enity.Brand.queryBrdName");
+            tx.commit();
+            return query.list();
+        } catch (HibernateException e) {
+            tx.rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
     public boolean saveSingleBrand(Brand brand) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -85,8 +101,7 @@ public class BrandSql implements BrandSqlInterface {
         } catch (HibernateException e) {
             transaction.rollback();
             return false;
-        }
-        finally {
+        } finally {
             session.close();
         }
     }

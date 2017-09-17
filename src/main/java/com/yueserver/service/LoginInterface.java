@@ -2,7 +2,7 @@ package com.yueserver.service;
 
 
 import com.yueserver.adaper.MethodNourtFoundException;
-import com.yueserver.bean.nodao.ForgotPassword;
+import com.yueserver.enity.nodao.ForgotPassword;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpSession;

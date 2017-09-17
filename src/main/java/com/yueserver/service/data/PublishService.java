@@ -1,6 +1,6 @@
 package com.yueserver.service.data;
 
-import com.yueserver.bean.Notice;
+import com.yueserver.enity.Notice;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.sql.NoticeSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;

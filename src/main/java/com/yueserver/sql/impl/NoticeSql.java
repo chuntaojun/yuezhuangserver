@@ -1,7 +1,7 @@
 package com.yueserver.sql.impl;
 
 import com.sun.xml.internal.ws.handler.HandlerException;
-import com.yueserver.bean.Notice;
+import com.yueserver.enity.Notice;
 import com.yueserver.sql.NoticeSqlInterface;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

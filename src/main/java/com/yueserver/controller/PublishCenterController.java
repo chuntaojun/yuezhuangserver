@@ -1,6 +1,6 @@
 package com.yueserver.controller;
 
-import com.yueserver.bean.Notice;
+import com.yueserver.enity.Notice;
 import com.yueserver.service.PublishServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 
 @Secured("ROLE_ADMIN")
 @Controller
+@RequestMapping(value = "/admin/push")
 public class PublishCenterController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class PublishCenterController {
     /**
      * 今日抢试发送
      */
-    @RequestMapping(value = "/gettodaytry", method = RequestMethod.POST)
+    @RequestMapping(value = "/TodayTry", method = RequestMethod.POST)
     public void getTodayTry() {
         System.out.println("ok");
     }
@@ -31,7 +32,7 @@ public class PublishCenterController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/getnotice", method = RequestMethod.POST)
+    @RequestMapping(value = "/Notice", method = RequestMethod.POST)
     public boolean getNoticeInfo(@ModelAttribute Notice notice) {
         return publishServiceInterface.SaveNotice(notice);
     }

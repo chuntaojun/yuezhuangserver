@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service("AdminEditData")
-public class AdminEditData implements EditInterface {
+public class AdminEditDataService implements EditInterface {
 
     @Autowired
     @Resource(name = "AdminSql")

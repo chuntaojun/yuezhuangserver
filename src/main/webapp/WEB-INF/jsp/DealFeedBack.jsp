@@ -26,6 +26,7 @@
     <style type="text/css">@import url("<c:url value="/resources/css/styles.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/bootstrap-editable.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/bootstrap-table.min.css" />");</style>
+    <style type="text/css">@import url("<c:url value="/resources/css/bootstrap-dialog.css" />");</style>
 
     <!--[if lt IE 9]>
     <script src="/resources/js/html5shiv.js"></script>
@@ -34,7 +35,7 @@
 
 </head>
 
-<body>
+<f>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -67,35 +68,42 @@
     <ul class="nav menu">
         <sec:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/show"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
-            <li><a href="/admin/businessmen"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+            <li><a href="/admin/merchant"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
         </sec:authorize>
-        <li class="active"><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
-        <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-        <li><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
-        <sec:authorize access="hasRole('ADMIN')">
-            <li class="parent ">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> 消息发布 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-1">
+        <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
+        <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+        <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span> 更多功能 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <sec:authorize access="hasRole('ADMIN')">
                     <li class="active">
-                        <a class="" href="/admin/superhuman">
+                        <a class="" href="/admin/sportInfo">
                             <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/admin/hot">
+                        <a class="" href="/admin/notice">
                             <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/admin/notic">
+                        <a class="" href="/admin/deal/feedback">
                             <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>
-                </ul>
-            </li>
-        </sec:authorize>
+                </sec:authorize>
+                <sec:authorize access="hasRole('USER')">
+                    <li>
+                        <a class="" href="/yue/issue/user/<%=account%>">
+                            <span class="glyphicon glyphicon-share-alt"></span> 反馈问题
+                        </a>
+                    </li>
+                </sec:authorize>
+            </ul>
+        </li>
         <li role="presentation" class="divider"></li>
         <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> 登录页面</a></li>
     </ul>
@@ -145,13 +153,61 @@
     </div>
     <!--/.row-->
 
+    <%--弹出修改菜单--%>
+    <form method="post" action="" class="form-horizontal" role="form" id="form_data" onsubmit="return false" style="margin: 20px;">
+        <div class="modal fade" id="issueModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Issue信息</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">反馈者</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="mctname" value="" id="account">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" name="mctemail" value="" id="mctemail">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Issue名称</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="quesname" value="" id="quesname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">反馈</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="solve" value="" id="solve" rows="7" style="resize: none"></textarea>
+                                </div>
+                            </div>
+                        <input type="hidden" name="url" id="url" value="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button onclick="IssueSolve()" class="btn btn-primary">提交</button><span id="tip"> </span>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </form>
+
 </div>
 
 <script src="/resources/js/jquery-1.11.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/bootstrap-datepicker.js"></script>
+<script src="/resources/js/bootstrap-editable.js"></script>
 <script src="/resources/js/bootstrap-table.js"></script>
 <script src="/resources/js/bootstrap-table-editable.js"></script>
+<script src="/resources/js/bootstrap-dialog.js"></script>
+<script src="/resources/js/jquery-form.js"></script>
 <script src="/resources/js/feedbacktable.js"></script>
 <script>
     ! function($) {

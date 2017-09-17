@@ -1,7 +1,7 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.Product;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.Product;
 import com.yueserver.sql.*;
 
 import org.hibernate.HibernateException;
@@ -54,10 +54,10 @@ public class MerchantSql implements MerchantSqlInterface {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            String hql = "SELECT DISTINCT p FROM Product p, Brand b WHERE p in elements(b.products) and b.mctno=? and p.prdname=?";
+            String hql = "SELECT DISTINCT p FROM Product p, Brand b WHERE p in elements(b.products) and b.mctno=:mctno and p.prdname=:prdname";
             Query query = session.createQuery(hql);
-            query.setInteger(0, getPrincipal().getMctno());
-            query.setString(1, prdName);
+            query.setParameter("mctno", getPrincipal().getMctno());
+            query.setParameter("prdname", prdName);
             Product product = (Product) query.list().iterator().next();
             transaction.commit();
             return product;

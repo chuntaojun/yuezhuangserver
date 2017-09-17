@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service("DeleteData")
-public class DeleteDataInfo implements DeleteInterface {
+public class DeleteDataService implements DeleteInterface {
 
     @Autowired
     @Resource(name = "AdminSql")

@@ -2,13 +2,12 @@ package com.yueserver.adaper.conver;
 
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
-import com.yueserver.bean.User;
-import com.yueserver.bean.Brand;
-import com.yueserver.bean.Merchant;
-import com.yueserver.bean.PrdPic;
-import com.yueserver.bean.Product;
-import com.yueserver.bean.Post;
-import org.omg.CORBA.PRIVATE_MEMBER;
+import com.yueserver.enity.User;
+import com.yueserver.enity.Brand;
+import com.yueserver.enity.Merchant;
+import com.yueserver.enity.PrdPic;
+import com.yueserver.enity.Product;
+import com.yueserver.enity.Post;
 
 import javax.servlet.http.HttpSession;
 import java.util.*;

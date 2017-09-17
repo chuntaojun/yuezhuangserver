@@ -13,7 +13,7 @@ $(window).on('resize', function() {
 })
 
 Dropzone.options.dropzone = {
-    url: "/uploadprdpicinfo",
+    url: "/user/upload/ProductPicture",
     method:'post',
     addRemoveLinks: true,
     autoProcessQueue: false,
@@ -58,7 +58,7 @@ Dropzone.options.dropzone = {
 
 
 $("#dropzone_1").dropzone({
-    url: "/save/todayTrypic",
+    url: "/admin/push/TodayTry/Picture",
     method:'post',
     addRemoveLinks: true,
     autoProcessQueue: true,

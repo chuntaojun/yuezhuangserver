@@ -23,6 +23,7 @@ import static com.yueserver.controller.LoginController.getPrincipal;
  */
 
 @Controller
+@RequestMapping(value = {"/admin/query", "/user/query"})
 public class ShowDataController {
 
     private HashMap<String, JSONObject> cacheMap = new HashMap<>();
@@ -38,7 +39,7 @@ public class ShowDataController {
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
-    @RequestMapping(value = "/reportProductInfo", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/Product", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReprotProductInfo(HttpSession session, boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("prdCache"))
             cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session));
@@ -55,7 +56,7 @@ public class ShowDataController {
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
-    @RequestMapping(value = "/reportBrandInfo", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/Brand", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportBrandInfo(HttpSession session, boolean refresh) throws IOException {
         while (session.getAttribute("brdlist") == null){}
         if (!refresh && !cacheMap.containsKey("brdCache"))
@@ -72,7 +73,7 @@ public class ShowDataController {
      */
     @Secured("ROLE_ADMIN")
     @ResponseBody
-    @RequestMapping(value = "/reportSellerInfo", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/Merchant", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportSellerInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("mctCache"))
             cacheMap.put("mctCache", showInterface.QuerySellerInfo());
@@ -88,7 +89,7 @@ public class ShowDataController {
      */
     @Secured("ROLE_ADMIN")
     @ResponseBody
-    @RequestMapping(value = "/reportUserInfo", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/User", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportUserInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("usrCache"))
             cacheMap.put("usrCache", showInterface.QueryUserInfo());
@@ -104,7 +105,7 @@ public class ShowDataController {
      */
     @Secured("ROLE_ADMIN")
     @ResponseBody
-    @RequestMapping(value = "/reportPostInfo", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/Post", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportPostInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("postCache"))
             cacheMap.put("postCache", showInterface.QueryPostInfo());

@@ -3,9 +3,9 @@ package com.yueserver.service.login;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.adaper.encryption.mdfive.MD5;
-import com.yueserver.bean.nodao.ForgotPassword;
+import com.yueserver.enity.nodao.ForgotPassword;
 import com.yueserver.sql.LoginSqlInterface;
-import com.yueserver.bean.Merchant;
+import com.yueserver.enity.Merchant;
 import com.yueserver.service.LoginInterface;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.Date;
 
 import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 
-@Service("LoginProcess")
+@Service("LoginProcessService")
 public class LoginProcessService implements LoginInterface {
 
     @Autowired
