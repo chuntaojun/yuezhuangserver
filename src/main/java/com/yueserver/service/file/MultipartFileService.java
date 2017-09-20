@@ -5,6 +5,7 @@ import com.yueserver.adaper.conver.UrlConverter;
 import com.yueserver.adaper.conver.impl.AdminPic;
 import com.yueserver.adaper.conver.impl.MctPic;
 import com.yueserver.adaper.encryption.base64.Base64;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.MultipartFileIntereface;
 
 import org.springframework.stereotype.Service;
@@ -33,7 +34,7 @@ public class MultipartFileService implements MultipartFileIntereface {
      * @return
      */
     @Override
-    public ArrayList<String> saveProductFiles(MultipartFile[] multipartFiles, String filepath, String mctInfo) {
+    public ResultBean<ArrayList<String>> saveProductFiles(MultipartFile[] multipartFiles, String filepath, String mctInfo) {
         ArrayList<String> urlList = new ArrayList<>();
         CreatFileDir(filepath);
         for (MultipartFile multipartFile : multipartFiles) {
@@ -46,7 +47,7 @@ public class MultipartFileService implements MultipartFileIntereface {
                 return null;
             }
         }
-        return urlList;
+        return new ResultBean<>(urlList);
     }
 
     /**
@@ -57,12 +58,12 @@ public class MultipartFileService implements MultipartFileIntereface {
      * @return
      */
     @Override
-    public String saveBrandFiles(MultipartFile multipartFile, String filepath, String brdName) {
+    public ResultBean<String> saveBrandFiles(MultipartFile multipartFile, String filepath, String brdName) {
         CreatFileDir(filepath);
         try {
             multipartFile.transferTo(new File(filepath, multipartFile.getOriginalFilename()));
             String brdLogo = CreateUrlConverter().BrandReourcesHttpUrl(multipartFile.getOriginalFilename(), brdName);
-            return brdLogo;
+            return new ResultBean<>(brdLogo);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -77,14 +78,14 @@ public class MultipartFileService implements MultipartFileIntereface {
      * @return
      */
     @Override
-    public boolean saveTodayTry(MultipartFile multipartFile, String filpath, String info) {
+    public ResultBean<Boolean> saveTodayTry(MultipartFile multipartFile, String filpath, String info) {
         CreatFileDir(filpath);
         try {
             multipartFile.transferTo(new File(filpath, multipartFile.getOriginalFilename()));
-            return true;
+            return new ResultBean<>(true);
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
+            return new ResultBean<>(false);
         }
     }
 

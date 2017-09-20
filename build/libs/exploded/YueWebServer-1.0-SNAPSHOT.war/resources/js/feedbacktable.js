@@ -38,7 +38,7 @@ function feedbackformct() {
                 document.getElementById("mctemail").value = row['mctemail'];
                 document.getElementById("account").value = row['mctname'];
                 document.getElementById("quesname").value = row['quesname'];
-                $("#form_data").attr('action', "/solve/issue/merchant?ID=" + row['no']);
+                $("#form_data").attr('action', "/admin/feed/solve/merchant?ID=" + row['no']);
                 return '<button class="btn btn-default issue" data-toggle="modal" data-target="#issueModal">反馈</button> ';
             }
         }],
@@ -110,7 +110,7 @@ function feedbackforusr() {
                 document.getElementById("mctemail").value = row['useraccount'];
                 document.getElementById("account").value = row['username'];
                 document.getElementById("quesname").value = row['quesname'];
-                $("#form_data").attr('action', "/solve/issue/user?ID=" + row['no']);
+                $("#form_data").attr('action', "/admin/feed/solve/user?ID=" + row['no']);
                 return '<button class="btn btn-default issue" data-toggle="modal" data-target="#issueModal">反馈</button> ';
             }
         }],

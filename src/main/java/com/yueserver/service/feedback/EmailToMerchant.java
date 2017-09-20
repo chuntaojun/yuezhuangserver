@@ -1,5 +1,6 @@
 package com.yueserver.service.feedback;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EmailInterface;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -57,7 +58,7 @@ public class EmailToMerchant implements EmailInterface {
     @Async
     @Override
     public void SendVerificationCodeEmail(String address, boolean cansend, HttpSession httpsession) {
-        String authcode = setVerificationCode();
+        String authcode = setVerificationCode().getData();
         httpsession.setAttribute("authcode", authcode);
         String context = "该验证码的有效时间为5分钟，过期验证码将失效。\n验证码：" + authcode;
         if (cansend) {
@@ -93,8 +94,8 @@ public class EmailToMerchant implements EmailInterface {
 
     @Async
     @Override
-    public boolean SendIssueFeedBack(String address, String context) {
-        return setEmail("问题反馈",context, address);
+    public ResultBean<Boolean> SendIssueFeedBack(String address, String context) {
+        return new ResultBean<>(setEmail("问题反馈",context, address));
     }
 
     /**
@@ -102,7 +103,7 @@ public class EmailToMerchant implements EmailInterface {
      * @return
      */
     @Override
-    public String setVerificationCode() {
+    public ResultBean<String> setVerificationCode() {
         String authcode = "";
         Random random = new Random();
         for(int i = 0; i < 8; i++) {
@@ -114,7 +115,7 @@ public class EmailToMerchant implements EmailInterface {
                 authcode += String.valueOf(random.nextInt(10));
             }
         }
-        return authcode;
+        return new ResultBean<>(authcode);
     }
 
     /**

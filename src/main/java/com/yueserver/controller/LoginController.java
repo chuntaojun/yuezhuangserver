@@ -52,7 +52,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/registere", method = RequestMethod.POST)
     public String LoginRegistere(@ModelAttribute ResigterLogin resigterLogin, Model model) throws MethodNourtFoundException {
-        boolean isOK =loginInterface.AddNewMerchant(resigterLogin.getMctaccount(), resigterLogin.getPassword());
+        boolean isOK =loginInterface.AddNewMerchant(resigterLogin.getMctaccount(), resigterLogin.getPassword()).getData();
         if (!isOK){
             model.addAttribute("errors", "用户已存在，请重新输入用户名");
             return "Registered";
@@ -75,16 +75,14 @@ public class LoginController {
     @RequestMapping(value = "/login_check", method = RequestMethod.POST)
     public String LoginCheck(HttpSession session) {
         if (getPrincipal().getRole(getPrincipal().getAuthorities()).contains("ROLE_ADMIN")) {
-            session.setAttribute("function_2", "用户管理");
             session.setAttribute("usertype", "管理员");
             session.setAttribute("username", getPrincipal().getUsername());
-            return "redirect:/admin/show";
+            return "redirect:/yue/show/admin";
         }
         else {
-            session.setAttribute("function_2", "数据报表");
             session.setAttribute("usertype", "商家");
             session.setAttribute("username", getPrincipal().getUsername());
-            return "redirect:/yue/report/" + getPrincipal().getUsername();
+            return "redirect:/yue/report/user/" + getPrincipal().getUsername();
         }
     }
 
@@ -150,7 +148,7 @@ public class LoginController {
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
     public ModelAndView ForgotPassword(HttpSession session, ModelAndView modelAndView, @ModelAttribute ForgotPassword forgotPassword)
             throws InterruptedException, IOException, ServletException, ParseException {
-        JSONObject resultJson = loginInterface.ChangePasswordIsWork(forgotPassword, session);
+        JSONObject resultJson = loginInterface.ChangePasswordIsWork(forgotPassword, session).getData();
         if (((String)resultJson.get("isWork")).equalsIgnoreCase("yes")) {
             modelAndView.setViewName("redirect:/login.jsp");
             return modelAndView;

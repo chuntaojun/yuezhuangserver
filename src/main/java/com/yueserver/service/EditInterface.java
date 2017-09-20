@@ -5,6 +5,7 @@ import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 
+import com.yueserver.enity.nodao.ResultBean;
 import net.sf.json.JSONObject;
 
 /**
@@ -12,12 +13,12 @@ import net.sf.json.JSONObject;
  */
 public interface EditInterface {
 
-    JSONObject updateProInfo(Product product);
-    JSONObject updateMerchantAuthorize(Merchant merchant);
-    JSONObject updateBrandInfo(Brand brand);
-    JSONObject updateUserInfo(User user);
+    JSONObject updateProInfo(ResultBean<Product> resultBean);
+    JSONObject updateMerchantAuthorize(ResultBean<Merchant> resultBean);
+    JSONObject updateBrandInfo(ResultBean<Brand> resultBean);
+    JSONObject updateUserInfo(ResultBean<User> resultBean);
 
-    JSONObject addProductInfo(Product product);
-    JSONObject addBrandInfo(Brand brand);
+    JSONObject addProductInfo(ResultBean<Product> resultBean);
+    JSONObject addBrandInfo(ResultBean<Brand> brandResultBean);
 
 }

@@ -1,5 +1,6 @@
 package com.yueserver.service.data;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.AutoCompleteServiceInterface;
 import com.yueserver.sql.BrandSqlInterface;
 import com.yueserver.sql.ProductSqlInterface;
@@ -10,9 +11,12 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("AutoCompleteService")
 public class AutoCompleteService implements AutoCompleteServiceInterface {
+
+    private HashMap<String, HashMap<String, List>> cacheMap = new HashMap<>();
 
     @Autowired
     @Resource(name = "BrandSql")
@@ -23,18 +27,24 @@ public class AutoCompleteService implements AutoCompleteServiceInterface {
     private ProductSqlInterface productSqlInterface;
 
     @Override
-    public HashMap<String, List> AutoCompleteBrdName() {
+    public ResultBean<HashMap<String, List>> AutoCompleteBrdName() {
         ArrayList<String> nameList = (ArrayList) brandSqlInterface.queryBrdName();
-        HashMap<String, List> brdnameMap = new HashMap<>();
-        brdnameMap.put("brdName", nameList);
-        return brdnameMap;
+        if (!cacheMap.containsKey("brdMap")) {
+            HashMap hashMap = new HashMap();
+            hashMap.put("brdName", nameList);
+            cacheMap.put("brdMap", hashMap);
+        }
+        return new ResultBean<>(cacheMap.get("brdMap"));
     }
 
     @Override
-    public HashMap<String, List> AutoCompletePrdName() {
+    public ResultBean<HashMap<String, List>> AutoCompletePrdName() {
         ArrayList<String> nameList = (ArrayList) productSqlInterface.queryPrdName();
-        HashMap<String, List> prdnameMap = new HashMap<>();
-        prdnameMap.put("prdName", nameList);
-        return prdnameMap;
+        if (!cacheMap.containsKey("prdMap")) {
+            HashMap<String, List> prdnameMap = new HashMap<>();
+            prdnameMap.put("prdName", nameList);
+            cacheMap.put("prdMap", prdnameMap);
+        }
+        return new ResultBean<>(cacheMap.get("prdMap"));
     }
 }

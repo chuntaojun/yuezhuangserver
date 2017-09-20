@@ -7,95 +7,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1269edf2-7391-4d38-a7be-a0b9a53395d4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/YueWebServer_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/YueWebServer_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/adaper/conver/ListConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/adaper/conver/ListConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/AdminEditController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/AdminEditController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/DeleteController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/DeleteController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/FeedBackController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/FeedBackController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/LoginController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/PublishCenterController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/PublishCenterController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/SearchAutoCompleteController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/SearchAutoCompleteController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/ShowDataController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/ShowDataController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/SolveIssueController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/SolveIssueController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/UploadController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/UploadController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/view/JspViewController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/controller/view/JspViewController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/security/UserDetailsLogin.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/security/UserDetailsLogin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/AutoCompleteServiceInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/AutoCompleteServiceInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/DeleteInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/DeleteInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/EditInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/EditInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/EmailInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/EmailInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/LoginInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/LoginInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/MultipartFileIntereface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/MultipartFileIntereface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/PublishServiceInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/PublishServiceInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/ShowInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/ShowInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/SolveIssueInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/SolveIssueInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/UploadInterface.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/UploadInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/AdminEditDataService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/AdminEditDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/AutoCompleteService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/AutoCompleteService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/DeleteDataService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/DeleteDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/PublishService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/PublishService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/ShowDataInfoService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/ShowDataInfoService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/UploadDataService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/data/UploadDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant$2.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/EmailToMerchant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/SolveIssueService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/feedback/SolveIssueService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/file/MultipartFileService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/file/MultipartFileService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/login/LoginProcessService.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/service/login/LoginProcessService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/sql/impl/BrandSql.class" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/com/yueserver/sql/impl/BrandSql.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/AdminEditController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/AdminEditController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/DeleteController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/DeleteController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/FeedBackController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/FeedBackController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/PublishCenterController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/PublishCenterController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/SearchAutoCompleteController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/SearchAutoCompleteController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/ShowDataController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/ShowDataController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/SolveIssueController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/SolveIssueController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/UploadController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/UploadController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/view/JspViewController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/controller/view/JspViewController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/security/UserDetailsLogin.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/security/UserDetailsLogin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/AutoCompleteServiceInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/AutoCompleteServiceInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/DeleteInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/DeleteInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/EditInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/EditInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/EmailInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/EmailInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/LoginInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/LoginInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/MultipartFileIntereface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/MultipartFileIntereface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/PublishServiceInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/PublishServiceInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/ShowInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/ShowInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/SolveIssueInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/SolveIssueInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/UploadInterface.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/UploadInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/AdminEditDataService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/AdminEditDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/AutoCompleteService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/AutoCompleteService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/DeleteDataService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/DeleteDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/PublishService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/PublishService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/ShowDataInfoService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/ShowDataInfoService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/UploadDataService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/data/UploadDataService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant$1.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant$2.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/EmailToMerchant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/SolveIssueService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/feedback/SolveIssueService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/file/MultipartFileService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/file/MultipartFileService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/login/LoginProcessService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/service/login/LoginProcessService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/yueserver/sql/impl/BrandSql.class" afterPath="$PROJECT_DIR$/out/production/classes/com/yueserver/sql/impl/BrandSql.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/bean.hbm/brand.hbm.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/classes/bean.hbm/brand.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/config/spring-config.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/config/spring-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ActivityInformation.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ActivityInformation.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/DataReport.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/DataReport.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/DealFeedBack.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/DealFeedBack.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/InformationRelease.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/InformationRelease.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ManageBrdPrd.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ManageBrdPrd.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ManageMerchants.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/ManageMerchants.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/PushFeedBack.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/PushFeedBack.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/SalesData.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/SalesData.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/UploadBrandedItems.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/WEB-INF/jsp/UploadBrandedItems.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/css/jquery-ui.min.css" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/css/jquery-ui.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/bootstrap-table.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/bootstrap-table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/feedbacktable.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/feedbacktable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/jquery-ui.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/myBootstraptable.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/myBootstraptable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/mydropzone.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/mydropzone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/yuezhuang.js" afterPath="$PROJECT_DIR$/build/libs/exploded/YueWebServer-1.0-SNAPSHOT.war/resources/js/yuezhuang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/bean.hbm/brand.hbm.xml" afterPath="$PROJECT_DIR$/out/production/resources/bean.hbm/brand.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/DeleteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/DeleteController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/FeedBackController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/FeedBackController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SearchAutoCompleteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SearchAutoCompleteController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/ShowDataController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/ShowDataController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SolveIssueController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SolveIssueController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/UploadController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/formatter/DateFormatter.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/formatter/DateFormatter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/JspViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/JspViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Address.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Address.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Administator.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Administator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/BrdFav.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/BrdFav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Frined.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Frined.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Manage.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Manage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Memo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Memo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Merchant.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Merchant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Notice.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Notice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Post.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Post.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostComment.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostComment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostFav.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostFav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostLike.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostLike.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostPic.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostPic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostType.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostVideo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PostVideo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Poster.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Poster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdFav.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdFav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdPic.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdPic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdType.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdVideo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/PrdVideo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Skin.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Skin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/TctGet.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/TctGet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/TctType.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/TctType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Ticket.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/Ticket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/EventInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/EventInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ForgotPassword.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ForgotPassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForMct.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForMct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/Login.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ResigterLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ResigterLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/MerchantTicket.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/MerchantTicket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ResultBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ResultBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/security/UserDetailsLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/security/UserDetailsLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/AutoCompleteServiceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/AutoCompleteServiceInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/DeleteInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/DeleteInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/EditInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/EditInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/EmailInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/EmailInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/LoginInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/LoginInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/MultipartFileIntereface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/MultipartFileIntereface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/PublishServiceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/PublishServiceInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/ShowInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/ShowInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/TicketInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/TicketInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/UploadInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/UploadInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AdminEditDataService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AdminEditDataService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/DeleteDataService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/DeleteDataService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/PublishService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/PublishService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/ShowDataInfoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/ShowDataInfoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/TicketService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/TicketService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/UploadDataService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/UploadDataService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/EmailToMerchant.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/EmailToMerchant.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/SolveIssueService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/SolveIssueService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/file/MultipartFileService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/file/MultipartFileService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcessService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcessService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/service/noticepush/WebsocketEndPoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/service/noticepush/WebsocketEndPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/AdminSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/AdminSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/BrandSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/BrandSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/LoginSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/LoginSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/MerchantSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/MerchantSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/NoticeSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/NoticeSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/PostSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/PostSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/ProductSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/ProductSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/UserSqlInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/UserSqlInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/AdminSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/AdminSql.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/LoginSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/LoginSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/MerchantSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/MerchantSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/NoticeSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/NoticeSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/PostSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/PostSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/ProductSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/ProductSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/UserSql.java" afterPath="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/UserSql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/administator.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/administator.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/manage.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/manage.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/merchant.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/merchant.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/post.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/post.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/prdpic.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/prdpic.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/product.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/product.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/bean.hbm/user.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/bean.hbm/user.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-config.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Appeals.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Appeals.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DealFeedBack.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DealFeedBack.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/InformationRelease.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/InformationRelease.jsp" />
@@ -104,11 +144,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PushFeedBack.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PushFeedBack.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SalesData.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SalesData.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-dialog.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-dialog.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/feedbacktable.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/feedbacktable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/myBootstraptable.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/myBootstraptable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/mydropzone.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/mydropzone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-table.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/yuezhuang.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/yuezhuang.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -128,7 +168,17 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="sessionFactory/Hibernate" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="sessionFactory/Hibernate" type="e3449647:DbNodeDescriptor" />
+        <item name="YueZhuang" type="e3449647:DbNodeDescriptor" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ExternalProjectsData">
@@ -137,15 +187,39 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TicketService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/TicketService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+              <folding>
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#859#860#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TicketInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/TicketInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,8 +227,11 @@
     <findStrings>
       <find>mctname</find>
       <find>form_data</find>
-      <find>url</find>
       <find>email</find>
+      <find>url</find>
+      <find>data</find>
+      <find>field</find>
+      <find>opacity</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -540,57 +617,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/UploadData.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/feedback.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/FeedBackController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/Issue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/EditInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AdminEditDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/AutoCompleteServiceInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/DeleteInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/DeleteDataService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueIInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/ProductSqlInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/BrandSqlInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/bean.hbm/product.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/ProductSql.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/EmailToMerchant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/EmailInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/SolveIssueService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/FeedBack.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/noticepush/WebsocketEndPoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/LoginSql.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/MerchantSql.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcessService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/PublishServiceInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/PublishService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/ShowInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/ShowDataInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-dialog.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-dialog.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/UploadInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/UploadDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/EmailInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/EmailToMerchant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/SolveIssueService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/MultipartFileIntereface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/file/MultipartFileService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Appeals.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForMct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/LoginInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcessService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/DeleteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/FeedBackController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SolveIssueController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/security/UserDetailsLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-table.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/ShowDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/JspViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DealFeedBack.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ManageBrdPrd.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ManageMerchants.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SalesData.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PushFeedBack.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/DeleteController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/FeedBackController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/ShowDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/UploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/myBootstraptable.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/mydropzone.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SolveIssueController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/feedbacktable.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/MerchanrTicket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/MerchantTicket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/formatter/DateFormatter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/InformationRelease.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/controller/SearchAutoCompleteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/yuezhuang.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.min.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/TicketInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yueserver/service/data/TicketService.java" />
       </list>
     </option>
   </component>
@@ -629,10 +706,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -673,6 +747,25 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="adaper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="adaper" type="462c0819:PsiDirectoryNode" />
+              <item name="conver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -684,6 +777,93 @@
               <item name="yueserver" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="excption" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="feedback" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yueserver" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
@@ -739,19 +919,31 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YueWebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YueWebServer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
@@ -867,6 +1059,9 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="33753" />
+      </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -927,7 +1122,15 @@
       <workItem from="1505608165393" duration="14618000" />
       <workItem from="1505628120892" duration="7488000" />
       <workItem from="1505655677446" duration="711000" />
-      <workItem from="1505661445801" duration="2262000" />
+      <workItem from="1505661445801" duration="2409000" />
+      <workItem from="1505690211329" duration="1591000" />
+      <workItem from="1505723128660" duration="4417000" />
+      <workItem from="1505730139784" duration="6436000" />
+      <workItem from="1505739362243" duration="4016000" />
+      <workItem from="1505744312272" duration="9138000" />
+      <workItem from="1505879949044" duration="5515000" />
+      <workItem from="1505904922307" duration="3501000" />
+      <workItem from="1505918980821" duration="1853000" />
     </task>
     <task id="LOCAL-00001" summary="增加新的功能">
       <created>1505577827743</created>
@@ -940,15 +1143,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30185000" />
+    <option name="totallyTimeSpent" value="66799000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -956,19 +1169,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19797225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20864461" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -978,7 +1192,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -996,7 +1209,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1004,12 +1217,12 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19797225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20437567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1032,240 +1245,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="1428">
+          <caret line="99" column="14" lean-forward="true" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="98" column="33" lean-forward="true" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/BrandSqlInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/ProductSqlInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bean.hbm/product.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="81" lean-forward="true" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/ProductSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/EmailInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/PublishService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Registered.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="72" lean-forward="false" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/noticepush/WebsocketEndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/LoginSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/MerchantSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/login/LoginProcessService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="1394" column="0" lean-forward="true" selection-start-line="1394" selection-start-column="0" selection-end-line="1394" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-dialog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/file/MultipartFileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1308">
-          <caret line="97" column="43" lean-forward="false" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/respond.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="1203" lean-forward="false" selection-start-line="5" selection-start-column="1203" selection-end-line="5" selection-end-column="1203" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/adaper/conver/JsonConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/adaper/conver/ListConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2176">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/SolveIssueInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/EmailToMerchant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/ShowDataInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="122" column="28" lean-forward="false" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Appeals.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForMct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="71" column="18" lean-forward="false" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/IssueForUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/feedback/SolveIssueService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/RetrievepasPassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="76" column="25" lean-forward="true" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/JspViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/DeleteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="697">
+          <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1273,152 +1264,381 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/FeedBackController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding />
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/UploadInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/SearchAutoCompleteController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="-928">
+          <caret line="794" column="0" lean-forward="true" selection-start-line="794" selection-start-column="0" selection-end-line="794" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/ResultBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/ShowDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myBootstraptable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-433">
-          <caret line="550" column="11" lean-forward="false" selection-start-line="550" selection-start-column="11" selection-end-line="550" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/mydropzone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/AdminEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-901">
-          <caret line="64" column="29" lean-forward="false" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2431">
-          <caret line="62" column="40" lean-forward="false" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/feedbacktable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1232">
-          <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        <state relative-caret-position="391">
+          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/SolveIssueController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="340">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/InformationRelease.jsp">
+    <entry file="jar://$PROJECT_DIR$/java_api/c3p0/hibernate-core-5.2.10.Final.jar!/org/hibernate/query/Query.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="135" column="60" lean-forward="false" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
+        <state relative-caret-position="294">
+          <caret line="496" column="13" lean-forward="false" selection-start-line="496" selection-start-column="13" selection-end-line="496" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bean.hbm/brand.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/adaper/conver/ListConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/enity/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Appeals.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Registered.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/view/JspViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/PublishCenterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="51" column="97" lean-forward="false" selection-start-line="51" selection-start-column="97" selection-end-line="51" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/enity/nodao/MerchantTicket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/formatter/DateFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DealFeedBack.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1615">
+          <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ManageBrdPrd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1190">
-          <caret line="65" column="38" lean-forward="false" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+        <state relative-caret-position="-1054">
+          <caret line="91" column="25" lean-forward="false" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ManageMerchants.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-986">
-          <caret line="95" column="62" lean-forward="true" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
+        <state relative-caret-position="-1518">
+          <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/RetrievepasPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/impl/BrandSql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/sql/BrandSqlInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SalesData.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2524">
+          <caret line="86" column="21" lean-forward="false" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PushFeedBack.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="118" column="20" lean-forward="true" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
+        <state relative-caret-position="204">
+          <caret line="178" column="21" lean-forward="false" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SalesData.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/InformationRelease.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="158" column="107" lean-forward="false" selection-start-line="158" selection-start-column="107" selection-end-line="158" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/AutoCompleteServiceInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/dateanddropzone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DataReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="2486" column="0" lean-forward="false" selection-start-line="2486" selection-start-column="0" selection-end-line="2486" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="2025" column="8" lean-forward="false" selection-start-line="2025" selection-start-column="8" selection-end-line="2025" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/AutoCompleteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="77" column="21" lean-forward="false" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/security/UserDetailsLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-747">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/86854107/0f474542-9c70-41ba-9a44-113bdd6da74e/YueZhuang.PostVideo">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/86854107/0f474542-9c70-41ba-9a44-113bdd6da74e/YueZhuang.PrdVideo">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="74" column="72" lean-forward="false" selection-start-line="74" selection-start-column="72" selection-end-line="74" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="57" lean-forward="false" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/yuezhuang.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/searchauto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ActivityInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="230" column="19" lean-forward="true" selection-start-line="230" selection-start-column="19" selection-end-line="230" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/controller/SearchAutoCompleteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="783" lean-forward="false" selection-start-line="5" selection-start-column="773" selection-end-line="5" selection-end-column="783" />
+          <folding>
+            <element signature="e#1315#1400#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/UploadBrandedItems.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/TicketInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yueserver/service/data/TicketService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DealFeedBack.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="193" column="46" lean-forward="false" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="46" />
-          <folding />
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

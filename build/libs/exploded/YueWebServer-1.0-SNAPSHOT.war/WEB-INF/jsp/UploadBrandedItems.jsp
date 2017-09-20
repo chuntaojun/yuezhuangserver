@@ -4,6 +4,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ page import="static com.yueserver.controller.LoginController.getPrincipal" %>
 <%
+    boolean role = getPrincipal().getRole(getPrincipal().getAuthorities()).contains("ROLE_ADMIN");
     String account = getPrincipal().getUsername();
 %>
 <!DOCTYPE html>
@@ -18,6 +19,7 @@
     <style type="text/css">@import url("<c:url value="/resources/css/datepicker3.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/styles.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/dropzone.css" />");</style>
+    <style type="text/css">@import url("<c:url value="/resources/css/jquery-ui.min.css" />");</style>
 
     <!--[if lt IE 9]>
     <script src="/resources/js/html5shiv.js"></script>
@@ -58,12 +60,17 @@
     </form>
     <ul class="nav menu">
         <sec:authorize access="hasRole('ADMIN')">
-        <li><a href="/admin/show"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
-        <li><a href="/admin/businessmen"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+            <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
+            <li><a href="/yue/merchant/admin"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+            <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
+            <li><a href="/yue/query/admin"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li class="active"><a href="/yue/uploads/admin"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入</a></li>
         </sec:authorize>
-        <li><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
-        <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-        <li class="active"><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+        <sec:authorize access="hasRole('USER')">
+            <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 数据报表</a></li>
+            <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li class="active"><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+        </sec:authorize>
         <li class="parent ">
             <a href="#">
                 <span class="glyphicon glyphicon-list"></span> 更多功能 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
@@ -71,24 +78,29 @@
             <ul class="children collapse" id="sub-item-1">
                 <sec:authorize access="hasRole('ADMIN')">
                     <li class="active">
-                        <a class="" href="/admin/superhuman">
+                        <a class="" href="/yue/sportInfo/admin">
                             <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/admin/notic">
+                        <a class="" href="/yue/notice/admin">
                             <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                         </a>
                     </li>
                     <li>
-                        <a class="" href="/deal/feedback">
+                        <a class="" href="/yue/deal/feedback/admin">
                             <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                         </a>
                     </li>
                 </sec:authorize>
                 <sec:authorize access="hasRole('USER')">
                     <li>
-                        <a class="" href="/yue/issue/<%=account%>">
+                        <a class="" href="/yue/push/ticket/user/<%=account%>">
+                            <span class="glyphicon glyphicon-share-alt"></span> 折扣券
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="/yue/issue/user/<%=account%>">
                             <span class="glyphicon glyphicon-share-alt"></span> 反馈问题
                         </a>
                     </li>
@@ -231,17 +243,21 @@
                 <label style="color: palevioletred">上传商品图片信息</label>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="form-group">
-                            <label>商品品牌</label>
-                            <input id="brd" name="brdname" type="text" class="form-control" placeholder="品牌名称">
-                        </div>
-                        <div class="form-group">
-                            <label>商品名称</label>
-                            <input id="prd" name="prdname" type="text" class="form-control" placeholder="商品名称">
-                        </div>
-                        <div id="dropzone" class="dropzone"></div>
-                        <div class="form-group">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>商品品牌</label>
+                                <input id="brd" name="brdname" type="text" class="form-control" placeholder="品牌名称">
+                            </div>
+                            <div class="form-group">
+                                <label>商品名称</label>
+                                <input id="prd" name="prdname" type="text" class="form-control" placeholder="商品名称">
+                            </div>
                             <button type="submit" class="btn btn-primary" id="submit-all" disabled="disabled">上传商品图片</button>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="dropzone" class="dropzone"></div>
+                            <div class="form-group">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -252,14 +268,14 @@
                 <label style="color: palevioletred">上传商品视频信息</label>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form id="vid_form" action="/uploadprdvideo" method="post" enctype="multipart/form-data" onsubmit="return vid_submit();">
+                        <form id="vid_form" action="" method="post" enctype="multipart/form-data" onsubmit="return vid_submit();">
                             <div class="form-group">
                                 <label>商品品牌</label>
-                                <input name="brdname" type="text" class="form-control" placeholder="品牌名称">
+                                <input id="brd" name="brdname" type="text" class="form-control" placeholder="品牌名称">
                             </div>
                             <div class="form-group">
                                 <label>商品名称</label>
-                                <input name="prdname" type="text" class="form-control" placeholder="商品名称">
+                                <input id="prd" name="prdname" type="text" class="form-control" placeholder="商品名称">
                             </div>
                             <input id="prdvideo" name="prdvideo" type="file" value="点击上传视频文件">
                             <div class="form-group">
@@ -276,14 +292,41 @@
 
 </div>
 <!--/.main-->
-<script src="/resources/js/jquery-1.11.1.min.js"></script>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/jquery-ui.min.js"></script>
+<script src="/resources/js/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $.ajax({
+            url: '/search/prdName',
+            type: 'post',
+            cache: true,
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data) {
+                $("#prd").autocomplete({
+                    source: data.data.prdName
+                });
+            }
+        })
+        $.ajax({
+            url: '/search/brdName',
+            type: 'post',
+            cache: true,
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data) {
+                $("#brd").autocomplete({
+                    source:data.data.brdName
+                })
+            }
+        })
+    })
+</script>
+<%--<script src="/resources/js/jquery-1.11.1.min.js"></script>--%>
 <script src="/resources/js/dropzone.js"></script>
 <script src="/resources/js/dateanddropzone.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/chart.min.js"></script>
-<script src="/resources/js/chart-data.js"></script>
-<script src="/resources/js/easypiechart.js"></script>
-<script src="/resources/js/easypiechart-data.js"></script>
 <script src="/resources/js/bootstrap-datepicker.js"></script>
 <script src="/resources/js/jquery-form.js"></script>
 <script src="/resources/js/yuezhuang.js"></script>
@@ -294,6 +337,13 @@
                 alert("上传品牌信息失败")
         })
     }
+
+    $(function () {
+        if (<%=role %>)
+            $("#vid_form").attr("action", "/admin/upload/ProductVideos");
+        else
+            $("#vid_form").attr("action", "/user/upload/ProductVideos");
+    })
 </script>
 </body>
 

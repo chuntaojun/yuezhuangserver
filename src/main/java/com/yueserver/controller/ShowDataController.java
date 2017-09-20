@@ -2,6 +2,7 @@ package com.yueserver.controller;
 
 import javax.servlet.http.HttpSession;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.ShowInterface;
 
 import net.sf.json.JSONObject;
@@ -42,9 +43,9 @@ public class ShowDataController {
     @RequestMapping(value = "/Product", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReprotProductInfo(HttpSession session, boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("prdCache"))
-            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session));
+            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session).getData());
         else if (refresh)
-            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session));
+            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session).getData());
         return cacheMap.get("prdCache").getString("prdList");
     }
 
@@ -60,9 +61,9 @@ public class ShowDataController {
     public String ReportBrandInfo(HttpSession session, boolean refresh) throws IOException {
         while (session.getAttribute("brdlist") == null){}
         if (!refresh && !cacheMap.containsKey("brdCache"))
-            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session));
+            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session).getData());
         else if (refresh)
-            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session));
+            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session).getData());
         return cacheMap.get("brdCache").getString("brdList");
     }
 
@@ -76,9 +77,9 @@ public class ShowDataController {
     @RequestMapping(value = "/Merchant", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportSellerInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("mctCache"))
-            cacheMap.put("mctCache", showInterface.QuerySellerInfo());
+            cacheMap.put("mctCache", showInterface.QuerySellerInfo().getData());
         else if (refresh)
-            cacheMap.put("mctCache", showInterface.QuerySellerInfo());
+            cacheMap.put("mctCache", showInterface.QuerySellerInfo().getData());
         return cacheMap.get("mctCache").getString("mctList");
     }
 
@@ -92,9 +93,9 @@ public class ShowDataController {
     @RequestMapping(value = "/User", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportUserInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("usrCache"))
-            cacheMap.put("usrCache", showInterface.QueryUserInfo());
+            cacheMap.put("usrCache", showInterface.QueryUserInfo().getData());
         else if (refresh)
-            cacheMap.put("usrCache", showInterface.QueryUserInfo());
+            cacheMap.put("usrCache", showInterface.QueryUserInfo().getData());
         return cacheMap.get("usrCache").getString("usrList");
     }
 
@@ -108,9 +109,9 @@ public class ShowDataController {
     @RequestMapping(value = "/Post", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportPostInfo(boolean refresh) throws IOException {
         if (!refresh && !cacheMap.containsKey("postCache"))
-            cacheMap.put("postCache", showInterface.QueryPostInfo());
+            cacheMap.put("postCache", showInterface.QueryPostInfo().getData());
         else if (refresh)
-            cacheMap.put("postCache", showInterface.QueryPostInfo());
+            cacheMap.put("postCache", showInterface.QueryPostInfo().getData());
         return cacheMap.get("postCache").getString("postList");
     }
 

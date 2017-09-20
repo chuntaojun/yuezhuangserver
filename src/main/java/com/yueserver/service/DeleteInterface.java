@@ -1,9 +1,11 @@
 package com.yueserver.service;
 
+import com.yueserver.enity.nodao.ResultBean;
+
 public interface DeleteInterface {
 
-    boolean DelePrdInfo(int[] prdno);
-    boolean DelePostInfo(int[] postno);
-    boolean DeleBrandInfo(int[] brdno);
+    ResultBean<Boolean> DelePrdInfo(int[] prdno);
+    ResultBean<Boolean> DelePostInfo(int[] postno);
+    ResultBean<Boolean> DeleBrandInfo(int[] brdno);
 
 }

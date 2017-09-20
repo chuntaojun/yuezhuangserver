@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="static com.yueserver.controller.LoginController.getPrincipal" %>
 <%
     String account = getPrincipal().getUsername();
@@ -39,7 +39,8 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -48,7 +49,8 @@
                 <a class="navbar-brand" href="#">悦妆 ${usertype}管理</a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> ${username} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-user"></span> ${username} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
                         </ul>
@@ -67,37 +69,49 @@
         </form>
         <ul class="nav menu">
             <sec:authorize access="hasRole('ADMIN')">
-                <li><a href="/admin/show"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
-                <li><a href="/admin/businessmen"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+                <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
+                <li><a href="/yue/merchant/admin"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
+                <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
+                <li><a href="/yue/query/admin"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+                <li><a href="/yue/uploads/admin"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入</a></li>
             </sec:authorize>
-            <li><a href="/yue/report/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> ${function_2}</a></li>
-            <li><a href="/yue/query/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-            <li><a href="/yue/uploads/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+            <sec:authorize access="hasRole('USER')">
+                <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 数据报表</a></li>
+                <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+                <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+            </sec:authorize>
             <li class="parent ">
                 <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> 更多功能 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                    <span class="glyphicon glyphicon-list"></span> 更多功能 <span data-toggle="collapse" href="#sub-item-1"
+                                                                              class="icon pull-right"><em
+                        class="glyphicon glyphicon-s glyphicon-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                     <sec:authorize access="hasRole('ADMIN')">
                         <li class="active">
-                            <a class="" href="/admin/superhuman">
+                            <a class="" href="/yue/sportInfo/admin">
                                 <span class="glyphicon glyphicon-share-alt"></span> 活动发布
                             </a>
                         </li>
                         <li>
-                            <a class="" href="/admin/notic">
+                            <a class="" href="/yue/notice/admin">
                                 <span class="glyphicon glyphicon-share-alt"></span> 通告发布
                             </a>
                         </li>
                         <li>
-                            <a class="" href="/deal/feedback">
+                            <a class="" href="/yue/deal/feedback/admin">
                                 <span class="glyphicon glyphicon-share-alt"></span> 反馈处理
                             </a>
                         </li>
                     </sec:authorize>
                     <sec:authorize access="hasRole('USER')">
                         <li>
-                            <a class="" href="/yue/issue/<%=account%>">
+                            <a class="" href="/yue/push/ticket/user/<%=account%>">
+                                <span class="glyphicon glyphicon-share-alt"></span> 折扣券
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="/yue/issue/user/<%=account%>">
                                 <span class="glyphicon glyphicon-share-alt"></span> 反馈问题
                             </a>
                         </li>
@@ -136,7 +150,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>联系方式</label>
-                                    <input name="mctemail" type="email" class="form-control" id="email" placeholder="联系邮箱">
+                                    <input name="mctemail" type="email" class="form-control" id="email"
+                                           placeholder="联系邮箱">
                                 </div>
                                 <div class="form-group">
                                     <label>问题名称</label>
@@ -149,7 +164,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>请具体描述问题</label>
-                                    <textarea name="issueMain" class="form-control has-feedback" rows="6" style="resize: none" placeholder="请具体描述你所要反馈的问题"></textarea>
+                                    <textarea name="issueMain" class="form-control has-feedback" rows="6"
+                                              style="resize: none" placeholder="请具体描述你所要反馈的问题"></textarea>
                                 </div>
                             </div>
                         </form>
@@ -163,17 +179,17 @@
     <script src="/resources/js/bootstrap-datepicker.js"></script>
     <script src="/resources/js/jquery-form.js"></script>
     <script>
-        ! function($) {
-            $(document).on("click", "ul.nav li.parent > a > span.icon", function() {
+        !function ($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
                 $(this).find('em:first').toggleClass("glyphicon-minus");
             });
             $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
         }(window.jQuery);
 
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
         })
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         })
 

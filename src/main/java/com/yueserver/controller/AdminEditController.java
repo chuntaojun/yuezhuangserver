@@ -6,6 +6,7 @@ import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 
 import com.yueserver.enity.nodao.EventInfo;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EditInterface;
 import com.yueserver.service.EmailInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class AdminEditController {
         System.out.println(ID + "," + product);
         product.setPrdno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
-        if (editInterface.updateProInfo(product).getBoolean("result"))
+        if (editInterface.updateProInfo(new ResultBean<>(product)).getBoolean("result"))
             responesHashmap.put("judge", true);
         else
             responesHashmap.put("judge", false);
@@ -63,7 +64,7 @@ public class AdminEditController {
         System.out.println(user);
         user.setUserno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
-        if (editInterface.updateUserInfo(user).getBoolean("result"))
+        if (editInterface.updateUserInfo(new ResultBean<>(user)).getBoolean("result"))
             responesHashmap.put("judge", true);
         else
             responesHashmap.put("judge", false);
@@ -81,7 +82,7 @@ public class AdminEditController {
     public HashMap<String, Boolean> EditForSelller(int ID, @RequestBody Merchant merchant) {
         merchant.setMctno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
-        if (editInterface.updateMerchantAuthorize(merchant).getBoolean("result")) {
+        if (editInterface.updateMerchantAuthorize(new ResultBean<>(merchant)).getBoolean("result")) {
             if (merchant.getMctstate() == 1)
                 emailInterface.SendMerchantCanLogin("1069284099@qq.com");
             System.out.println(new Date());
@@ -103,7 +104,7 @@ public class AdminEditController {
     public HashMap<String, Boolean> EditForBrand(int ID, @RequestBody Brand brand) {
         brand.setBrdno(ID);
         HashMap<String, Boolean> responesHashmap = new HashMap<>();
-        if (editInterface.updateBrandInfo(brand).getBoolean("result"))
+        if (editInterface.updateBrandInfo(new ResultBean<>(brand)).getBoolean("result"))
             responesHashmap.put("judge", true);
         else
             responesHashmap.put("judge", false);

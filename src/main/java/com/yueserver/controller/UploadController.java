@@ -3,6 +3,7 @@ package com.yueserver.controller;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
+import com.yueserver.enity.nodao.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by liaochuntao on 17-7-18.
- * 商家端商品信息上传的controller
+ * 品牌、商品信息上传的controller
  */
 @Secured({"ROLE_USER", "ROLE_ADMIN"})
 @Controller
@@ -31,11 +32,11 @@ public class UploadController {
 
     @ResponseBody
     @RequestMapping(value = "/Brand", method = RequestMethod.POST)
-    public boolean UploadBrandInfo(@RequestParam(name = "logo") MultipartFile multipartFile, @ModelAttribute Brand brand,
-                                   HttpSession session) throws MethodNourtFoundException {
-        String brdLogo = uploadInterface.SaveBrdLogo(multipartFile, session, brand.getBrdname());
+    public ResultBean<Boolean> UploadBrandInfo(@RequestParam(name = "logo") MultipartFile multipartFile, @ModelAttribute Brand brand,
+                                      HttpSession session) throws MethodNourtFoundException {
+        String brdLogo = uploadInterface.SaveBrdLogo(multipartFile, session, brand.getBrdname()).getData();
         if ("".equals(brdLogo) || brdLogo == null)
-            return false;
+            return new ResultBean<>(false);
         brand.setBrdlogo(brdLogo);
         return uploadInterface.AddBrandInfo(brand);
     }
@@ -47,7 +48,7 @@ public class UploadController {
      * @throws IOException
      */
     @RequestMapping(value = "/Product", method = {RequestMethod.POST, RequestMethod.GET})
-    public boolean UploadPrdInfo(@ModelAttribute Product product, String brdname, String submittype) throws ServletException, IOException {
+    public ResultBean<Boolean> UploadPrdInfo(@ModelAttribute Product product, String brdname, String submittype) throws ServletException, IOException {
         if ("upload".equalsIgnoreCase(submittype))
             return uploadInterface.AddProductInfo(product, brdname);
         return uploadInterface.UpdateProductInfo(product);
@@ -64,7 +65,7 @@ public class UploadController {
      */
     @ResponseBody
     @RequestMapping(value = "/ProductPicture", method = {RequestMethod.POST, RequestMethod.GET})
-    public boolean UploadPrdFile(@RequestParam(value = "file") MultipartFile[] multipartFiles, @RequestParam(name = "brdname") String brdname,
+    public ResultBean<Boolean> UploadPrdFile(@RequestParam(value = "file") MultipartFile[] multipartFiles, @RequestParam(name = "brdname") String brdname,
                                  @RequestParam(name = "prdname") String prdname, HttpSession session) throws MethodNourtFoundException {
         return uploadInterface.SavePrdPic(multipartFiles, brdname, prdname, session);
     }
@@ -80,10 +81,10 @@ public class UploadController {
      */
     @ResponseBody
     @RequestMapping(value = "/ProductVideos", method = RequestMethod.POST)
-    public void UploadPrdVideo(@RequestParam(name = "prdvideo") MultipartFile multipartFile, @RequestParam(name = "brdname") String brdname,
-                               @RequestParam(name = "prdname") String prdname, HttpSession session)
+    public ResultBean<Boolean> UploadPrdVideo(@RequestParam(name = "prdvideo") MultipartFile multipartFile, @RequestParam(name = "brdname") String brdname,
+                                        @RequestParam(name = "prdname") String prdname, HttpSession session)
             throws IOException, MethodNourtFoundException {
-        uploadInterface.SavePrdVideo(multipartFile, brdname, prdname, session);
+        return uploadInterface.SavePrdVideo(multipartFile, brdname, prdname, session);
     }
 
 }

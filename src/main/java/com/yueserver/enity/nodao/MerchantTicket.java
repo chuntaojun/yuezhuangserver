@@ -1,15 +1,15 @@
 package com.yueserver.enity.nodao;
 
-import com.sun.org.glassfish.gmbal.NameValue;
+import java.util.Date;
 
-public class MerchanrTicket {
+public class MerchantTicket {
 
     private String brdName;
     private String prdName;
-
-    @NameValue()
     private int tickNum;
     private String mctname;
+    private Date starttime;
+    private Date deadline;
 
     public String getBrdName() {
         return brdName;
@@ -39,17 +39,35 @@ public class MerchanrTicket {
         return mctname;
     }
 
+    public void setMctname(String mctname) {
+        this.mctname = mctname;
+    }
+
+    public Date getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
     @Override
     public String toString() {
-        return "MerchanrTicket{" +
+        return "MerchantTicket{" +
                 "brdName='" + brdName + '\'' +
                 ", prdName='" + prdName + '\'' +
                 ", tickNum=" + tickNum +
                 ", mctname='" + mctname + '\'' +
+                ", starttime=" + starttime +
+                ", deadline=" + deadline +
                 '}';
-    }
-
-    public void setMctname(String mctname) {
-        this.mctname = mctname;
     }
 }

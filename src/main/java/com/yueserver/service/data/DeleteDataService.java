@@ -1,5 +1,6 @@
 package com.yueserver.service.data;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.DeleteInterface;
 import com.yueserver.sql.AdminSqlInterface;
 import com.yueserver.sql.MerchantSqlInterface;
@@ -25,8 +26,8 @@ public class DeleteDataService implements DeleteInterface {
      * @return
      */
     @Override
-    public boolean DelePrdInfo(int[] prdno) {
-        return false;
+    public ResultBean<Boolean> DelePrdInfo(int[] prdno) {
+        return new ResultBean<>(false);
     }
 
     /**
@@ -35,9 +36,9 @@ public class DeleteDataService implements DeleteInterface {
      * @return
      */
     @Override
-    public boolean DelePostInfo(int[] postno) {
+    public ResultBean<Boolean> DelePostInfo(int[] postno) {
 
-        return false;
+        return new ResultBean<>(false);
     }
 
     /**
@@ -46,9 +47,9 @@ public class DeleteDataService implements DeleteInterface {
      * @return
      */
     @Override
-    public boolean DeleBrandInfo(int[] brdno) {
+    public ResultBean<Boolean> DeleBrandInfo(int[] brdno) {
 
-        return false;
+        return new ResultBean<>(false);
     }
 
 }

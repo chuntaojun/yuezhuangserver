@@ -9,6 +9,7 @@ import com.yueserver.adaper.conver.impl.MctVid;
 import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.UploadInterface;
 import com.yueserver.sql.BrandSqlInterface;
 import com.yueserver.sql.MerchantSqlInterface;
@@ -52,8 +53,8 @@ public class UploadDataService implements UploadInterface {
      * @return
      */
     @Override
-    public boolean AddBrandInfo(Brand brand) {
-        return brandSqlInterface.saveSingleBrand(brand);
+    public ResultBean<Boolean> AddBrandInfo(Brand brand) {
+        return new ResultBean<>(brandSqlInterface.saveSingleBrand(brand));
     }
 
     /**
@@ -61,8 +62,8 @@ public class UploadDataService implements UploadInterface {
      * @param product
      */
     @Override
-    public boolean AddProductInfo(Product product, String brdname) {
-        return merchantSqlInterface.saveSinglePrd(product, brdname);
+    public ResultBean<Boolean> AddProductInfo(Product product, String brdname) {
+        return new ResultBean<>(merchantSqlInterface.saveSinglePrd(product, brdname));
     }
 
     /**
@@ -70,8 +71,8 @@ public class UploadDataService implements UploadInterface {
      * @param product
      */
     @Override
-    public boolean UpdateProductInfo(Product product) {
-        return merchantSqlInterface.updateSinglePrd(product);
+    public ResultBean<Boolean> UpdateProductInfo(Product product) {
+        return new ResultBean<>(merchantSqlInterface.updateSinglePrd(product));
     }
 
     /**
@@ -80,7 +81,7 @@ public class UploadDataService implements UploadInterface {
      * @return
      */
     @Override
-    public String SaveBrdLogo(MultipartFile multipartFile, HttpSession session, String brdName) throws MethodNourtFoundException {
+    public ResultBean<String> SaveBrdLogo(MultipartFile multipartFile, HttpSession session, String brdName) throws MethodNourtFoundException {
         brdName = urlConverter.UrlEncode(brdName);
         UrlConverter _urlConverter;
         HashMap hashMap = UserResources(session);
@@ -96,10 +97,10 @@ public class UploadDataService implements UploadInterface {
         try {
             multipartFile.transferTo(new File(filepath, multipartFile.getOriginalFilename()));
             String brdLogo = _urlConverter.BrandReourcesHttpUrl(multipartFile.getOriginalFilename(), brdName);
-            return brdLogo;
+            return new ResultBean<>(brdLogo);
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            return new ResultBean<>("");
         }
     }
 
@@ -113,11 +114,11 @@ public class UploadDataService implements UploadInterface {
      * @throws MethodNourtFoundException
      */
     @Override
-    public boolean SavePrdPic(MultipartFile[] multipartFiles, String brdname, String prdname, HttpSession session) throws MethodNourtFoundException {
+    public ResultBean<Boolean> SavePrdPic(MultipartFile[] multipartFiles, String brdname, String prdname, HttpSession session) throws MethodNourtFoundException {
         UrlConverter _urlConverter;
         int prdno = getPrdNo(prdname);
         if (prdno == -1)
-            return false;
+            return new ResultBean<>(false);
         HashMap hashMap = UserResources(session);
         String filepath = (String) hashMap.get("resources");
         if ("admin".equals(hashMap.get("role")))
@@ -137,11 +138,11 @@ public class UploadDataService implements UploadInterface {
                 picurllist.add(_urlConverter.ReourcesHttpUrl(multipartFile.getOriginalFilename(),
                         base64.Base64Encode(getPrincipal().getUsername()) + "/" + merinfo));
             }
-            return ImageStorageDatabase(picurllist,  prdno, 1);
+            return new ResultBean<>(ImageStorageDatabase(picurllist,  prdno, 1));
         }
         catch (IOException e) {
             e.printStackTrace();
-            return false;
+            return new ResultBean<>(false);
         }
     }
 
@@ -155,7 +156,7 @@ public class UploadDataService implements UploadInterface {
      * @throws MethodNourtFoundException
      */
     @Override
-    public boolean SavePrdVideo(MultipartFile multipartFile, String brdname, String prdname, HttpSession session) throws MethodNourtFoundException {
+    public ResultBean<Boolean> SavePrdVideo(MultipartFile multipartFile, String brdname, String prdname, HttpSession session) throws MethodNourtFoundException {
         UrlConverter _urlConverter;
         HashMap hashMap = UserResources(session);
         String filepath = (String) hashMap.get("resources");
@@ -175,10 +176,10 @@ public class UploadDataService implements UploadInterface {
             vidurllist.add(_urlConverter.ReourcesHttpUrl(filename, base64.Base64Decode(getPrincipal().getUsername())
                     + "/" + merinfo));
             multipartFile.transferTo(new File(filepath, filename));
-            return true;
+            return new ResultBean<>(true);
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
+            return new ResultBean<>(false);
         }
     }
 

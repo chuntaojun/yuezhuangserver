@@ -4,6 +4,7 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EditInterface;
 import com.yueserver.sql.AdminSqlInterface;
 
@@ -23,13 +24,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 商品的增加操作（悦妆自营类型）
-     * @param product
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject addProductInfo(Product product) {
+    public JSONObject addProductInfo(ResultBean<Product> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.saveSinglePrd(product)) {
+        if (adminSqlInterface.saveSinglePrd(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -39,13 +40,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 更新商品信息的操作（用于检查商家是否违规宣传商品）
-     * @param product
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject updateProInfo(Product product) {
+    public JSONObject updateProInfo(ResultBean<Product> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSinglePrd(product)) {
+        if (adminSqlInterface.updateSinglePrd(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -55,13 +56,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 品牌的增，改操作
-     * @param brand
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject addBrandInfo(Brand brand) {
+    public JSONObject addBrandInfo(ResultBean<Brand> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.saveSingleBrand(brand)) {
+        if (adminSqlInterface.saveSingleBrand(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -71,13 +72,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 更新品牌信息
-     * @param brand
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject updateBrandInfo(Brand brand) {
+    public JSONObject updateBrandInfo(ResultBean<Brand> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleBrand(brand)) {
+        if (adminSqlInterface.updateSingleBrand(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -87,13 +88,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 更新商家授权信息的操作
-     * @param merchant
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject updateMerchantAuthorize(Merchant merchant) {
+    public JSONObject updateMerchantAuthorize(ResultBean<Merchant> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleMerchant(merchant)) {
+        if (adminSqlInterface.updateSingleMerchant(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -103,13 +104,13 @@ public class AdminEditDataService implements EditInterface {
 
     /**
      * 用户账户状态更改改操作
-     * @param user
+     * @param resultBean
      * @return
      */
     @Override
-    public JSONObject updateUserInfo(User user) {
+    public JSONObject updateUserInfo(ResultBean<User> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleUser(user)) {
+        if (adminSqlInterface.updateSingleUser(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }

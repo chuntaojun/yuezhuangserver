@@ -4,6 +4,7 @@ import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.adaper.encryption.mdfive.MD5;
 import com.yueserver.enity.nodao.ForgotPassword;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.sql.LoginSqlInterface;
 import com.yueserver.enity.Merchant;
 import com.yueserver.service.LoginInterface;
@@ -32,10 +33,10 @@ public class LoginProcessService implements LoginInterface {
      * @throws MethodNourtFoundException
      */
     @Override
-    public Object getLoginObject(String username) throws MethodNourtFoundException {
+    public ResultBean<Object> getLoginObject(String username) throws MethodNourtFoundException {
         Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
         username = base64.Base64Encode(username);
-        return loginSqlInterface.getLoginObject(username, username);
+        return new ResultBean<>(loginSqlInterface.getLoginObject(username, username));
     }
 
     /**
@@ -45,14 +46,14 @@ public class LoginProcessService implements LoginInterface {
      * @return
      */
     @Override
-    public JSONObject ChangePasswordIsWork(ForgotPassword forgotPassword, HttpSession session) {
+    public ResultBean<JSONObject> ChangePasswordIsWork(ForgotPassword forgotPassword, HttpSession session) {
         JSONObject resultJson = new JSONObject();
         if (loginSqlInterface.updatePassword(forgotPassword)){
             resultJson.put("isWork", "yes");
-            return resultJson;
+            return new ResultBean<>(resultJson);
         }
         resultJson.put("isWork", "no");
-        return resultJson;
+        return new ResultBean<>(resultJson);
     }
 
     /**
@@ -62,7 +63,7 @@ public class LoginProcessService implements LoginInterface {
      * @return
      */
     @Override
-    public boolean AddNewMerchant(String mctaccount, String password) throws MethodNourtFoundException {
+    public ResultBean<Boolean> AddNewMerchant(String mctaccount, String password) throws MethodNourtFoundException {
         Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
         MD5 md5 = (MD5) getSingleAdaperFactory().getEncryption("MD5");
         Merchant merchant = new Merchant();
@@ -71,12 +72,10 @@ public class LoginProcessService implements LoginInterface {
         merchant.setMcttime(new Date());
         //商家注册后需管理员设定商家权限以及审核账户
         merchant.setMctstate(0);
-        if (TheMerchantExist(merchant.getMctaccount())) {
-            return false;
+        if (TheMerchantExist(merchant.getMctaccount()).getData()) {
+            return new ResultBean<>(false);
         }
-        else {
-            return loginSqlInterface.saveNewAccount(merchant);
-        }
+        return new ResultBean<>(loginSqlInterface.saveNewAccount(merchant));
     }
 
     /**
@@ -85,8 +84,8 @@ public class LoginProcessService implements LoginInterface {
      * @return
      */
     @Override
-    public boolean TheMerchantExist(String username) {
-        return loginSqlInterface.getExistUser(username);
+    public ResultBean<Boolean> TheMerchantExist(String username) {
+        return new ResultBean<>(loginSqlInterface.getExistUser(username));
     }
 
 

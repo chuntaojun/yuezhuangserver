@@ -7,6 +7,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.CriteriaSpecification;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.hibernate.query.Query;
@@ -53,15 +55,13 @@ public class BrandSql implements BrandSqlInterface {
         Transaction transaction = session.beginTransaction();
         try {
             if (getPrincipal().getRole(getPrincipal().getAuthorities()).equals("ROLE_ADMIN")) {
-                String hql = "FROM Brand";
-                List list = session.createQuery(hql).list();
+                List list = session.getNamedQuery("com.yueserver.enity.Brand.queryBrand").list();
                 transaction.commit();
                 return list;
             } else {
-                String hql = "FROM Brand b WHERE b.mctno=:mctno";
-                Query query = session.createQuery(hql);
-                query.setParameter("mctno", getPrincipal().getMctno());
-                List list = query.list();
+                List list = session.getNamedQuery("com.yueserver.enity.Brand.queryBrdMctno")
+                                    .setParameter("mctno", getPrincipal().getMctno())
+                                    .list();
                 transaction.commit();
                 return list;
             }

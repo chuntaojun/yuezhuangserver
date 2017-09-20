@@ -53,6 +53,7 @@ function SubmitType(type) {
  * @returns {boolean}
  */
 function vid_submit() {
+
     var file = document.getElementById("prdvideo").files[0];
     if (file == null || file == ""){
         alert("您还未上传相关视频文件");

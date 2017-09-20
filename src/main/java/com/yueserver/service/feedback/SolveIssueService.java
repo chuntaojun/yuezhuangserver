@@ -2,6 +2,7 @@ package com.yueserver.service.feedback;
 
 import com.yueserver.enity.nodao.IssueForMct;
 import com.yueserver.enity.nodao.IssueForUser;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EmailInterface;
 import com.yueserver.service.SolveIssueInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,13 @@ public class SolveIssueService implements SolveIssueInterface {
     private EmailInterface emailInterface;
 
     @Override
-    public boolean SolveIssueForMct(IssueForMct issueForMct) {
+    public ResultBean<Boolean> SolveIssueForMct(IssueForMct issueForMct) {
         return emailInterface.SendIssueFeedBack(issueForMct.getMctemail(), FeedIssueForMct(issueForMct));
     }
 
     @Override
-    public boolean SolveIssueForUser(IssueForUser issueForUser) {
-        return false;
+    public ResultBean<Boolean> SolveIssueForUser(IssueForUser issueForUser) {
+        return new ResultBean<>(false);
     }
 
     private String FeedIssueForMct(IssueForMct issueForMct) {

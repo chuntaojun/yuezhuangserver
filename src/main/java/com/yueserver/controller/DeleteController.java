@@ -1,5 +1,6 @@
 package com.yueserver.controller;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.DeleteInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by liaochuntao on 17-7-18.
@@ -29,15 +31,10 @@ public class DeleteController {
      */
     @ResponseBody
     @RequestMapping(value = "/Product", method = RequestMethod.POST)
-    public HashMap DeleteProduct(int[] no){
-        if (deleteservice.DelePrdInfo(no)){
-            HashMap hashMap = new HashMap();
-            hashMap.put("data", new HashMap().put("stats", 200));
-            return hashMap;
-        }
-        HashMap hashMap = new HashMap();
-        hashMap.put("data", new HashMap<>().put("stats", 500));
-        return hashMap;
+    public ResultBean<Boolean> DeleteProduct(int[] no){
+        if (deleteservice.DelePrdInfo(no).getData())
+            return new ResultBean<>(true);
+        return new ResultBean<>(false);
     }
 
     /**
@@ -47,15 +44,10 @@ public class DeleteController {
     @Secured("ROLE_ADMIN")
     @ResponseBody
     @RequestMapping(value = "/Post", method = RequestMethod.POST)
-    public HashMap DeletePost(int[] no){
-        if (deleteservice.DelePostInfo(no)){
-            HashMap hashMap = new HashMap();
-            hashMap.put("data", new HashMap().put("stats", 200));
-            return hashMap;
-        }
-        HashMap hashMap = new HashMap();
-        hashMap.put("data", new HashMap<>().put("stats", 500));
-        return hashMap;
+    public ResultBean<Boolean> DeletePost(int[] no){
+        if (deleteservice.DelePostInfo(no).getData())
+            return new ResultBean<>(true);
+        return new ResultBean<>(false);
     }
 
     /**
@@ -65,15 +57,10 @@ public class DeleteController {
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
     @RequestMapping(value = "/Brand", method = RequestMethod.POST)
-    public HashMap DeleteBrand(int[] no){
-        if (deleteservice.DeleBrandInfo(no)){
-            HashMap hashMap = new HashMap();
-            hashMap.put("data", new HashMap().put("stats", 200));
-            return hashMap;
-        }
-        HashMap hashMap = new HashMap();
-        hashMap.put("data", new HashMap<>().put("stats", 500));
-        return hashMap;
+    public ResultBean<Boolean> DeleteBrand(int[] no){
+        if (deleteservice.DeleBrandInfo(no).getData())
+            return new ResultBean<>(true);
+        return new ResultBean<>(false);
     }
 
 }

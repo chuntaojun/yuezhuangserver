@@ -33,7 +33,7 @@ public class UserDetailsLogin implements UserDetailsService {
         Login login = null;
         List list = null;
         try {
-            list = (List) loginservice.getLoginObject(username);
+            list = (List) loginservice.getLoginObject(username).getData();
         } catch (MethodNourtFoundException e) {
             e.printStackTrace();
         }

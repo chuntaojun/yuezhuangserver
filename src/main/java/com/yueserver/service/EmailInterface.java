@@ -1,5 +1,7 @@
 package com.yueserver.service;
 
+import com.yueserver.enity.nodao.ResultBean;
+
 import javax.servlet.http.HttpSession;
 
 public interface EmailInterface {
@@ -9,7 +11,7 @@ public interface EmailInterface {
     void SendMerchantCanLogin(String address);
     void VerificationCodeExpired(HttpSession session);
 
-    boolean SendIssueFeedBack(String address, String context);
+    ResultBean<Boolean> SendIssueFeedBack(String address, String context);
 
-    String setVerificationCode();
+    ResultBean<String> setVerificationCode();
 }

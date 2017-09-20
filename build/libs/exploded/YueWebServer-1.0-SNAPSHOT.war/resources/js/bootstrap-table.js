@@ -651,6 +651,7 @@
                 // Fix #2014 - getFieldIndex and elsewhere assume this is string, causes issues if not
                 if (typeof $(this).data('field') !== 'undefined') {
                     $(this).data('field', $(this).data('field') + '');
+                    console.log("这个测试" + $(this).data.data)
                 }
                 column.push($.extend({}, {
                     title: $(this).html(),

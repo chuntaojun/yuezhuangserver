@@ -2,6 +2,7 @@ package com.yueserver.controller;
 
 import com.yueserver.enity.nodao.IssueForMct;
 import com.yueserver.enity.nodao.IssueForUser;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.SolveIssueInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,13 +23,13 @@ public class SolveIssueController {
 
     @ResponseBody
     @RequestMapping(value = "/merchant", method = RequestMethod.POST)
-    public boolean SolveIssueMerchant(@ModelAttribute IssueForMct iuuseForMct, int ID) {
+    public ResultBean<Boolean> SolveIssueMerchant(@ModelAttribute IssueForMct iuuseForMct, int ID) {
         return solveIssueInterface.SolveIssueForMct(iuuseForMct);
     }
 
     @ResponseBody
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public boolean SolveIssueUser(@ModelAttribute IssueForUser issueForUser, int ID) {
+    public ResultBean<Boolean> SolveIssueUser(@ModelAttribute IssueForUser issueForUser, int ID) {
         return solveIssueInterface.SolveIssueForUser(issueForUser);
     }
 

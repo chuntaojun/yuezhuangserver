@@ -54,7 +54,7 @@ function initTableforAdminSeller() {
         }],
         data: [],
         method: 'post',
-        url: '/reportSellerInfo',
+        url: '/admin/query/Merchant',
         cache: true,
         contentType: 'application/json',
         queryParams: function (params) {return params;},
@@ -87,7 +87,7 @@ function initTableforAdminSeller() {
         onEditableSave:function (field, row, oldValue, $el) {
             $.ajax({
                 type: 'post',
-                url: '/editforMerchant?ID=' + row['no'],
+                url: '/admin/edit/Merchant?ID=' + row['no'],
                 data: JSON.stringify(row),
                 dataType: 'JSON',
                 contentType: "application/json;charset=UTF-8",
@@ -170,7 +170,7 @@ function initTableforAdminProduct() {
         onEditableSave:function (field, row, oldValue, $el) {
             $.ajax({
                 type: 'post',
-                url: '/editforProduct?ID=' + row['no'],
+                url: '/admin/edit/Product?ID=' + row['no'],
                 data: JSON.stringify(row),
                 dataType: 'json',
                 contentType: "application/json;charset=UTF-8",
@@ -184,7 +184,7 @@ function initTableforAdminProduct() {
         },
         data: [],
         method: 'post',
-        url: '/reportProductInfo',
+        url: '/admin/query/Product',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {return params;},
@@ -256,7 +256,7 @@ function initTableforAdminBrand() {
         onEditableSave:function (field, row, oldValue, $el) {
             $.ajax({
                 type: 'post',
-                url: '/editforBrand?ID=' + row['no'],
+                url: '/admin/edit/Brand?ID=' + row['no'],
                 data: JSON.stringify(row),
                 dataType: 'json',
                 contentType: "application/json;charset=UTF-8",
@@ -270,7 +270,7 @@ function initTableforAdminBrand() {
         },
         data: [],
         method: 'post',
-        url: '/reportBrandInfo',
+        url: '/admin/query/Brand',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {return params;},
@@ -327,7 +327,7 @@ function initTableforAdminPost() {
         }],
         data: [],
         method: 'post',
-        url: '',
+        url: '/admin/query/Post',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {
@@ -404,7 +404,7 @@ function initTableforAdminUser() {
         onEditableSave:function (field, row, oldValue, $el) {
             $.ajax({
                 type: 'post',
-                url: '/editforUser?ID=' + row['no'],
+                url: '/admin/edit/User?ID=' + row['no'],
                 data: JSON.stringify(row),
                 dataType: 'json',
                 contentType: "application/json;charset=UTF-8",
@@ -418,7 +418,7 @@ function initTableforAdminUser() {
         },
         data: [],
         method: 'post',
-        url: '',
+        url: '/admin/query/User',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {
@@ -491,7 +491,7 @@ function initTableforSellerProduct() {
         }],
         data: [],
         method: 'post',
-        url: '/reportProductInfo',
+        url: '/user/query/Product',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {
@@ -542,45 +542,16 @@ function intiTableforSellerBrand() {
         },{
             field: 'brdname',
             title: '品牌名称',
-            editable: {
-                type: 'text',
-                title: '品牌名称',
-                validate: function (v) {
-                    if (!v) return '品牌名称不能为空';
-                }
-            }
         },{
             field: 'brdintro',
             title: '品牌简介',
-            editable: {
-                type: 'text',
-                title: '品牌简介',
-                validate: function (v) {
-                    if (!v) return '品牌简介不能为空';
-                }
-            }
         },{
             field: 'brdlogi',
             title: '品牌logo',
         }],
-        onEditableSave:function (field, row, oldValue, $el) {
-            $.ajax({
-                type: 'post',
-                url: '/editforBrand?ID=' + row['no'],
-                data: JSON.stringify(row),
-                dataType: 'json',
-                contentType: "application/json;charset=UTF-8",
-                success: function (data) {
-                    if (data.judge == true)
-                        alert("修改成功");
-                },
-                compile: function () {
-                }
-            });
-        },
         data: [],
         method: 'post',
-        url: '/reportBrandInfo',
+        url: '/user/query/Brand',
         cache: false,
         contentType: 'application/json',
         queryParams: function (params) {return params;},

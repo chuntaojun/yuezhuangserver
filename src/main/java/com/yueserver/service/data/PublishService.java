@@ -1,6 +1,7 @@
 package com.yueserver.service.data;
 
 import com.yueserver.enity.Notice;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.sql.NoticeSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class PublishService implements PublishServiceInterface {
     private NoticeSqlInterface noticeSqlInterface;
 
     @Override
-    public boolean SaveNotice(Notice notice) {
-        return noticeSqlInterface.SaveNotice(notice);
+    public ResultBean<Boolean> SaveNotice(Notice notice) {
+        return new ResultBean<>(noticeSqlInterface.SaveNotice(notice));
     }
 }

@@ -4,6 +4,7 @@ import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.conver.JsonConverter;
 import com.yueserver.adaper.conver.ListConverter;
 import com.yueserver.enity.nodao.Login;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.ShowInterface;
 import com.yueserver.sql.AdminSqlInterface;
 import com.yueserver.sql.MerchantSqlInterface;
@@ -40,13 +41,13 @@ public class ShowDataInfoService implements ShowInterface {
      * @return
      */
     @Override
-    public JSONObject QueryProdInfo(Login login, HttpSession session) {
+    public ResultBean<JSONObject> QueryProdInfo(Login login, HttpSession session) {
         JSONObject prdJson = getSingleJson();
         if ("ROLE_USER".equals(login.getRole(login.getAuthorities()))){
             List list = merchantSqlInterface.queryBrd_PrdInfo(login.getMctno());
             List infoList = getListConverter().setPrdList(list, session);
             prdJson.put("prdList", getJsonConverter().setMessage(infoList));
-            return prdJson;
+            return new ResultBean<>(prdJson);
         } else {
             /*
                  管理员取出品牌与商品信息
@@ -54,7 +55,7 @@ public class ShowDataInfoService implements ShowInterface {
             List list = adminSqlInterface.queryBrd_PrdInfo();
             List infoList = getListConverter().setPrdList(list, session);
             prdJson.put("prdList", getJsonConverter().setMessage(infoList));
-            return prdJson;
+            return new ResultBean<>(prdJson);
         }
     }
 
@@ -63,11 +64,11 @@ public class ShowDataInfoService implements ShowInterface {
      * @param session
      * @return
      */
-    public JSONObject QueryBrandInfo(HttpSession session){
+    public ResultBean<JSONObject> QueryBrandInfo(HttpSession session){
         JSONObject brdJson = getSingleJson();
         brdJson.put("brdList", getJsonConverter().setMessage((List) session.getAttribute("brdlist")));
         session.removeAttribute("brdlist");
-        return brdJson;
+        return new ResultBean<>(brdJson);
     }
 
     /**
@@ -76,12 +77,12 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
-    public JSONObject QueryPostInfo() {
+    public ResultBean<JSONObject> QueryPostInfo() {
         JSONObject postJson = getSingleJson();
         List list = adminSqlInterface.queryPostInfo();
         List infoList = getListConverter().setPostList(list);
         postJson.put("postList", getJsonConverter().setMessage(infoList));
-        return postJson;
+        return new ResultBean<>(postJson);
     }
 
     /**
@@ -90,12 +91,12 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
-    public JSONObject QueryUserInfo() {
+    public ResultBean<JSONObject> QueryUserInfo() {
         JSONObject userJson = getSingleJson();
         List list = adminSqlInterface.queryUserInfo();
         List infoList = getListConverter().setUserList(list);
         userJson.put("usrList", infoList);
-        return userJson;
+        return new ResultBean<>(userJson);
     }
 
     /**
@@ -104,12 +105,12 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
-    public JSONObject QuerySellerInfo() {
+    public ResultBean<JSONObject> QuerySellerInfo() {
         JSONObject mctJson = getSingleJson();
         List list = adminSqlInterface.queryMerchantInfo();
         List infoList = getListConverter().setSellerList(list);
         mctJson.put("mctList", getJsonConverter().setMessage(infoList));
-        return mctJson;
+        return new ResultBean<>(mctJson);
     }
 
     protected JSONObject getSingleJson() {

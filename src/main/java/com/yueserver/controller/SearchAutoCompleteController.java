@@ -1,5 +1,6 @@
 package com.yueserver.controller;
 
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.AutoCompleteServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,20 +16,19 @@ import java.util.List;
 @RequestMapping(value = "/search")
 public class SearchAutoCompleteController {
 
-
     @Autowired
     @Resource(name = "AutoCompleteService")
     private AutoCompleteServiceInterface autoCompleteServiceInterface;
 
     @ResponseBody
     @RequestMapping(value = "/brdName", method = RequestMethod.POST)
-    public HashMap<String, List> SearchAutonCompleteBrdName() {
+    public ResultBean<HashMap<String,List>> SearchAutonCompleteBrdName() {
         return autoCompleteServiceInterface.AutoCompleteBrdName();
     }
 
     @ResponseBody
     @RequestMapping(value = "/prdName", method = RequestMethod.POST)
-    public HashMap<String, List> SearchAutoCompletePrdName() {
+    public ResultBean<HashMap<String,List>> SearchAutoCompletePrdName() {
         return autoCompleteServiceInterface.AutoCompletePrdName();
     }
 

@@ -28,5 +28,15 @@
                 SELECT brdname FROM Brand
             ]]>
         </query>
+        <query name="queryBrdMctno">
+            <![CDATA[
+                FROM Brand b WHERE b.mctno=:mctno
+            ]]>
+        </query>
+        <query name="queryBrand">
+            <![CDATA[
+                FROM Brand
+            ]]>
+        </query>
     </class>
 </hibernate-mapping>

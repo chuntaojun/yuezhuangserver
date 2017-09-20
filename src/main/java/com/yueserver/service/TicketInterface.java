@@ -1,4 +1,13 @@
 package com.yueserver.service;
 
-public class TicketInterface {
+import com.yueserver.enity.nodao.ResultBean;
+
+import java.util.Map;
+
+public interface TicketInterface {
+
+    ResultBean<Boolean> addTicket();
+    ResultBean<Boolean> cancleTicket();
+    ResultBean<Map> getRemainTicket();
+
 }
