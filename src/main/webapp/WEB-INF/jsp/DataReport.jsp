@@ -13,7 +13,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>悦妆</title>
-
     <style type="text/css">@import url("<c:url value="/resources/css/bootstrap.min.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/datepicker3.css" />");</style>
     <style type="text/css">@import url("<c:url value="/resources/css/styles.css" />");</style>
@@ -229,58 +228,61 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="panel-body">
-                        <div class="panel-heading">用户管理</div>
-                        <div id="toolbar_user" class="btn-group">
-                            <button id="btn_delete" type="button" class="btn btn-default"
-                                    onclick="deleInfo($('#userTable'), '/admindeleteUser')">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
-                            </button>
-                        </div>
-                        <table id="userTable"></table>
-                        <div class="panel-heading">发帖管理</div>
-                        <div id="toolbar_post" class="btn-group">
-                            <button id="btn_delete" type="button" class="btn btn-default"
-                                    onclick="deleInfo($('#postTable'), '/admindeletePost')">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
-                            </button>
-                        </div>
-                        <table id="postTable"></table>
+                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 用户信息管理</div>
+                <div class="panel-body">
+                    <div id="toolbar_user" class="btn-group">
+                        <button id="btn_delete1" type="button" class="btn btn-default" onclick="deleInfo($('#userTable'), '/admindeleteUser')">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                        </button>
                     </div>
+                    <table id="userTable"></table>
                 </div>
             </div>
         </div>
-        </sec:authorize>
-
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> 发帖信息管理</div>
+                <div class="panel-body">
+                    <div id="toolbar_post" class="btn-group">
+                        <button id="btn_delete2" type="button" class="btn btn-default" onclick="deleInfo($('#postTable'), '/admindeletePost')">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                            </button>
+                    </div>
+                    <table id="postTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </sec:authorize>
+</div>
     <!--/.main-->
 
 
-    <script src="/resources/js/jquery-1.11.1.min.js"></script>
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/chart.min.js"></script>
-    <script src="/resources/js/chart-data.js"></script>
-    <script src="/resources/js/easypiechart.js"></script>
-    <script src="/resources/js/easypiechart-data.js"></script>
-    <script src="/resources/js/bootstrap-datepicker.js"></script>
-    <script src="/resources/js/bootstrap-table.js"></script>
-    <script src="/resources/js/bootstrap-table-editable.js"></script>
-    <script src="/resources/js/myBootstraptable.js"></script>
-    <script>
-        !function ($) {
-            $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
-                $(this).find('em:first').toggleClass("glyphicon-minus");
-            });
-            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-        }(window.jQuery);
+<script src="/resources/js/jquery-1.11.1.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/chart.min.js"></script>
+<script src="/resources/js/chart-data.js"></script>
+<script src="/resources/js/bootstrap-datepicker.js"></script>
+<script src="/resources/js/bootstrap-table.js"></script>
+<script src="/resources/js/bootstrap-editable.js"></script>
+<script src="/resources/js/bootstrap-table-editable.js"></script>
+<script src="/resources/js/myBootstraptable.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
 
-        $(window).on('resize', function () {
-            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-        })
-        $(window).on('resize', function () {
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-        })
+    })
     </script>
 </body>
 

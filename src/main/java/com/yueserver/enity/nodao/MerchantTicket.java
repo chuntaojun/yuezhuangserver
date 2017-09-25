@@ -4,12 +4,21 @@ import java.util.Date;
 
 public class MerchantTicket {
 
+    private int tickNo;
     private String brdName;
     private String prdName;
     private int tickNum;
     private String mctname;
     private Date starttime;
     private Date deadline;
+
+    public int getTickNo() {
+        return tickNo;
+    }
+
+    public void setTickNo(int tickNo) {
+        this.tickNo = tickNo;
+    }
 
     public String getBrdName() {
         return brdName;

@@ -8,6 +8,7 @@ import com.yueserver.sql.*;
 
 import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

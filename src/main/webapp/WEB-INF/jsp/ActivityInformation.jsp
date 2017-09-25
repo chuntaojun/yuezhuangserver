@@ -5,6 +5,7 @@
 <%@ page import="static com.yueserver.controller.LoginController.getPrincipal" %>
 <%@ page import="java.util.Date" %>
 <%
+    boolean role = getPrincipal().getRole(getPrincipal().getAuthorities()).contains("ROLE_ADMIN");
     String account = getPrincipal().getUsername();
 %>
 <!DOCTYPE html>
@@ -66,14 +67,16 @@
         <sec:authorize access="hasRole('ADMIN')">
             <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
             <li><a href="/yue/merchant/admin"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
-            <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
+            <li><a href="/yue/report/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
             <li><a href="/yue/query/admin"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
             <li><a href="/yue/uploads/admin"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入</a></li>
         </sec:authorize>
         <sec:authorize access="hasRole('USER')">
             <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 数据报表</a></li>
-            <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
-            <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
+            <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a>
+            </li>
+            <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a>
+            </li>
         </sec:authorize>
         <li class="parent ">
             <a href="#">
@@ -166,7 +169,8 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form id="merchantTicket" action="" method="post" onsubmit="return false">
+                                <form id="merchantTicket" action="/yue/user/push/Ticket" method="post"
+                                      onsubmit="return false">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>品牌名称</label>
@@ -184,21 +188,26 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>折扣券</label>
-                                            <input name="ticketNum" class="form-control" type="number" placeholder="折扣券">
+                                            <input name="ticketNum" class="form-control" type="number"
+                                                   placeholder="折扣券">
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-3">
                                                 <label>起始时间</label>
-                                                <div class="input-append date" id="datetimepicker1" data-date="" data-date-format="yyyy-mm-dd">
-                                                    <input name="starttime" class="span2 form-control" size="16" type="text" value="<%=new Date().toLocaleString()%>">
+                                                <div class="input-append date" id="datetimepicker1" data-date=""
+                                                     data-date-format="yyyy-mm-dd">
+                                                    <input name="starttime" class="span2 form-control" size="16"
+                                                           type="text" value="<%=new Date().toLocaleString()%>">
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <label>截止时间</label>
-                                                <div class="input-append date" id="datetimepicker2" data-date="" data-date-format="yyyy-mm-dd">
-                                                    <input name="deadline" class="span2 form-control" size="16" type="text" value="<%=new Date().toLocaleString()%>">
+                                                <div class="input-append date" id="datetimepicker2" data-date=""
+                                                     data-date-format="yyyy-mm-dd">
+                                                    <input name="deadline" class="span2 form-control" size="16"
+                                                           type="text" value="<%=new Date().toLocaleString()%>">
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
@@ -244,7 +253,10 @@
 
     function MctTicketSubmit() {
         $("#merchantTicket").ajaxSubmit(function (message) {
-
+            if (message.data == true)
+                alert("ok");
+            else
+                alert("error");
         })
     }
 

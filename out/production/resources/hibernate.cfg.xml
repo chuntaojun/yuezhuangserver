@@ -42,6 +42,7 @@
         <mapping resource="bean.hbm/post.hbm.xml" />
         <mapping resource="bean.hbm/user.hbm.xml" />
         <mapping resource="bean.hbm/manage.hbm.xml" />
+        <mapping resource="bean.hbm/merchantticket.hbm.xml" />
 
     </session-factory>
 

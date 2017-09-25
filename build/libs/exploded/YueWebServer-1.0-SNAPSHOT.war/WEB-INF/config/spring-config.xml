@@ -86,8 +86,8 @@
         </property>
     </bean>
 
-    <!--spring 配置事务声明管理-->
-
+    <!--spring 缓存管理-->
+    <beans:import resource="spring-cache.xml" />
 
     <!--引入security配置文件-->
     <beans:import resource="spring-security.xml" />

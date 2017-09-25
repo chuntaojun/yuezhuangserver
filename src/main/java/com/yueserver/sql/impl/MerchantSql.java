@@ -12,6 +12,7 @@ import org.hibernate.query.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,25 +52,7 @@ public class MerchantSql implements MerchantSqlInterface {
      */
     @Override
     public Product getPrdInfo(String prdName) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            String hql = "SELECT DISTINCT p FROM Product p, Brand b WHERE p in elements(b.products) and b.mctno=:mctno and p.prdname=:prdname";
-            Query query = session.createQuery(hql);
-            query.setParameter("mctno", getPrincipal().getMctno());
-            query.setParameter("prdname", prdName);
-            Product product = (Product) query.list().iterator().next();
-            transaction.commit();
-            return product;
-        } catch (HibernateException e) {
-            transaction.rollback();
-            return null;
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            session.close();
-        }
+        return productSqlInterface.getPrdInfo(prdName);
     }
 
     @Override
@@ -116,18 +99,7 @@ public class MerchantSql implements MerchantSqlInterface {
 
     @Override
     public boolean updateSinglePrd(Product product) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            session.update(product);
-            transaction.commit();
-            return true;
-        } catch (HibernateException e) {
-            transaction.rollback();
-            return false;
-        } finally {
-            session.close();
-        }
+        return productSqlInterface.updateSinglePrd(product);
     }
 
     @Override

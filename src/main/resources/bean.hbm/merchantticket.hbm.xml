@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yueserver.enity.nodao.MerchantTicket" table="MerchantTicket" schema="YueZhuang">
+        <id name="tickNo" type="java.lang.Integer" column="TickNo">
+            <generator class="identity" />
+        </id>
+        <property name="brdName" type="java.lang.String" column="BrdName" />
+        <property name="prdName" type="java.lang.String" column="PrdName" />
+        <property name="tickNum" type="java.lang.Integer" column="TickNum" />
+        <property name="mctname" type="java.lang.String" column="MctName" />
+        <property name="starttime" type="java.util.Date" column="StartTime" />
+        <property name="deadline" type="java.util.Date" column="DeadLine" />
+    </class>
+</hibernate-mapping>

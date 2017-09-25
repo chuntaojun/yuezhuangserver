@@ -4,6 +4,7 @@ import com.yueserver.enity.Notice;
 import com.yueserver.enity.nodao.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
+import com.yueserver.service.TicketInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,10 @@ public class PublishCenterController {
     @Autowired
     @Resource(name = "PublishService")
     private PublishServiceInterface publishServiceInterface;
+
+    @Autowired
+    @Resource(name = "TicketService")
+    private TicketInterface ticketInterface;
 
     /**
      * 今日抢试发送
@@ -50,7 +55,7 @@ public class PublishCenterController {
     @ResponseBody
     @RequestMapping(value = "/Ticket", method = RequestMethod.POST)
     public ResultBean<Boolean> getMerchantTicket(@ModelAttribute MerchantTicket merchantTicket) {
-        return new ResultBean<>(false);
+        return ticketInterface.addTicket(merchantTicket);
     }
 
 }

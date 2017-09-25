@@ -60,13 +60,13 @@
         <sec:authorize access="hasRole('ADMIN')">
             <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-dashboard"></span> 销售总览</a></li>
             <li><a href="/yue/merchant/admin"><span class="glyphicon glyphicon-th"></span> 商家管理</a></li>
-            <li><a href="/yue/show/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
-            <li><a href="/yue/query/admin"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li><a href="/yue/report/admin"><span class="glyphicon glyphicon-stats"></span> 用户管理</a></li>
+            <li class="active"><a href="/yue/query/admin"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
             <li><a href="/yue/uploads/admin"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入</a></li>
         </sec:authorize>
         <sec:authorize access="hasRole('USER')">
             <li><a href="/yue/report/user/<%=account  %>"><span class="glyphicon glyphicon-stats"></span> 数据报表</a></li>
-            <li><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
+            <li class="active"><a href="/yue/query/user/<%=account  %>"><span class="glyphicon glyphicon-list-alt"></span> 商品数据</a></li>
             <li><a href="/yue/uploads/user/<%=account  %>"><span class="glyphicon glyphicon-pencil"></span> 商品信息录入 </a></li>
         </sec:authorize>
         <li class="parent ">

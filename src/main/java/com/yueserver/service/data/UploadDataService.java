@@ -17,6 +17,7 @@ import com.yueserver.sql.MerchantSqlInterface;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -53,6 +54,7 @@ public class UploadDataService implements UploadInterface {
      * @return
      */
     @Override
+    @CacheEvict(value = "brdInfo", allEntries = true)
     public ResultBean<Boolean> AddBrandInfo(Brand brand) {
         return new ResultBean<>(brandSqlInterface.saveSingleBrand(brand));
     }
@@ -62,6 +64,7 @@ public class UploadDataService implements UploadInterface {
      * @param product
      */
     @Override
+    @CacheEvict(value = "prdInfo", allEntries = true)
     public ResultBean<Boolean> AddProductInfo(Product product, String brdname) {
         return new ResultBean<>(merchantSqlInterface.saveSinglePrd(product, brdname));
     }
@@ -71,6 +74,7 @@ public class UploadDataService implements UploadInterface {
      * @param product
      */
     @Override
+    @CacheEvict(value = "prdInfo", allEntries = true)
     public ResultBean<Boolean> UpdateProductInfo(Product product) {
         return new ResultBean<>(merchantSqlInterface.updateSinglePrd(product));
     }

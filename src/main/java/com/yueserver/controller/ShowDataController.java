@@ -27,8 +27,6 @@ import static com.yueserver.controller.LoginController.getPrincipal;
 @RequestMapping(value = {"/admin/query", "/user/query"})
 public class ShowDataController {
 
-    private HashMap<String, JSONObject> cacheMap = new HashMap<>();
-
     @Autowired
     private ShowInterface showInterface;
 
@@ -42,11 +40,7 @@ public class ShowDataController {
     @ResponseBody
     @RequestMapping(value = "/Product", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReprotProductInfo(HttpSession session, boolean refresh) throws IOException {
-        if (!refresh && !cacheMap.containsKey("prdCache"))
-            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session).getData());
-        else if (refresh)
-            cacheMap.put("prdCache", showInterface.QueryProdInfo(getPrincipal(), session).getData());
-        return cacheMap.get("prdCache").getString("prdList");
+        return String.valueOf(showInterface.QueryProdInfo(getPrincipal(), session).getData().get("prdList"));
     }
 
     /**
@@ -60,11 +54,7 @@ public class ShowDataController {
     @RequestMapping(value = "/Brand", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportBrandInfo(HttpSession session, boolean refresh) throws IOException {
         while (session.getAttribute("brdlist") == null){}
-        if (!refresh && !cacheMap.containsKey("brdCache"))
-            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session).getData());
-        else if (refresh)
-            cacheMap.put("brdCache", showInterface.QueryBrandInfo(session).getData());
-        return cacheMap.get("brdCache").getString("brdList");
+        return String.valueOf(showInterface.QueryBrandInfo(session).getData().get("brdList"));
     }
 
     /**
@@ -76,11 +66,7 @@ public class ShowDataController {
     @ResponseBody
     @RequestMapping(value = "/Merchant", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportSellerInfo(boolean refresh) throws IOException {
-        if (!refresh && !cacheMap.containsKey("mctCache"))
-            cacheMap.put("mctCache", showInterface.QuerySellerInfo().getData());
-        else if (refresh)
-            cacheMap.put("mctCache", showInterface.QuerySellerInfo().getData());
-        return cacheMap.get("mctCache").getString("mctList");
+        return String.valueOf(showInterface.QuerySellerInfo().getData().get("mctList"));
     }
 
     /**
@@ -92,11 +78,7 @@ public class ShowDataController {
     @ResponseBody
     @RequestMapping(value = "/User", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportUserInfo(boolean refresh) throws IOException {
-        if (!refresh && !cacheMap.containsKey("usrCache"))
-            cacheMap.put("usrCache", showInterface.QueryUserInfo().getData());
-        else if (refresh)
-            cacheMap.put("usrCache", showInterface.QueryUserInfo().getData());
-        return cacheMap.get("usrCache").getString("usrList");
+        return String.valueOf(showInterface.QueryUserInfo().getData().get("usrList"));
     }
 
     /**
@@ -108,11 +90,7 @@ public class ShowDataController {
     @ResponseBody
     @RequestMapping(value = "/Post", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
     public String ReportPostInfo(boolean refresh) throws IOException {
-        if (!refresh && !cacheMap.containsKey("postCache"))
-            cacheMap.put("postCache", showInterface.QueryPostInfo().getData());
-        else if (refresh)
-            cacheMap.put("postCache", showInterface.QueryPostInfo().getData());
-        return cacheMap.get("postCache").getString("postList");
+        return String.valueOf(showInterface.QueryPostInfo().getData().get("postList"));
     }
 
 }

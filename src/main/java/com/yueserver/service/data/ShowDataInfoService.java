@@ -12,6 +12,7 @@ import com.yueserver.sql.MerchantSqlInterface;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +41,9 @@ public class ShowDataInfoService implements ShowInterface {
      * @param session
      * @return
      */
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @Override
+    @Cacheable(value = "prdInfo")
     public ResultBean<JSONObject> QueryProdInfo(Login login, HttpSession session) {
         JSONObject prdJson = getSingleJson();
         if ("ROLE_USER".equals(login.getRole(login.getAuthorities()))){
@@ -64,6 +67,8 @@ public class ShowDataInfoService implements ShowInterface {
      * @param session
      * @return
      */
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
+    @Cacheable(value = "brdInfo")
     public ResultBean<JSONObject> QueryBrandInfo(HttpSession session){
         JSONObject brdJson = getSingleJson();
         brdJson.put("brdList", getJsonConverter().setMessage((List) session.getAttribute("brdlist")));
@@ -77,6 +82,7 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
+    @Cacheable(value = "postInfo")
     public ResultBean<JSONObject> QueryPostInfo() {
         JSONObject postJson = getSingleJson();
         List list = adminSqlInterface.queryPostInfo();
@@ -91,6 +97,7 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
+    @Cacheable(value = "userInfo")
     public ResultBean<JSONObject> QueryUserInfo() {
         JSONObject userJson = getSingleJson();
         List list = adminSqlInterface.queryUserInfo();
@@ -105,6 +112,7 @@ public class ShowDataInfoService implements ShowInterface {
      */
     @Secured("ROLE_ADMIN")
     @Override
+    @Cacheable(value = "merchantInfo")
     public ResultBean<JSONObject> QuerySellerInfo() {
         JSONObject mctJson = getSingleJson();
         List list = adminSqlInterface.queryMerchantInfo();
