@@ -19,7 +19,7 @@ public class TicketSql implements TicketSqlInterface {
     private SessionFactory sessionFactory;
 
     @Override
-    public boolean SaveMerchantTicket(MerchantTicket ticket) {
+    public boolean saveMerchantTicket(MerchantTicket ticket) {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         try {
@@ -37,11 +37,38 @@ public class TicketSql implements TicketSqlInterface {
 
     @Override
     public boolean updateMerchantTicket(MerchantTicket ticket) {
-        return false;
+        return VoucherTicket(ticket);
     }
 
     @Override
     public boolean deleteMerchantTicket(MerchantTicket ticket) {
-        return false;
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            session.delete(ticket);
+            tx.commit();
+            return true;
+        } catch (HibernateException e) {
+            tx.rollback();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public boolean VoucherTicket(MerchantTicket ticket) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            session.update(ticket);
+            tx.commit();
+            return true;
+        } catch (HibernateException e) {
+            tx.rollback();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 }

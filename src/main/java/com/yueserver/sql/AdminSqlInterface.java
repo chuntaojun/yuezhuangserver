@@ -4,6 +4,7 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
+import com.yueserver.enity.nodao.ResultBean;
 
 import java.util.List;
 import java.util.Map;
@@ -22,7 +23,7 @@ public interface AdminSqlInterface {
     boolean saveSinglePrd(Product product);
     boolean saveBatchPrd(List<Product> prdList);
 
-    boolean deleBatchPrd(Map<String, Object> prdMap);
+    boolean deleBatchPrd(ResultBean<List> prdNos);
     boolean deleBatchPrdVid(Map<String, Object> prdvidMap);
     boolean deleBatchPrdPic(Map<String, Object> prdpicMap);
     boolean delBatchBrand(Map<String, Object> brdMap);

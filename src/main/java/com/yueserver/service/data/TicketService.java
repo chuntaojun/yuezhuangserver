@@ -4,7 +4,8 @@ import com.yueserver.enity.nodao.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.TicketInterface;
 import com.yueserver.sql.TicketSqlInterface;
-import com.yueserver.sql.impl.TicketSql;
+
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +19,17 @@ public class TicketService implements TicketInterface {
     @Resource(name = "TicketSql")
     private TicketSqlInterface ticketSqlInterface;
 
+    @Autowired
+    @Resource(name = "taskExecutor")
+    private TaskExecutor executor;
+
     /**
      * 添加优惠券信息
      * @return
      */
     @Override
     public ResultBean<Boolean> addTicket(MerchantTicket ticket) {
-        return new ResultBean<>(ticketSqlInterface.SaveMerchantTicket(ticket));
+        return new ResultBean<>(ticketSqlInterface.saveMerchantTicket(ticket));
     }
 
     /**
@@ -50,9 +55,14 @@ public class TicketService implements TicketInterface {
      * 并返回抢券是否成功
      * @return
      */
-    public static synchronized ResultBean<Boolean> VoucherTicket(MerchantTicket ticket) {
-        ticket.setTickNum(ticket.getTickNum() - 1);
-        boolean b = new TicketSql().updateMerchantTicket(ticket);
-        return new ResultBean<>(b);
+    @Override
+    public ResultBean<Boolean> VoucherTicket(MerchantTicket ticket) {
+        executor.execute(() -> {
+            synchronized (ticketSqlInterface) {
+                ticket.setTickNum(ticket.getTickNum() - 1);
+                ticketSqlInterface.VoucherTicket(ticket);
+            }
+        });
+        return new ResultBean<>(false);
     }
 }

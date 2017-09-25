@@ -10,5 +10,6 @@ public interface TicketInterface {
     ResultBean<Boolean> addTicket(MerchantTicket ticket);
     ResultBean<Boolean> cancleTicket(MerchantTicket ticket);
     ResultBean<Map> getRemainTicket(MerchantTicket ticket);
+    ResultBean<Boolean> VoucherTicket(MerchantTicket ticket);
 
 }

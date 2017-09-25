@@ -5,9 +5,12 @@ import com.yueserver.service.DeleteInterface;
 import com.yueserver.sql.AdminSqlInterface;
 import com.yueserver.sql.MerchantSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
 
 @Service("DeleteData")
 public class DeleteDataService implements DeleteInterface {
@@ -25,9 +28,11 @@ public class DeleteDataService implements DeleteInterface {
      * @param prdno
      * @return
      */
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @Override
     public ResultBean<Boolean> DelePrdInfo(int[] prdno) {
-        return new ResultBean<>(false);
+        List prdNos = Array2List(prdno);
+        return new ResultBean<>(adminSqlInterface.deleBatchPrd(new ResultBean<>(prdNos)));
     }
 
     /**
@@ -35,9 +40,10 @@ public class DeleteDataService implements DeleteInterface {
      * @param postno
      * @return
      */
+    @Secured({"ROLE_ADMIN"})
     @Override
     public ResultBean<Boolean> DelePostInfo(int[] postno) {
-
+        List postNos = Array2List(postno);
         return new ResultBean<>(false);
     }
 
@@ -46,10 +52,15 @@ public class DeleteDataService implements DeleteInterface {
      * @param brdno
      * @return
      */
+    @Secured({"ROLE_ADMIN"})
     @Override
     public ResultBean<Boolean> DeleBrandInfo(int[] brdno) {
-
+        List brdNos = Array2List(brdno);
         return new ResultBean<>(false);
+    }
+
+    private List Array2List(int[] array) {
+        return Arrays.asList(array);
     }
 
 }

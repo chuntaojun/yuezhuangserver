@@ -49,22 +49,45 @@
           <element id="file-copy" path="$PROJECT_DIR$/java_api/spring-framework/spring-security-taglibs-4.2.3.RELEASE.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/spring-framework/spring-jdbc-4.3.9.RELEASE.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/email/mail.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/4.2.3.RELEASE/7a03e737484ca232d7146852f06d067ac21427ac/spring-security-web-4.2.3.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/4.2.3.RELEASE/9f3771903616e33521836fd999d63efbfebf90d/spring-security-config-4.2.3.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.0/14fb5f088cc0b0dc90a73ba745bcade4961a3ee3/jackson-databind-2.9.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.0/88e7c6220be3b3497b3074d3fc7754213289b987/jackson-core-2.9.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15/1.46/d726ceb2dcc711ef066cc639c12d856128ea1ef1/bcprov-jdk15-1.46.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/4.2.3.RELEASE/5c0e47a47036c94d6fdd02696bf52be6d1adbd4d/spring-security-core-4.2.3.RELEASE.jar" />
-          <element id="file-copy" path="$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.9.RELEASE/91dae64c4280093ad5fb4736a10913c9233479c1/spring-web-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.9.RELEASE/a186823724f03b98becd5f93b1fa107fe6f7a7ff/spring-context-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.9.RELEASE/95f5f5cf3cae64266a89dc1bc9e0484425cd8358/spring-aop-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.9.RELEASE/daa5abf3779c8cad1a2910e1ea08e4272489d8ae/spring-beans-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.9.RELEASE/4edca6913da9e62a6586714e053e01a61952a153/spring-expression-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.9.RELEASE/430b7298bfb85d66fb61e19ca8f06231b911e9f5/spring-core-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.9.0/7c10d545325e3a6e72e06381afe469fd40eb701/jackson-annotations-2.9.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
+          <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-config:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.0" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.0" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: org.bouncycastle:bcprov-jdk15:1.46" />
+          <element id="library" level="project" name="Gradle: org.apache.activemq:activemq-core:5.7.0" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:1.8.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: redis.clients:jedis:2.9.0" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-core:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-keyvalue:1.2.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-oxm:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:1.13.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Gradle: org.apache.activemq:kahadb:5.7.0" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
+          <element id="library" level="project" name="Gradle: org.apache.activemq.protobuf:activemq-protobuf:1.1" />
+          <element id="library" level="project" name="Gradle: org.fusesource.mqtt-client:mqtt-client:1.3" />
+          <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
+          <element id="library" level="project" name="Gradle: commons-net:commons-net:3.1" />
+          <element id="library" level="project" name="Gradle: org.jasypt:jasypt:1.9.0" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: org.fusesource.hawtdispatch:hawtdispatch-transport:1.11" />
+          <element id="library" level="project" name="Gradle: org.fusesource.hawtbuf:hawtbuf:1.9" />
+          <element id="library" level="project" name="Gradle: org.fusesource.hawtdispatch:hawtdispatch:1.11" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.12" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
         </element>
       </element>
     </root>

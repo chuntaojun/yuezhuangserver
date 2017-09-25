@@ -119,8 +119,13 @@ public class ProductSql implements ProductSqlInterface {
         Transaction transaction = session.beginTransaction();
         try {
             session.doWork(connection -> {
-                String sql = "";
+                String sql = "DELETE Product, PrdPic FROM Product LEFT JOIN PrdPic ON Product.PrdNo = PrdPic.PrdNo WHERE Product.PrdNo = ?";
+                for (int i = 0; i < prdNos.size() - 1; i ++)
+                    sql += " OR ?";
+                System.out.println(sql);
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                for (int i = 0; i < prdNos.size(); i ++)
+                    preparedStatement.setInt(i, prdNos.get(i));
                 preparedStatement.executeUpdate();
             });
             transaction.commit();

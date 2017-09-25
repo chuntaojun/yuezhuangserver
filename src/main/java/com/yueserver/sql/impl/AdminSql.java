@@ -4,6 +4,7 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
+import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.sql.*;
 
 import org.hibernate.*;
@@ -117,8 +118,8 @@ public class AdminSql implements AdminSqlInterface {
     }
 
     @Override
-    public boolean deleBatchPrd(Map<String, Object> prdMap) {
-        return deleBatchPrd(prdMap);
+    public boolean deleBatchPrd(ResultBean<List> prdNos) {
+        return productSqlInterface.deleBatchPrd(prdNos.getData());
     }
 
     @Override
