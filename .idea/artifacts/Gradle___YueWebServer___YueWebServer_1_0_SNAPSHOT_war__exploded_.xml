@@ -17,16 +17,12 @@
           <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/json-lib-2.4-jdk15.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-beanutils-1.8.3.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-collections-3.2.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-lang-2.6.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/ezmorph-1.0.6.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-logging-1.1.1.jar" />
+          <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
+          <element id="library" level="project" name="Gradle: commons-net:commons-net:3.1" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/mysql/mysql-connector-java-5.1.42-bin.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/hibernate-c3p0-5.2.10.Final.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/c3p0-0.9.5.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/mchange-commons-java-0.2.11.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/email/mail.jar" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.12" />
+          <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/hibernate-commons-annotations-5.0.1.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/hibernate-core-5.2.10.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/jboss-logging-3.3.0.Final.jar" />
@@ -48,8 +44,9 @@
           <element id="file-copy" path="$PROJECT_DIR$/java_api/spring-framework/spring-tx-4.3.9.RELEASE.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/spring-framework/spring-security-taglibs-4.2.3.RELEASE.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/java_api/spring-framework/spring-jdbc-4.3.9.RELEASE.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/java_api/email/mail.jar" />
-          <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/hibernate-c3p0-5.2.10.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/c3p0-0.9.5.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/c3p0/mchange-commons-java-0.2.11.jar" />
           <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-config:4.2.3.RELEASE" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.0" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.0" />
@@ -59,6 +56,7 @@
           <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:1.8.6.RELEASE" />
           <element id="library" level="project" name="Gradle: redis.clients:jedis:2.9.0" />
           <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
           <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-core:4.2.3.RELEASE" />
           <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.9.RELEASE" />
@@ -78,16 +76,61 @@
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
           <element id="library" level="project" name="Gradle: org.apache.activemq.protobuf:activemq-protobuf:1.1" />
-          <element id="library" level="project" name="Gradle: org.fusesource.mqtt-client:mqtt-client:1.3" />
-          <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
-          <element id="library" level="project" name="Gradle: commons-net:commons-net:3.1" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-lang-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-logging-1.1.1.jar" />
           <element id="library" level="project" name="Gradle: org.jasypt:jasypt:1.9.0" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Gradle: org.fusesource.hawtdispatch:hawtdispatch-transport:1.11" />
           <element id="library" level="project" name="Gradle: org.fusesource.hawtbuf:hawtbuf:1.9" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/json-lib-2.4-jdk15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-beanutils-1.8.3.jar" />
           <element id="library" level="project" name="Gradle: org.fusesource.hawtdispatch:hawtdispatch:1.11" />
-          <element id="library" level="project" name="Gradle: junit:junit:4.12" />
-          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Gradle: com.janeluo:ikanalyzer:2012_u6" />
+          <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-core:4.7.2" />
+          <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-queryparser:4.7.2" />
+          <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-analyzers-common:4.7.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/java_api/json/commons-collections-3.2.1.jar" />
+          <element id="library" level="project" name="Gradle: org.fusesource.mqtt-client:mqtt-client:1.3" />
+          <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-queries:4.7.2" />
+          <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-sandbox:4.7.2" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.mahout/mahout-core/0.9/22a63210e10d39be2edcc01564f5d5f68f91eeb7/mahout-core-0.9.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.mahout/mahout-math/0.9/8f94abb3e30b2385f10b8d856f2c723b4743cbc7/mahout-math-0.9.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.solr/solr-commons-csv/3.5.0/97ba33976975a85568a8bd579b885fe3b47f6c08/solr-commons-csv-3.5.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-core/1.2.1/3e5874122a26a735162a380627210779b41bfd59/hadoop-core-1.2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-json/1.8/825621478fec59983106efaa032c679f925b4eff/jersey-json-1.8.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-jaxrs/1.7.1/28dacb717bedc4f6edd9ca088448ef69d4dcd856/jackson-jaxrs-1.7.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-xc/1.7.1/5eb6018a46439ae23afa3699005277ca2a0f7b47/jackson-xc-1.7.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.12/8b290aae44213e2f6da00c07af59b0d442068f4d/jackson-mapper-asl-1.9.12.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.12/ecfc6f73a841c4c3c653b59651a3f9d5f1286469/jackson-core-asl-1.9.12.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtworks.xstream/xstream/1.4.4/488e9e4a47afc81d2b2dec3c3eb3a4d0f10fe105/xstream-1.4.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.mahout.commons/commons-cli/2.0-mahout/f1df8dc67ae086159ac66bd92c0bb54254776a93/commons-cli-2.0-mahout.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.2/ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-httpclient/commons-httpclient/3.0.1/d6364bcc1b2b2aa69d008602d36a700453648560/commons-httpclient-3.0.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.6/32cadde23955d7681b0d94a2715846d20b425235/commons-configuration-1.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-el/commons-el/1.0/1df2c042b3f2de0124750241ac6c886dbfa2cc2c/commons-el-1.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-digester/commons-digester/1.8/dc6a73fdbd1fa3f0944e8497c6c872fa21dca37e/commons-digester-1.8.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils-core/1.8.0/175dc721f87e4bc5cc0573f990e28c3cf9117508/commons-beanutils-core-1.8.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.7.0/5675fd96b29656504b86029551973d60fb41339b/commons-beanutils-1.7.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/16.0/aca09d2e5e8416bf91550e72281958e35460be52/guava-16.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xmlpull/xmlpull/1.1.3.1/2b8e230d2ab644e4ecaa94db7cdedbc40c805dfa/xmlpull-1.1.3.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xpp3/xpp3_min/1.1.4c/19d4e90b43059058f6e056f794f0ea4030d60b86/xpp3_min-1.1.4c.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-server/1.8/6da1231f5e2d7a9f7d194e292fc3695ba7710b2f/jersey-server-1.8.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-core/1.8/b6a0553c0eb3da45a9b8947a0a7283b3b9266d0d/jersey-core-1.8.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.1/fd51f906669f49a4ffd06650666c3b8147a6106e/commons-io-2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math/2.1/b3c4bdc2778ddccceb8da2acec3e37bfa41303e9/commons-math-2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.1/1a01a2a1218fcf9faa2cc2a6ced025bdea687262/jettison-1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.3-1/56baae106392040a45a06d4a41099173425da1e6/jaxb-impl-2.2.3-1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/asm/asm/3.1/c157def142714c544bdea2e6144645702adf7097/asm-3.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/16313e02a793435009f1e458fa4af5d879f6fb11/commons-lang-2.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/stax/stax-api/1.0.1/49c100caf72d658aca8e58bd74a4ba90fa2b0d70/stax-api-1.0.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.2/aeb3021ca93dde265796d82015beecdcff95bf09/jaxb-api-2.2.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar" />
         </element>
       </element>
     </root>

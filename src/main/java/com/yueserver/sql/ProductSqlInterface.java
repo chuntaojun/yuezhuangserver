@@ -8,6 +8,8 @@ import java.util.Map;
 public interface ProductSqlInterface {
 
     Product getPrdInfo(String prdName);
+
+    List queryProductInfo();
     List queryPrdName();
 
     boolean saveSinglePrd(Product product);

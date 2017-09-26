@@ -132,4 +132,24 @@ public class User {
     public void setUsrstatus(int usrstatus) {
         this.usrstatus = usrstatus;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userno=" + userno +
+                ", userphone=" + userphone +
+                ", usrname='" + usrname + '\'' +
+                ", usrpassword='" + usrpassword + '\'' +
+                ", usersex=" + usersex +
+                ", userimage='" + userimage + '\'' +
+                ", userbirthday=" + userbirthday +
+                ", userage=" + userage +
+                ", usertime=" + usertime +
+                ", userqq='" + userqq + '\'' +
+                ", userwechat='" + userwechat + '\'' +
+                ", userfriendway=" + userfriendway +
+                ", userintro='" + userintro + '\'' +
+                ", usrstatus=" + usrstatus +
+                '}';
+    }
 }

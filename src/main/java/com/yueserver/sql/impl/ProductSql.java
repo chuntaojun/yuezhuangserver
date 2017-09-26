@@ -52,6 +52,23 @@ public class ProductSql implements ProductSqlInterface {
     }
 
     @Override
+    public List queryProductInfo() {
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        try {
+            String hql = "SELECT prdname, prdintro, prdno FROM Product";
+            Query query = session.createQuery(hql);
+            return query.list();
+        } catch (HibernateException e) {
+            tx.rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+
+    @Override
     public List queryPrdName() {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
