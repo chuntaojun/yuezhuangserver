@@ -1,4 +1,4 @@
-package com.yueserver.enity.nodao;
+package com.yueserver.enity;
 
 import java.util.Date;
 

@@ -3,6 +3,7 @@ package com.yueserver.sql.impl;
 import com.yueserver.enity.Product;
 import com.yueserver.sql.ProductSqlInterface;
 
+import net.sf.json.JSONArray;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,7 +14,9 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -52,12 +55,17 @@ public class ProductSql implements ProductSqlInterface {
     }
 
     @Override
-    public List queryProductInfo() {
+    public List queryProductInfo(JSONArray prdId) {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         try {
-            String hql = "SELECT prdname, prdintro, prdno FROM Product";
-            Query query = session.createQuery(hql);
+            String sql = "SELECT *FROM YueZhuang.Product WHERE ";
+            int i;
+            for (i = 0; i < prdId.size() - 1; i ++)
+                sql += "PrdCode=" + prdId.get(i) + " or ";
+            sql += "PrdCode=" + prdId.get(i) + "";
+            System.out.println(sql);
+            Query query = session.createNativeQuery(sql);
             return query.list();
         } catch (HibernateException e) {
             tx.rollback();

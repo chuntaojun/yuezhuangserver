@@ -1,6 +1,6 @@
 package com.yueserver.sql;
 
-import com.yueserver.enity.nodao.MerchantTicket;
+import com.yueserver.enity.MerchantTicket;
 
 public interface TicketSqlInterface {
 

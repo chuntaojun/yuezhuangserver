@@ -1,18 +1,14 @@
 package com.yueserver.service.data;
 
 import com.yueserver.enity.Notice;
-import com.yueserver.enity.nodao.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.sql.NoticeSqlInterface;
-import com.yueserver.sql.TicketSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
-import static com.yueserver.controller.LoginController.getPrincipal;
 
 @Secured({"ROLE_ADMIN", "ROLE_USER"})
 @Service("PublishService")

@@ -1,6 +1,6 @@
 package com.yueserver.sql.impl;
 
-import com.yueserver.enity.nodao.MerchantTicket;
+import com.yueserver.enity.MerchantTicket;
 import com.yueserver.sql.TicketSqlInterface;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

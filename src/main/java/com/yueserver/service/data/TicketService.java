@@ -1,6 +1,6 @@
 package com.yueserver.service.data;
 
-import com.yueserver.enity.nodao.MerchantTicket;
+import com.yueserver.enity.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.TicketInterface;
 import com.yueserver.sql.TicketSqlInterface;

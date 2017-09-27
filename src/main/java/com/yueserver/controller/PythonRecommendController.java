@@ -3,17 +3,15 @@ package com.yueserver.controller;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * 用于推荐算法获取信息进行用户推荐
@@ -45,7 +43,6 @@ public class PythonRecommendController {
     @ResponseBody
     @RequestMapping(value = "/request/recommend/test", method = RequestMethod.POST)
     public ResultBean<List<String>> getUserInfoToRecommend(String useraccount) throws IOException {
-        System.out.println(new Date().toString());
         return pythonRecommendInterface.getUserToRecommend(useraccount);
     }
 
@@ -55,9 +52,9 @@ public class PythonRecommendController {
      */
     @ResponseBody
     @RequestMapping(value = "/recommend/answer", method = RequestMethod.POST)
-    public boolean getRecommendResult(List prdId, List nearUser) {
-        System.out.println(new Date().toString());
-        System.out.println(prdId + "\n" + nearUser);
-        return true;
+    public ResultBean<Boolean> getRecommendResult(@RequestBody String json) {
+        JSONObject jsonObject = JSONObject.fromObject(json);
+        JSONArray[] jsonData = new JSONArray[]{(JSONArray) jsonObject.get("prdId"), (JSONArray) jsonObject.get("nearUser")};
+        return pythonRecommendInterface.getRecommendDataInfo(new ResultBean<>(jsonData));
     }
 }

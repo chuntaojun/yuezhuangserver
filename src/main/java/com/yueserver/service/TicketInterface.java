@@ -1,6 +1,6 @@
 package com.yueserver.service;
 
-import com.yueserver.enity.nodao.MerchantTicket;
+import com.yueserver.enity.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 
 import java.util.Map;

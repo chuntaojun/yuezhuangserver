@@ -1,7 +1,7 @@
 package com.yueserver.controller;
 
 import com.yueserver.enity.Notice;
-import com.yueserver.enity.nodao.MerchantTicket;
+import com.yueserver.enity.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.service.TicketInterface;

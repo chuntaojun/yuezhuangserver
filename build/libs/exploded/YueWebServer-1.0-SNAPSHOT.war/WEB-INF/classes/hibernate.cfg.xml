@@ -44,7 +44,6 @@
         <mapping resource="bean.hbm/manage.hbm.xml" />
         <mapping resource="bean.hbm/merchantticket.hbm.xml" />
         <mapping resource="bean.hbm/prdfav.hbm.xml" />
-
     </session-factory>
 
 </hibernate-configuration>
