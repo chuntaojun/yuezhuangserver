@@ -29,17 +29,15 @@ public class PythonRecommendService implements PythonRecommendInterface {
     @Resource(name = "ProductSql")
     private ProductSqlInterface productSqlInterface;
 
-    @Override
-    public ResultBean<List<String>> getUserToRecommend(String useraccount) throws IOException {
-        return new ResultBean<>(prdFavSqlInterface.queryPrdFavData());
-    }
+    private String username;
 
-    /**
-     * redis 缓存数据库数据用于用户推荐
-     */
     @Override
-    public void RedisCacheData() {
-
+    public ResultBean getUserToRecommend(String useraccount) throws IOException {
+        username = useraccount;
+        if (redisTemplate.opsForValue().get("prdInfo" + useraccount) == null) {
+            redisTemplate.opsForValue().set("prdInfo", prdFavSqlInterface.queryPrdFavData());
+        }
+        return new ResultBean<>(redisTemplate.opsForValue().get("prdInfo"));
     }
 
     @Override
@@ -48,10 +46,19 @@ public class PythonRecommendService implements PythonRecommendInterface {
         JSONArray nearUser = resultBean.getData()[1];
         List prdList = productSqlInterface.queryProductInfo(prdId);
         System.out.println(prdList);
-        if (prdList != null)
+        if (prdList.size() != 0) {
+            RedisCacheData(prdList);
             return new ResultBean<>(true);
+        }
         return new ResultBean<>(false);
     }
 
+    /**
+     * redis 缓存数据库数据用于用户推荐
+     */
+    @Override
+    public void RedisCacheData(List prdList) {
+        redisTemplate.opsForValue().set("recommend-" + username, prdList);
+    }
 
 }
