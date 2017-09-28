@@ -34,10 +34,10 @@ public class PythonRecommendService implements PythonRecommendInterface {
     @Override
     public ResultBean getUserToRecommend(String useraccount) throws IOException {
         username = useraccount;
-        if (redisTemplate.opsForValue().get("prdInfo" + useraccount) == null) {
-            redisTemplate.opsForValue().set("prdInfo", prdFavSqlInterface.queryPrdFavData());
+        if (redisTemplate.opsForList().range("prdFav-" + useraccount, 0, -1).size() == 0) {
+            redisTemplate.opsForList().rightPushAll("prdFav-" + useraccount, prdFavSqlInterface.queryPrdFavData());
         }
-        return new ResultBean<>(redisTemplate.opsForValue().get("prdInfo"));
+        return new ResultBean<>(redisTemplate.opsForList().range("prdFav-" + useraccount, 0, -1));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class PythonRecommendService implements PythonRecommendInterface {
      */
     @Override
     public void RedisCacheData(List prdList) {
-        redisTemplate.opsForValue().set("recommend-" + username, prdList);
+        redisTemplate.opsForList().rightPushAll("recommend-" + username, prdList);
     }
 
 }

@@ -59,11 +59,11 @@ public class ProductSql implements ProductSqlInterface {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         try {
-            String sql = "SELECT FROM YueZhuang.Product WHERE ";
+            String sql = "SELECT PrdNo, PrdName, PrdCode, PrdPrice FROM Product WHERE ";
             int i;
             for (i = 0; i < prdId.size() - 1; i ++)
-                sql += "PrdCode=" + prdId.get(i) + " or ";
-            sql += "PrdCode=" + prdId.get(i) + "";
+                sql += "PrdCode=" + prdId.get(i) + " OR ";
+            sql += "PrdCode=" + prdId.get(i);
             System.out.println(sql);
             Query query = session.createNativeQuery(sql);
             return query.list();
