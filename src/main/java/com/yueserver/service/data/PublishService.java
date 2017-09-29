@@ -3,7 +3,7 @@ package com.yueserver.service.data;
 import com.yueserver.enity.Notice;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
-import com.yueserver.sql.NoticeSqlInterface;
+import com.yueserver.database.NoticeSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;

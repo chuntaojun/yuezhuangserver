@@ -18,7 +18,8 @@
     <!--Controller-->
     <context:component-scan base-package="com.yueserver.controller*"/>
     <context:component-scan base-package="com.yueserver.service.*" />
-    <context:component-scan base-package="com.yueserver.sql.impl" />
+    <context:component-scan base-package="com.yueserver.database.impl" />
+    <context:component-scan base-package="com.yueserver.database.redisutil.impl" />
 
     <!--开启异步处理-->
     <task:annotation-driven executor="mytaskExecutor" />

@@ -10,6 +10,9 @@
         </id>
         <property name="posttitle" type="java.lang.String" column="PostTitle" />
         <property name="postmain" type="java.lang.String" column="PostMain" />
-        <property name="posttime" type="java.util.Date" column="PostTime" />
+        <property name="posttime" type="java.util.Date" column="PostTime" update="false" />
+        <property name="postlikenum" type="java.lang.Integer" column="PostLikeNum" update="false" />
+        <property name="postcomnum" type="java.lang.Integer" column="PostComNum" update="false" />
+        <property name="postsharenum" type="java.lang.Integer" column="PostShareNum" update="false" />
     </class>
 </hibernate-mapping>

@@ -2,8 +2,8 @@ package com.yueserver.service.data;
 
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.DeleteInterface;
-import com.yueserver.sql.AdminSqlInterface;
-import com.yueserver.sql.MerchantSqlInterface;
+import com.yueserver.database.AdminSqlInterface;
+import com.yueserver.database.MerchantSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;

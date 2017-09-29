@@ -2,6 +2,7 @@
   <dictionary name="chuntaojun">
     <words>
       <w>jedis</w>
+      <w>useraccount</w>
     </words>
   </dictionary>
 </component>

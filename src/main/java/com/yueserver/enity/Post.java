@@ -1,6 +1,6 @@
 package com.yueserver.enity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Post {
 
@@ -8,6 +8,9 @@ public class Post {
     private String posttitle;
     private String postmain;
     private Date posttime;
+    private int postlikenum;
+    private int postcomnum;
+    private int postsharenum;
 
     public Post(){}
 
@@ -41,5 +44,42 @@ public class Post {
 
     public void setPosttime(Date posttime) {
         this.posttime = posttime;
+    }
+
+    public int getPostlikenum() {
+        return postlikenum;
+    }
+
+    public void setPostlikenum(int postlikenum) {
+        this.postlikenum = postlikenum;
+    }
+
+    public int getPostcomnum() {
+        return postcomnum;
+    }
+
+    public void setPostcomnum(int postcomnum) {
+        this.postcomnum = postcomnum;
+    }
+
+    public int getPostsharenum() {
+        return postsharenum;
+    }
+
+    public void setPostsharenum(int postsharenum) {
+        this.postsharenum = postsharenum;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postno=" + postno +
+                ", posttitle='" + posttitle + '\'' +
+                ", postmain='" + postmain + '\'' +
+                ", posttime=" + posttime +
+                ", postlikenum=" + postlikenum +
+                ", postcomnum=" + postcomnum +
+                ", postsharenum=" + postsharenum +
+                '}';
     }
 }

@@ -9,7 +9,9 @@ import java.util.List;
 public interface PythonRecommendInterface {
 
     ResultBean getUserToRecommend(String useraccount) throws IOException;
-    ResultBean<Boolean> getRecommendDataInfo(ResultBean<JSONArray[]> resultBean);
+    ResultBean<List> getRecommendDataInfo(String useraccount);
+    ResultBean<List<List>> getHotPostToRecommend();
+    ResultBean<List<List>> getHotPostDataInfo();
+    ResultBean<Boolean> RedisCacheData(ResultBean<JSONArray[]> resultBean);
 
-    void RedisCacheData(List prdList);
 }

@@ -6,7 +6,7 @@ import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EditInterface;
-import com.yueserver.sql.AdminSqlInterface;
+import com.yueserver.database.AdminSqlInterface;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

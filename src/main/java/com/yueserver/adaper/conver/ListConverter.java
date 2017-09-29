@@ -170,6 +170,14 @@ public class ListConverter {
         return jsonlist;
     }
 
+    public List<List> HotPostList(List<List> hotList) {
+        List<List> list = new ArrayList<>();
+        for (Iterator iterator = hotList.iterator(); iterator.hasNext();) {
+
+        }
+        return null;
+    }
+
     private Base64 getBase64() {
         try {
             return (Base64) getSingleAdaperFactory().getEncryption("Base64");

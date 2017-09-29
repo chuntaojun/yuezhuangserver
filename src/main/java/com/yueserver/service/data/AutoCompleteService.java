@@ -2,8 +2,8 @@ package com.yueserver.service.data;
 
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.AutoCompleteServiceInterface;
-import com.yueserver.sql.BrandSqlInterface;
-import com.yueserver.sql.ProductSqlInterface;
+import com.yueserver.database.BrandSqlInterface;
+import com.yueserver.database.ProductSqlInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service("AutoCompleteService")
 public class AutoCompleteService implements AutoCompleteServiceInterface {

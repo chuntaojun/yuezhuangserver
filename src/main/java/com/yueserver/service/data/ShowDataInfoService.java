@@ -6,8 +6,8 @@ import com.yueserver.adaper.conver.ListConverter;
 import com.yueserver.enity.nodao.Login;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.ShowInterface;
-import com.yueserver.sql.AdminSqlInterface;
-import com.yueserver.sql.MerchantSqlInterface;
+import com.yueserver.database.AdminSqlInterface;
+import com.yueserver.database.MerchantSqlInterface;
 
 import net.sf.json.JSONObject;
 

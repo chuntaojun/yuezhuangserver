@@ -11,8 +11,8 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.UploadInterface;
-import com.yueserver.sql.BrandSqlInterface;
-import com.yueserver.sql.MerchantSqlInterface;
+import com.yueserver.database.BrandSqlInterface;
+import com.yueserver.database.MerchantSqlInterface;
 
 import net.sf.json.JSONObject;
 

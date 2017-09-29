@@ -3,7 +3,7 @@ package com.yueserver.service.data;
 import com.yueserver.enity.MerchantTicket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.TicketInterface;
-import com.yueserver.sql.TicketSqlInterface;
+import com.yueserver.database.TicketSqlInterface;
 
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.beans.factory.annotation.Autowired;

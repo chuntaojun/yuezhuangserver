@@ -5,7 +5,7 @@ import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.adaper.encryption.mdfive.MD5;
 import com.yueserver.enity.nodao.ForgotPassword;
 import com.yueserver.enity.nodao.ResultBean;
-import com.yueserver.sql.LoginSqlInterface;
+import com.yueserver.database.LoginSqlInterface;
 import com.yueserver.enity.Merchant;
 import com.yueserver.service.LoginInterface;
 import net.sf.json.JSONObject;
