@@ -1,7 +1,8 @@
 package com.yueserver.database.impl;
 
 import com.yueserver.database.PrdVidSqlInterface;
-import org.hibernate.SessionFactory;
+
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,10 @@ import java.util.Map;
 @Service("PrdVidSql")
 public class PrdVidSql implements PrdVidSqlInterface {
 
-    @Autowired(required = false)
-    @Resource(name = "sessionFactory")
-    private SessionFactory sessionFactory;
+    @Autowired
+    @Resource(name = "sqlSessionFactory")
+    private SqlSessionFactory sqlSessionFactory;
+
 
     @Override
     public boolean saveBatchPrdVid(Map<String, Object> prdvidMap) {

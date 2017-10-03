@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yueserver.enity.Post">
+    <resultMap id="PostResult" type="com.yueserver.enity.Post">
+        <result column="PostNo" property="postno" jdbcType="INTEGER" />
+        <result column="PostTitle" property="posttitle" jdbcType="VARCHAR" />
+        <result column="PostMain" property="postmain" jdbcType="VARCHAR" />
+        <result column="PostTime" property="posttime" jdbcType="DATETIME" />
+        <result column="PostLikeNum" property="postlikenum" jdbcType="INTEGER" />
+        <result column="PostComNum" property="postcomnum" jdbcType="INTEGER" />
+        <result column="PostShareNum" property="postsharenum" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="queryPostInfp" resultType="java.util.HashMap">
+        SELECT *FROM Post
+    </select>
+
+</mapper>

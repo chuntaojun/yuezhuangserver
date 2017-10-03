@@ -5,9 +5,13 @@ import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 import com.yueserver.enity.nodao.ResultBean;
-import com.yueserver.database.*;
+import com.yueserver.database.AdminSqlInterface;
+import com.yueserver.database.BrandSqlInterface;
+import com.yueserver.database.ProductSqlInterface;
+import com.yueserver.database.PostSqlInterface;
+import com.yueserver.database.UserSqlInterface;
 
-import org.hibernate.*;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +22,9 @@ import java.util.Map;
 @Service("AdminSql")
 public class AdminSql implements AdminSqlInterface {
 
-    @Autowired(required = false)
-    @Resource(name = "sessionFactory")
-    private SessionFactory sessionFactory;
+    @Autowired
+    @Resource(name = "sqlSessionFactory")
+    private SqlSessionFactory sqlSessionFactory;
 
     @Autowired
     @Resource(name = "BrandSql")
@@ -62,19 +66,7 @@ public class AdminSql implements AdminSqlInterface {
      */
     @Override
     public List queryMerchantInfo() {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            List list = session.getNamedQuery("queryMerchantInfo").list();
-            transaction.commit();
-            return list;
-        } catch (HibernateException e) {
-            e.printStackTrace();
-            transaction.rollback();
-            return null;
-        } finally {
-            session.close();
-        }
+        return null;
     }
 
     /**
@@ -143,19 +135,7 @@ public class AdminSql implements AdminSqlInterface {
 
     @Override
     public boolean updateSingleMerchant(Merchant merchant) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            Merchant merchant1 = session.get(merchant.getClass(), merchant.getMctno());
-            merchant1.setMctstate(merchant.getMctstate());
-            transaction.commit();
-            return true;
-        } catch (HibernateException e) {
-            transaction.rollback();
-            return false;
-        } finally {
-            session.close();
-        }
+        return false;
     }
 
     @Override
