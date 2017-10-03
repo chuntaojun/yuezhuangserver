@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yueserver.enity.Merchant">
+<mapper namespace="com.yueserver.database.dao.MerchantMapper">
     <resultMap id="MerchantResult" type="com.yueserver.enity.Merchant">
         <result column="MctNo" property="mctno" jdbcType="INTEGER" />
         <result column="MctAccount" property="mctaccount" jdbcType="VARCHAR" />
@@ -20,28 +20,28 @@
 
     <insert id="insertNewMct" useGeneratedKeys="true" keyProperty="MctNo" parameterType="com.yueserver.enity.Merchant">
         INSERT INTO Merchat
-              (MctAccount, MctPassword, MctTime, MctState)
+            (MctAccount, MctPassword, MctTime, MctState)
         VALUES
-              (#{MctAccount, jdbcType=VARCHAR}, #{MctPassword, jdbcType=VARCHAR}, #{MctTime, jdbcType=DATETIME}, #{MctState, jdbcType=INTEGER})
+            (#{MctAccount, jdbcType=VARCHAR}, #{MctPassword, jdbcType=VARCHAR}, #{MctTime, jdbcType=DATETIME}, #{MctState, jdbcType=INTEGER})
     </insert>
 
     <update id="updateMctInfo" parameterType="com.yueserver.enity.Merchant">
         UPDATE
-              Merchant
+            Merchant
         SET
-              Merchant.MctAccount = #{MctAccount},
-              Merchant.MctPassword = #{MctPassword}
+            Merchant.MctAccount = #{MctAccount},
+            Merchant.MctPassword = #{MctPassword}
         WHERE
-              Merchant.MctAccount = #{MctAccount}
+            Merchant.MctAccount = #{MctAccount}
     </update>
 
     <update id="updateMctStates" parameterType="com.yueserver.enity.Merchant">
         UPDATE
-              Merchant
+            Merchant
         SET
-              Merchant.MctState = #{MctState}
+            Merchant.MctState = #{MctState}
         WHERE
-              Merchant.MctAccount = #{MctAccount}
+            Merchant.MctAccount = #{MctAccount}
     </update>
 
 </mapper>

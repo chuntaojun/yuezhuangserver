@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                     <label>
-                        <a href="/retrievePassword">忘记密码?</a>
+                        <a href="http://127.0.0.1:8080/retrievePassword">忘记密码?</a>
                     </label>
                     </div>
                     <button onclick="check();" class="btn btn-primary">登录</button>

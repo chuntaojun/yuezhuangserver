@@ -1,40 +1,55 @@
 package com.yueserver.database.impl;
 
+import com.yueserver.database.dao.AdminMapper;
+import com.yueserver.database.dao.LoginMapper;
+import com.yueserver.database.dao.MerchantMapper;
+import com.yueserver.enity.Administator;
 import com.yueserver.enity.nodao.ForgotPassword;
-import com.yueserver.database.LoginSqlInterface;
 import com.yueserver.enity.Merchant;
 
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service("LoginSql")
-public class LoginSql implements LoginSqlInterface {
+public class LoginSql implements LoginMapper {
 
     @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
+    @Resource(name = "AdminSql")
+    private AdminMapper adminDao;
+
+    @Autowired
+    @Resource(name = "MerchantSql")
+    private MerchantMapper merchantDao;
 
     @Override
     public boolean getExistUser(String mctaccount) {
+        if (merchantDao.MerchantLogin(mctaccount) == null)
+            return true;
         return false;
     }
 
     @Override
-    public List getLoginObject(String mctaccount, String adminaccount) {
-        return null;
+    public Object getLoginObject(String mctaccount, String adminaccount) {
+        Administator admin = adminDao.AdminLogin(adminaccount);
+        Merchant merchant = merchantDao.MerchantLogin(mctaccount);
+        if (admin != null) {
+            return admin;
+        }
+        return merchant;
     }
 
     @Override
     public boolean updatePassword(ForgotPassword forgotPassword) {
-        return false;
+        Merchant merchant = new Merchant();
+        merchant.setMctaccount(forgotPassword.getUsername());
+        merchant.setMctpassword(forgotPassword.getPassword());
+        return this.merchantDao.updateMerchant(merchant);
     }
 
     @Override
     public boolean saveNewAccount(Merchant merchant) {
-        return false;
+        return this.merchantDao.insertMerchant(merchant);
     }
 }

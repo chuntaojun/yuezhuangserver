@@ -1,39 +1,34 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.enity.MerchantTicket;
-import com.yueserver.database.TicketSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.TicketMapper;
+import com.yueserver.enity.Ticket;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service("TicketSql")
-public class TicketSql implements TicketSqlInterface {
+public class TicketSql implements TicketMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private TicketMapper ticketMapper;
 
     @Override
-    public boolean saveMerchantTicket(MerchantTicket ticket) {
-        return false;
+    public boolean saveMerchantTicket(Ticket ticket) {
+        return this.ticketMapper.saveMerchantTicket(ticket);
     }
 
     @Override
-    public boolean updateMerchantTicket(MerchantTicket ticket) {
-        return false;
+    public boolean updateMerchantTicket(Ticket ticket) {
+        return this.ticketMapper.updateMerchantTicket(ticket);
     }
 
     @Override
-    public boolean deleteMerchantTicket(MerchantTicket ticket) {
-        return false;
+    public boolean deleteMerchantTicket(Ticket ticket) {
+        return this.ticketMapper.deleteMerchantTicket(ticket);
     }
 
     @Override
-    public boolean VoucherTicket(MerchantTicket ticket) {
-        return false;
+    public boolean VoucherTicket(Ticket ticket) {
+        return this.ticketMapper.VoucherTicket(ticket);
     }
 }

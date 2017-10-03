@@ -1,63 +1,59 @@
 package com.yueserver.database.impl;
 
+import com.yueserver.database.dao.ProductMapper;
 import com.yueserver.enity.Product;
-import com.yueserver.database.ProductSqlInterface;
 
 import net.sf.json.JSONArray;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 @Service("ProductSql")
-public class ProductSql implements ProductSqlInterface {
+public class ProductSql implements ProductMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private ProductMapper productMapper;
 
     @Override
     public Product getPrdInfo(String prdName) {
-        return null;
+        return this.productMapper.getPrdInfo(prdName);
     }
 
     @Override
-    public List queryProductInfo(JSONArray prdId) {
-        return null;
+    public List queryProductInfo(Integer mctNo) {
+        return this.productMapper.queryProductInfo(mctNo);
     }
+
+    @Override
+    public List queryProductInfo(JSONArray prdIds) {
+        return this.productMapper.queryProductInfo(prdIds);
+    }
+
+    @Override
+    public List queryProductInfo() {
+        return this.productMapper.queryProductInfo();
+    }
+
 
     @Override
     public List queryPrdName() {
-        return null;
+        return this.productMapper.queryPrdName();
     }
 
     @Override
-    public boolean saveSinglePrd(Product product) {
-        return false;
+    public boolean saveBatchPrd(List<Product> products) {
+        return this.saveBatchPrd(products);
     }
 
     @Override
-    public boolean saveBatchPrd(List<Product> prdList) {
-        return false;
+    public boolean deleBatchPrd(HashSet<Integer> products) {
+        return this.productMapper.deleBatchPrd(products);
     }
 
     @Override
-    public boolean deleBatchPrd(List<Integer> prdNos) {
-        return false;
-    }
-
-    @Override
-    public boolean updateSinglePrd(Product product) {
-        return false;
-    }
-
-    @Override
-    public boolean updateBatchPrd(Map<String, Object> prdMap) {
-        return false;
+    public boolean updateBatchPrd(List<Product> products) {
+        return this.productMapper.updateBatchPrd(products);
     }
 }

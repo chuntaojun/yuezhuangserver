@@ -1,12 +1,15 @@
 package com.yueserver.service.data;
 
+import com.yueserver.database.dao.BrandMapper;
+import com.yueserver.database.dao.MerchantMapper;
+import com.yueserver.database.dao.ProductMapper;
+import com.yueserver.database.dao.UserMapper;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.EditInterface;
-import com.yueserver.database.AdminSqlInterface;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +17,27 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("AdminEditData")
 public class AdminEditDataService implements EditInterface {
 
     @Autowired
-    @Resource(name = "AdminSql")
-    private AdminSqlInterface adminSqlInterface;
+    @Resource(name = "BrandSql")
+    private BrandMapper brandDao;
 
+    @Autowired
+    @Resource(name = "ProductSql")
+    private ProductMapper productDao;
+
+    @Autowired
+    @Resource(name = "MerchantSql")
+    private MerchantMapper merchantDao;
+
+    @Autowired
+    @Resource(name = "UserSql")
+    private UserMapper userDao;
 
     /**
      * 商品的增加操作（悦妆自营类型）
@@ -32,7 +48,9 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "prdInfo", allEntries = true)
     public JSONObject addProductInfo(ResultBean<Product> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.saveSinglePrd(resultBean.getData())) {
+        List resultList = new ArrayList();
+        resultList.add(resultBean.getData());
+        if (productDao.saveBatchPrd(resultList)) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -49,7 +67,9 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "prdInfo", allEntries = true)
     public JSONObject updateProInfo(ResultBean<Product> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSinglePrd(resultBean.getData())) {
+        List resultList = new ArrayList();
+        resultList.add(resultBean.getData());
+        if (productDao.updateBatchPrd(resultList)) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -66,7 +86,9 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "brdInfo", allEntries = true)
     public JSONObject addBrandInfo(ResultBean<Brand> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.saveSingleBrand(resultBean.getData())) {
+        List resultList = new ArrayList();
+        resultList.add(resultBean.getData());
+        if (brandDao.saveBatchBrand(resultList)) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -83,7 +105,9 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "brdInfo", allEntries = true)
     public JSONObject updateBrandInfo(ResultBean<Brand> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleBrand(resultBean.getData())) {
+        List resultList = new ArrayList();
+        resultList.add(resultBean.getData());
+        if (brandDao.updateBatchBrand(resultList)) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -100,7 +124,7 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "merchantInfo", allEntries = true)
     public JSONObject updateMerchantAuthorize(ResultBean<Merchant> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleMerchant(resultBean.getData())) {
+        if (merchantDao.updateMerchant(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }
@@ -117,7 +141,7 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "merchantInfo", allEntries = true)
     public JSONObject updateUserInfo(ResultBean<User> resultBean) {
         JSONObject resultJson = new JSONObject();
-        if (adminSqlInterface.updateSingleUser(resultBean.getData())) {
+        if (userDao.updateUserStatus(resultBean.getData().getUsrstatus(), resultBean.getData().getUserno())) {
             resultJson.put("result", true);
             return resultJson;
         }

@@ -1,30 +1,25 @@
 package com.yueserver.database.impl;
 
+import com.yueserver.database.dao.PrdFavMapper;
 import com.yueserver.enity.PrdFav;
-import com.yueserver.database.PrdFavSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service("PrdFavSql")
-public class PrdFavSql implements PrdFavSqlInterface {
+public class PrdFavSql implements PrdFavMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private PrdFavMapper prdFavMapper;
 
     @Override
-    public boolean savePrdFav(PrdFav prdFav) {
-        return false;
+    public boolean savePrdFav(@Param("PrdFav") PrdFav prdFav) {
+        return this.prdFavMapper.savePrdFav(prdFav);
     }
 
     @Override
     public List queryPrdFavData() {
-        return null;
+        return this.prdFavMapper.queryPrdFavData();
     }
 }

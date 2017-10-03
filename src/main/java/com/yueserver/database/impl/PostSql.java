@@ -1,41 +1,31 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.enity.Post;
-import com.yueserver.database.PostSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.PostMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 @Service("PostSql")
-public class PostSql implements PostSqlInterface {
+public class PostSql implements PostMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private PostMapper postMapper;
 
     @Override
     public List queryPostInfo() {
-        return null;
+        return this.postMapper.queryPostInfo();
     }
 
     @Override
     public List queryPostInfo2HotRecommend() {
-        return null;
+        return this.postMapper.queryPostInfo2HotRecommend();
     }
 
     @Override
-    public boolean deleSinglePost(Post post) {
-        return false;
+    public boolean deleBatchPost(Set<Integer> postNos) {
+        return this.postMapper.deleBatchPost(postNos);
     }
 
-    @Override
-    public boolean deleBatchPost(Map<String, Object> postMap) {
-        return false;
-    }
 }

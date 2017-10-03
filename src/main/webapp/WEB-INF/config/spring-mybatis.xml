@@ -38,17 +38,13 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:mybatis/*.xml"></property>
+        <property name="mapperLocations" value="classpath:mybatis/*.xml" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.yueserver.database.impl" />
+        <property name="basePackage" value="com.yueserver.database" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    </bean>
-
-    <!--spring 注入mybatis-->
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
     </bean>
 
     <!-- jdbc 事务管理-->

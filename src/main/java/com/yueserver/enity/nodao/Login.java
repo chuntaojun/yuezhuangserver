@@ -26,6 +26,14 @@ public class Login extends User {
         return grantedAuthority.getAuthority();
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public String getEmail() {
         return email;
     }

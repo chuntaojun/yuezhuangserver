@@ -3,11 +3,11 @@ package com.yueserver.service.data;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.conver.JsonConverter;
 import com.yueserver.adaper.conver.ListConverter;
+import com.yueserver.database.dao.*;
+import com.yueserver.enity.Product;
 import com.yueserver.enity.nodao.Login;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.ShowInterface;
-import com.yueserver.database.AdminSqlInterface;
-import com.yueserver.database.MerchantSqlInterface;
 
 import net.sf.json.JSONObject;
 
@@ -26,12 +26,24 @@ import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 public class ShowDataInfoService implements ShowInterface {
 
     @Autowired
-    @Resource(name = "MerchantSql")
-    private MerchantSqlInterface merchantSqlInterface;
+    @Resource(name = "ProductSql")
+    private ProductMapper productDao;
 
     @Autowired
-    @Resource(name = "AdminSql")
-    private AdminSqlInterface adminSqlInterface;
+    @Resource(name = "BrandSql")
+    private BrandMapper brandDao;
+
+    @Autowired
+    @Resource(name = "PostSql")
+    private PostMapper postDao;
+
+    @Autowired
+    @Resource(name = "UserSql")
+    private UserMapper userDao;
+
+    @Autowired
+    @Resource(name = "MerchantSql")
+    private MerchantMapper merchantDao;
 
     private JSONObject jsonObject;
 
@@ -47,7 +59,7 @@ public class ShowDataInfoService implements ShowInterface {
     public ResultBean<JSONObject> QueryProdInfo(Login login, HttpSession session) {
         JSONObject prdJson = getSingleJson();
         if ("ROLE_USER".equals(login.getRole(login.getAuthorities()))){
-            List list = merchantSqlInterface.queryBrd_PrdInfo(login.getMctno());
+            List list = productDao.queryProductInfo(login.getMctno());
             List infoList = getListConverter().setPrdList(list, session);
             prdJson.put("prdList", getJsonConverter().setMessage(infoList));
             return new ResultBean<>(prdJson);
@@ -55,7 +67,7 @@ public class ShowDataInfoService implements ShowInterface {
             /*
                  管理员取出品牌与商品信息
              */
-            List list = adminSqlInterface.queryBrd_PrdInfo();
+            List list = productDao.queryProductInfo();
             List infoList = getListConverter().setPrdList(list, session);
             prdJson.put("prdList", getJsonConverter().setMessage(infoList));
             return new ResultBean<>(prdJson);
@@ -85,7 +97,7 @@ public class ShowDataInfoService implements ShowInterface {
     @Cacheable(value = "postInfo")
     public ResultBean<JSONObject> QueryPostInfo() {
         JSONObject postJson = getSingleJson();
-        List list = adminSqlInterface.queryPostInfo();
+        List list = postDao.queryPostInfo();
         List infoList = getListConverter().setPostList(list);
         postJson.put("postList", getJsonConverter().setMessage(infoList));
         return new ResultBean<>(postJson);
@@ -100,7 +112,7 @@ public class ShowDataInfoService implements ShowInterface {
     @Cacheable(value = "userInfo")
     public ResultBean<JSONObject> QueryUserInfo() {
         JSONObject userJson = getSingleJson();
-        List list = adminSqlInterface.queryUserInfo();
+        List list = userDao.queryUserInfo();
         List infoList = getListConverter().setUserList(list);
         userJson.put("usrList", infoList);
         return new ResultBean<>(userJson);
@@ -115,7 +127,7 @@ public class ShowDataInfoService implements ShowInterface {
     @Cacheable(value = "merchantInfo")
     public ResultBean<JSONObject> QuerySellerInfo() {
         JSONObject mctJson = getSingleJson();
-        List list = adminSqlInterface.queryMerchantInfo();
+        List list = merchantDao.queryMerchantInfo();
         List infoList = getListConverter().setSellerList(list);
         mctJson.put("mctList", getJsonConverter().setMessage(infoList));
         return new ResultBean<>(mctJson);

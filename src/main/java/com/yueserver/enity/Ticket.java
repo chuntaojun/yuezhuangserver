@@ -9,6 +9,8 @@ public class Ticket {
     private Timestamp tcttime;
     private Timestamp tctdeadline;
     private int tctsum;
+    private int tcttypeno;
+    private int brdno;
 
     public Ticket(){}
 
@@ -50,5 +52,33 @@ public class Ticket {
 
     public void setTctsum(int tctsum) {
         this.tctsum = tctsum;
+    }
+
+    public int getTcttypeno() {
+        return tcttypeno;
+    }
+
+    public void setTcttypeno(int tcttypeno) {
+        this.tcttypeno = tcttypeno;
+    }
+
+    public int getBrdno() {
+        return brdno;
+    }
+
+    public void setBrdno(int brdno) {
+        this.brdno = brdno;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "tctno=" + tctno +
+                ", tctdiscount=" + tctdiscount +
+                ", tcttime=" + tcttime +
+                ", tctdeadline=" + tctdeadline +
+                ", tctsum=" + tctsum +
+                ", tcttypeno=" + tcttypeno +
+                '}';
     }
 }

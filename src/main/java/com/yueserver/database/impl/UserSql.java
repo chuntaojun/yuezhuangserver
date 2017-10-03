@@ -1,30 +1,24 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.enity.User;
-import com.yueserver.database.UserSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.UserMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service("UserSql")
-public class UserSql implements UserSqlInterface {
+public class UserSql implements UserMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private UserMapper userMapper;
 
     @Override
     public List queryUserInfo() {
-        return null;
+        return this.userMapper.queryUserInfo();
     }
 
     @Override
-    public boolean updateSingleUser(User user) {
-        return false;
+    public boolean updateUserStatus(Integer status, Integer usrNo) {
+        return this.userMapper.updateUserStatus(status, usrNo);
     }
 }

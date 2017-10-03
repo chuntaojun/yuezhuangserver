@@ -1,15 +1,15 @@
 package com.yueserver.service;
 
-import com.yueserver.enity.MerchantTicket;
+import com.yueserver.enity.Ticket;
 import com.yueserver.enity.nodao.ResultBean;
 
 import java.util.Map;
 
 public interface TicketInterface {
 
-    ResultBean<Boolean> addTicket(MerchantTicket ticket);
-    ResultBean<Boolean> cancleTicket(MerchantTicket ticket);
-    ResultBean<Map> getRemainTicket(MerchantTicket ticket);
-    ResultBean<Boolean> VoucherTicket(MerchantTicket ticket);
+    ResultBean<Boolean> addTicket(Ticket ticket);
+    ResultBean<Boolean> cancleTicket(Ticket ticket);
+    ResultBean<Map> getRemainTicket(Ticket ticket);
+    ResultBean<Boolean> VoucherTicket(Ticket ticket);
 
 }

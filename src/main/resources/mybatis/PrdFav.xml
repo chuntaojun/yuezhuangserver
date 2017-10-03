@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yueserver.enity.PrdFav">
+<mapper namespace="com.yueserver.database.dao.PrdFavMapper">
     <resultMap id="PrdFavMap" type="com.yueserver.enity.PrdFav">
         <result column="PrdFavNo" property="prdfavno" jdbcType="INTEGER" />
         <result column="PrdFavTime" property="prdfavtime" jdbcType="DATETIME" />
@@ -14,14 +14,20 @@
     </select>
 
     <insert id="insertPrdFavInfo" keyColumn="PrdFavNo" keyProperty="prdfavno" useGeneratedKeys="true">
-        INSERT INTO PrdFav (PrdFavTime, PrdLike, UsrName, PrdNo) VALUES (#{PrdFavTime}, #{PrdLike}, #{PrdLike}
-            #{UsrName}, #{PrdNo})
+        INSERT INTO
+            PrdFav (PrdFavTime, PrdLike, UsrName, PrdNo)
+        VALUES
+            (#{PrdFavTime}, #{PrdLike}, #{PrdLike}, #{UsrName}, #{PrdNo})
     </insert>
 
     <update id="updatePrdFav" keyColumn="PrdFavNo" keyProperty="prdfavno" useGeneratedKeys="true">
-        UPDATE PrdFav SET PrdLike = #{PrdLike},
-                          UsrName = #{UsrName},
-                          WHERE PrdFavNo = #{PrdFavNo}
+        UPDATE
+            PrdFav
+        SET
+            PrdLike = #{PrdLike},
+            UsrName = #{UsrName},
+        WHERE
+            PrdFavNo = #{PrdFavNo}
     </update>
 
 </mapper>

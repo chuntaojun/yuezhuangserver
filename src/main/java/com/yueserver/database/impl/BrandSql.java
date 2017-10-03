@@ -1,28 +1,23 @@
 package com.yueserver.database.impl;
 
+import com.yueserver.database.dao.BrandMapper;
 import com.yueserver.enity.Brand;
-import com.yueserver.database.BrandSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
-
+import java.util.Set;
 
 @Service("BrandSql")
-public class BrandSql implements BrandSqlInterface {
+public class BrandSql implements BrandMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private BrandMapper brandMapper;
 
     @Override
     public Brand getBrand(String brdname) {
-        return null;
+        return this.brandMapper.getBrand(brdname);
     }
 
     @Override
@@ -32,31 +27,23 @@ public class BrandSql implements BrandSqlInterface {
 
     @Override
     public List queryBrdName() {
-        return null;
+        return this.brandMapper.queryBrdName();
     }
 
     @Override
-    public boolean saveSingleBrand(Brand brand) {
-        return false;
+    public boolean saveBatchBrand(@Param("brands") List<Brand> brands) {
+        return this.brandMapper.saveBatchBrand(brands);
     }
 
     @Override
-    public boolean saveBatchBrand() {
-        return false;
+    public boolean delBatchBrand(@Param("brands") Set<Integer> brands) {
+        return this.brandMapper.delBatchBrand(brands);
     }
 
     @Override
-    public boolean delBatchBrand(Map<String, Object> brdMap) {
-        return false;
+    public boolean updateBatchBrand(@Param("brands") List<Brand> brands) {
+        return this.brandMapper.updateBatchBrand(brands);
     }
 
-    @Override
-    public boolean updateSingleBrand(Brand brand) {
-        return false;
-    }
 
-    @Override
-    public boolean updateBatchBrand(Map<String, Object> brdMap) {
-        return false;
-    }
 }

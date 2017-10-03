@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
+<mapper namespace="com.yueserver.database.dao.TicketMapper">
+    <resultMap id="TicketResult" type="com.yueserver.enity.Ticket">
+        <result column="TctNo" property="tctno" jdbcType="INTEGER" />
+        <result column="TctDiscount" property="tctdiscount" jdbcType="INTEGER" />
+        <result column="TctTime" property="tcttime" jdbcType="DATETIME" />
+        <result column="TctDeadline" property="tctdeadline" jdbcType="DATETIME" />
+        <result column="TctSum" property="tctsum" jdbcType="INTEGER" />
+        <result column="TctTypeNo" property="tcttypeno" jdbcType="INTEGER" />
+        <result column="" property="" jdbcType="" />
+    </resultMap>
+
+    <select id="queryTicketInfo" resultType="java.util.ArrayList">
+        SELECT *FROM Ticket WHERE BrdNo = #{Ticket.BrdNo}
+    </select>
+
+    <insert id="saveMerchantTicket" keyColumn="TctNo" useGeneratedKeys="true" parameterType="com.yueserver.enity.Ticket">
+        INSERT INTO
+            Ticket (TctDiscount, TctTime, TctDeadline, TctTime, TctSum, TctTypeNo)
+        VALUES 
+            (#{Ticket.TctDiscount}, #{Ticket.TctTime}, #{Ticket.TctDeadline}, #{Ticket.TctTime}, #{Ticket.TctSum}, #{Ticket.TctTypeNo})
+    </insert>
+    
+    <update id="updateMerchantTicket" keyColumn="TctNo" useGeneratedKeys="true">
+        UPDATE
+            Ticket
+        SET
+        <if test="TctSum != null">
+            Ticket.TctSum = #{Ticket.TctSum}
+        </if>
+    </update>
+
 </mapper>

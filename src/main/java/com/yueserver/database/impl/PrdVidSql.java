@@ -1,29 +1,26 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.database.PrdVidSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.PrdVidMapper;
+import com.yueserver.enity.PrdVideo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 @Service("PrdVidSql")
-public class PrdVidSql implements PrdVidSqlInterface {
+public class PrdVidSql implements PrdVidMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
+    @Resource
+    private PrdVidMapper prdVidMapper;
 
     @Override
-    public boolean saveBatchPrdVid(Map<String, Object> prdvidMap) {
-        return false;
+    public boolean saveBatchPrdVid(ArrayList<PrdVideo> prdVideos) {
+        return this.prdVidMapper.saveBatchPrdVid(prdVideos);
     }
 
     @Override
-    public boolean deleBatchPrdVid(Map<String, Object> prdvidMap) {
-        return false;
+    public boolean deleBatchPrdVid(HashSet<Integer> prdVideos) {
+        return this.deleBatchPrdVid(prdVideos);
     }
 }

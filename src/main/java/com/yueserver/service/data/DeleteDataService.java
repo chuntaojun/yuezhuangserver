@@ -1,27 +1,33 @@
 package com.yueserver.service.data;
 
+import com.yueserver.database.dao.*;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.DeleteInterface;
-import com.yueserver.database.AdminSqlInterface;
-import com.yueserver.database.MerchantSqlInterface;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service("DeleteData")
 public class DeleteDataService implements DeleteInterface {
 
     @Autowired
-    @Resource(name = "AdminSql")
-    private AdminSqlInterface adminSqlInterface;
+    @Resource(name = "ProductSql")
+    private ProductMapper productDao;
 
     @Autowired
-    @Resource(name = "MerchantSql")
-    private MerchantSqlInterface merchantSqlInterface;
+    @Resource(name = "BrandSql")
+    private BrandMapper brandDao;
+
+    @Autowired
+    @Resource(name = "PostSql")
+    private PostMapper postDao;
 
     /**
      * 进行Product批量删除操作，启用批量删除操作 sqlservice.deleteRecode(String hql, type = BATCH_PROCESSING)
@@ -31,8 +37,8 @@ public class DeleteDataService implements DeleteInterface {
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @Override
     public ResultBean<Boolean> DelePrdInfo(int[] prdno) {
-        List prdNos = Array2List(prdno);
-        return new ResultBean<>(adminSqlInterface.deleBatchPrd(new ResultBean<>(prdNos)));
+        HashSet prdNos = (HashSet) Array2Set(prdno);
+        return new ResultBean<>(productDao.deleBatchPrd(prdNos));
     }
 
     /**
@@ -43,8 +49,8 @@ public class DeleteDataService implements DeleteInterface {
     @Secured({"ROLE_ADMIN"})
     @Override
     public ResultBean<Boolean> DelePostInfo(int[] postno) {
-        List postNos = Array2List(postno);
-        return new ResultBean<>(false);
+        HashSet postNos = (HashSet) Array2Set(postno);
+        return new ResultBean<>(postDao.deleBatchPost(postNos));
     }
 
     /**
@@ -55,12 +61,14 @@ public class DeleteDataService implements DeleteInterface {
     @Secured({"ROLE_ADMIN"})
     @Override
     public ResultBean<Boolean> DeleBrandInfo(int[] brdno) {
-        List brdNos = Array2List(brdno);
-        return new ResultBean<>(false);
+        HashSet brdNos = (HashSet) Array2Set(brdno);
+        return new ResultBean<>(brandDao.delBatchBrand(brdNos));
     }
 
-    private List Array2List(int[] array) {
-        return Arrays.asList(array);
+    private Set Array2Set(int[] array) {
+        Set set = new HashSet();
+        set.add(Arrays.asList(array));
+        return set;
     }
 
 }

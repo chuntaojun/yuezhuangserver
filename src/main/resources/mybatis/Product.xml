@@ -1,4 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
+<mapper namespace="com.yueserver.database.dao.ProductMapper">
+    <resultMap id="ProductResult" type="com.yueserver.enity.Product">
+        <id column="PrdNo" property="prdno" jdbcType="INTEGER" />
+        <result column="PrdName" property="prdname" jdbcType="VARCHAR" />
+        <result column="PrdCode" property="prdcode" jdbcType="INTEGER" />
+        <result column="PrdIntro" property="prdintro" jdbcType="VARCHAR" />
+        <result column="PrdPrice" property="prdprice" jdbcType="DOUBLE" />
+        <result column="PrdCapacity" property="prdcapcaity" jdbcType="DOUBLE" />
+        <result column="PrdTypeNo" property="prdtypeno" jdbcType="INTEGER" />
+        <result column="BrdNo" property="brdno" jdbcType="INTEGER" />
+        <association property="Brand" javaType="com.yueserver.enity.Brand">
+            <id column="BrdNo" property="brdno" jdbcType="INTEGER" />
+            <result column="MctNo" property="mctno" jdbcType="INTEGER" />
+        </association>
+    </resultMap>
+
+    <select id="queryPrdInfo" resultType="java.util.ArrayList">
+        SELECT *FROM Product
+    </select>
+
+    <select id="queryMctPrd" resultType="java.util.ArrayList">
+        SELECT *FROM Product p, Brand b WHERE p.BrdNo=b.BrdNo AND b.MctNo=#{MctNo}
+    </select>
+
+    <insert id="insertNewPrd" keyColumn="PrdNo" useGeneratedKeys="true">
+        INSERT INTO Product
+            (PrdName, PrdCode, PrdIntro, PrdPrice, PrdCapacity, PrdTypeNo, BrdNo)
+        VALUES
+            (#{PrdName}, #{PrdCode}, #{PrdIntro}, #{PrdPrice}, #{PrdCapacity}, #{PrdTypeNo}, #{BrdNo})
+    </insert>
+
+    <update id="updatePrdInfo" keyColumn="PrdNo" useGeneratedKeys="true">
+        UPDATE
+            Product
+        SET
+        <if test="PrdName != null">
+            Product.PrdName = #{PrdName},
+        </if>
+        <if test="PrdCode != null">
+            Product.PrdCode = #{PrdCode},
+        </if>
+        <if test="PrdIntro != null">
+            Product.PrdIntro = #{PrdIntro},
+        </if>
+        <if test="PrdPrice != null">
+            Product.PrdPrice = #{PrdPrice},
+        </if>
+        <if test="PrdCapacity != null">
+            Product.PrdCapacity = #{PrdCapacity}
+        </if>
+        WHERE
+            PrdNo = #{PrdNo}
+    </update>
+
 </mapper>

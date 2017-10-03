@@ -1,9 +1,10 @@
 package com.yueserver.service.data;
 
 import com.yueserver.enity.MerchantTicket;
+import com.yueserver.enity.Ticket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.TicketInterface;
-import com.yueserver.database.TicketSqlInterface;
+import com.yueserver.database.dao.TicketMapper;
 
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class TicketService implements TicketInterface {
 
     @Autowired
     @Resource(name = "TicketSql")
-    private TicketSqlInterface ticketSqlInterface;
+    private TicketMapper ticketSqlInterface;
 
     @Autowired
     @Resource(name = "taskExecutor")
@@ -28,7 +29,7 @@ public class TicketService implements TicketInterface {
      * @return
      */
     @Override
-    public ResultBean<Boolean> addTicket(MerchantTicket ticket) {
+    public ResultBean<Boolean> addTicket(Ticket ticket) {
         return new ResultBean<>(ticketSqlInterface.saveMerchantTicket(ticket));
     }
 
@@ -37,7 +38,7 @@ public class TicketService implements TicketInterface {
      * @return
      */
     @Override
-    public ResultBean<Boolean> cancleTicket(MerchantTicket ticket) {
+    public ResultBean<Boolean> cancleTicket(Ticket ticket) {
         return null;
     }
 
@@ -46,7 +47,7 @@ public class TicketService implements TicketInterface {
      * @return
      */
     @Override
-    public ResultBean<Map> getRemainTicket(MerchantTicket ticket) {
+    public ResultBean<Map> getRemainTicket(Ticket ticket) {
         return null;
     }
 
@@ -56,10 +57,10 @@ public class TicketService implements TicketInterface {
      * @return
      */
     @Override
-    public ResultBean<Boolean> VoucherTicket(MerchantTicket ticket) {
+    public ResultBean<Boolean> VoucherTicket(Ticket ticket) {
         executor.execute(() -> {
             synchronized (ticketSqlInterface) {
-                ticket.setTickNum(ticket.getTickNum() - 1);
+                ticket.setTctsum(ticket.getTctsum() - 1);
                 ticketSqlInterface.VoucherTicket(ticket);
             }
         });

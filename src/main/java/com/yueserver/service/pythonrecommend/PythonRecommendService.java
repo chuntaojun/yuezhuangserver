@@ -1,12 +1,11 @@
 package com.yueserver.service.pythonrecommend;
 
-import com.yueserver.database.PostSqlInterface;
+import com.yueserver.database.dao.PostMapper;
 import com.yueserver.database.redisutil.RedisCacheInterface;
-import com.yueserver.enity.Post;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
-import com.yueserver.database.PrdFavSqlInterface;
-import com.yueserver.database.ProductSqlInterface;
+import com.yueserver.database.dao.PrdFavMapper;
+import com.yueserver.database.dao.ProductMapper;
 
 import net.sf.json.JSONArray;
 
@@ -26,15 +25,15 @@ public class PythonRecommendService implements PythonRecommendInterface {
 
     @Autowired
     @Resource(name = "PrdFavSql")
-    private PrdFavSqlInterface prdFavSqlInterface;
+    private PrdFavMapper prdFavSqlInterface;
 
     @Autowired
     @Resource(name = "ProductSql")
-    private ProductSqlInterface productSqlInterface;
+    private ProductMapper productSqlInterface;
 
     @Autowired
     @Resource(name = "PostSql")
-    private PostSqlInterface postSqlInterface;
+    private PostMapper postSqlInterface;
 
     private String username;
 

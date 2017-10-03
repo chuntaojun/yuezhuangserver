@@ -11,8 +11,8 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.UploadInterface;
-import com.yueserver.database.BrandSqlInterface;
-import com.yueserver.database.MerchantSqlInterface;
+import com.yueserver.database.dao.BrandMapper;
+import com.yueserver.database.dao.MerchantMapper;
 
 import net.sf.json.JSONObject;
 
@@ -36,11 +36,11 @@ public class UploadDataService implements UploadInterface {
 
     @Autowired
     @Resource(name = "MerchantSql")
-    private MerchantSqlInterface merchantSqlInterface;
+    private MerchantMapper merchantSqlInterface;
 
     @Autowired
     @Resource(name = "BrandSql")
-    private BrandSqlInterface brandSqlInterface;
+    private BrandMapper brandMapper;
 
     private  UrlConverter urlConverter = (UrlConverter) getSingleAdaperFactory().getConverter("URL");
     private Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
@@ -56,7 +56,7 @@ public class UploadDataService implements UploadInterface {
     @Override
     @CacheEvict(value = "brdInfo", allEntries = true)
     public ResultBean<Boolean> AddBrandInfo(Brand brand) {
-        return new ResultBean<>(brandSqlInterface.saveSingleBrand(brand));
+        return new ResultBean<>(brandMapper.saveSingleBrand(brand));
     }
 
     /**

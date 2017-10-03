@@ -1,166 +1,19 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.enity.Brand;
-import com.yueserver.enity.Merchant;
-import com.yueserver.enity.Product;
-import com.yueserver.enity.User;
-import com.yueserver.enity.nodao.ResultBean;
-import com.yueserver.database.AdminSqlInterface;
-import com.yueserver.database.BrandSqlInterface;
-import com.yueserver.database.ProductSqlInterface;
-import com.yueserver.database.PostSqlInterface;
-import com.yueserver.database.UserSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.AdminMapper;
+import com.yueserver.enity.Administator;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.Map;
 
 @Service("AdminSql")
-public class AdminSql implements AdminSqlInterface {
+public class AdminSql implements AdminMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
-
-    @Autowired
-    @Resource(name = "BrandSql")
-    private BrandSqlInterface brandSqlInterface;
-
-    @Autowired
-    @Resource(name = "ProductSql")
-    private ProductSqlInterface productSqlInterface;
-
-    @Autowired
-    @Resource(name = "PostSql")
-    private PostSqlInterface postSqlInterface;
-
-    @Autowired
-    @Resource(name = "UserSql")
-    private UserSqlInterface userSqlInterface;
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List queryBrd_PrdInfo() {
-        return brandSqlInterface.queryBrd_PrdInfo();
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List queryPostInfo() {
-        return postSqlInterface.queryPostInfo();
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List queryMerchantInfo() {
-        return null;
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List queryUserInfo() {
-        return userSqlInterface.queryUserInfo();
-    }
+    @Resource
+    private AdminMapper adminMapper;
 
     @Override
-    public boolean saveSingleBrand(Brand brand) {
-        return brandSqlInterface.saveSingleBrand(brand);
+    public Administator AdminLogin(String account) {
+        return this.adminMapper.AdminLogin(account);
     }
-
-    @Override
-    public boolean saveBatchBrand() {
-        return brandSqlInterface.saveBatchBrand();
-    }
-
-    @Override
-    public boolean saveBatchPrdPic(Map<String, Object> prdpicMap) {
-        return false;
-    }
-
-    @Override
-    public boolean saveBatchPrdVid(Map<String, Object> prdvidMap) {
-        return false;
-    }
-
-    @Override
-    public boolean saveSinglePrd(Product product) {
-        return productSqlInterface.saveSinglePrd(product);
-    }
-
-    @Override
-    public boolean saveBatchPrd(List<Product> prdList) {
-        return productSqlInterface.saveBatchPrd(prdList);
-    }
-
-    @Override
-    public boolean deleBatchPrd(ResultBean<List> prdNos) {
-        return productSqlInterface.deleBatchPrd(prdNos.getData());
-    }
-
-    @Override
-    public boolean deleBatchPrdVid(Map<String, Object> prdvidMap) {
-        return false;
-    }
-
-    @Override
-    public boolean deleBatchPrdPic(Map<String, Object> prdpicMap) {
-        return false;
-    }
-
-    @Override
-    public boolean delBatchBrand(Map<String, Object> brdMap) {
-        return brandSqlInterface.delBatchBrand(brdMap);
-    }
-
-    @Override
-    public boolean deleBatchPost(Map<String, Object> postMap) {
-        return postSqlInterface.deleBatchPost(postMap);
-    }
-
-    @Override
-    public boolean updateSingleMerchant(Merchant merchant) {
-        return false;
-    }
-
-    @Override
-    public boolean updateSingleBrand(Brand brand) {
-        return brandSqlInterface.updateSingleBrand(brand);
-    }
-
-    @Override
-    public boolean updateBatchBrand(Map<String, Object> brdMap) {
-        return brandSqlInterface.updateBatchBrand(brdMap);
-    }
-
-    @Override
-    public boolean updateSingleUser(User user) {
-        return userSqlInterface.updateSingleUser(user);
-    }
-
-    @Override
-    public boolean updateSinglePrd(Product product) {
-        return productSqlInterface.updateSinglePrd(product);
-    }
-
-    @Override
-    public boolean updateBatchPrd(List<Product> prdList) {
-        return productSqlInterface.saveBatchPrd(prdList);
-    }
-
 }

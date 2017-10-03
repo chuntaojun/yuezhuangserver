@@ -1,29 +1,26 @@
 package com.yueserver.database.impl;
 
-import com.yueserver.database.PrdPicSqlInterface;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yueserver.database.dao.PrdPicMapper;
+import com.yueserver.enity.PrdPic;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Map;
+import java.util.List;
 
 @Service("PrdPicSql")
-public class PrdPicSql implements PrdPicSqlInterface {
+public class PrdPicSql implements PrdPicMapper {
 
-    @Autowired
-    @Resource(name = "sqlSessionFactory")
-    private SqlSessionFactory sqlSessionFactory;
+    @Resource
+    private PrdPicMapper prdPicMapper;
 
 
     @Override
-    public boolean saveBatchPrdPic(Map<String, Object> prdpicMap) {
-        return false;
+    public boolean saveBatchPrdPic(List<PrdPic> prdPics) {
+        return this.prdPicMapper.saveBatchPrdPic(prdPics);
     }
 
     @Override
-    public boolean deleBatchPrdPic(Map<String, Object> prdpicMap) {
-        return false;
+    public boolean deleBatchPrdPic(List<Integer> prdPics) {
+        return this.prdPicMapper.deleBatchPrdPic(prdPics);
     }
 }

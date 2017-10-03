@@ -2,8 +2,8 @@ package com.yueserver.service.data;
 
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.AutoCompleteServiceInterface;
-import com.yueserver.database.BrandSqlInterface;
-import com.yueserver.database.ProductSqlInterface;
+import com.yueserver.database.dao.BrandMapper;
+import com.yueserver.database.dao.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,15 +19,15 @@ public class AutoCompleteService implements AutoCompleteServiceInterface {
 
     @Autowired
     @Resource(name = "BrandSql")
-    private BrandSqlInterface brandSqlInterface;
+    private BrandMapper brandMapper;
 
     @Autowired
     @Resource(name = "ProductSql")
-    private ProductSqlInterface productSqlInterface;
+    private ProductMapper productSqlInterface;
 
     @Override
     public ResultBean<HashMap<String, List>> AutoCompleteBrdName() {
-        ArrayList<String> nameList = (ArrayList) brandSqlInterface.queryBrdName();
+        ArrayList<String> nameList = (ArrayList) brandMapper.queryBrdName();
         if (!cacheMap.containsKey("brdMap")) {
             HashMap hashMap = new HashMap();
             hashMap.put("brdName", nameList);

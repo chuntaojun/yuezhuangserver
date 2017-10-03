@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
+<mapper namespace="com.yueserver.database.dao.UserMapper">
+    <resultMap id="UserResult" type="com.yueserver.enity.User">
+        <result column="UsrNo" property="userno" jdbcType="INTEGER" />
+        <result column="UsrPhone" property="userphone" jdbcType="VARCHAR" />
+        <result column="UsrName" property="usrname" jdbcType="VARCHAR" />
+        <result column="UsrPassword" property="usrpassword" jdbcType="VARCHAR" />
+        <result column="UsrSex" property="usersex" jdbcType="INTEGER" />
+        <result column="UsrImage" property="userimage" jdbcType="VARCHAR" />
+        <result column="UsrBirthday" property="userbirthday" jdbcType="DATETIME" />
+        <result column="UsrAge" property="userage" jdbcType="INTEGER" />
+        <result column="UsrTime" property="usertime" jdbcType="DATETIME" />
+        <result column="UsrQQ" property="userqq" jdbcType="VARCHAR" />
+        <result column="UsrWeChat" property="userwechat" jdbcType="VARCHAR" />
+        <result column="UsrFriendway" property="userfriendway" jdbcType="INTEGER" />
+        <result column="UsrIntro" property="userintro" jdbcType="VARCHAR" />
+        <result column="UserStatus" property="usrstatus" jdbcType="INTEGER" />
+    </resultMap>
+    
+    <select id="queryUserInfo" resultType="java.util.ArrayList">
+        SELECT *FROM User
+    </select>
+
+    <update id="updateUserStatus" keyColumn="UsrNo" useGeneratedKeys="true" parameterType="java.lang.Integer">
+        UPDATE
+            User
+        SET
+            UsrState = #{status}
+        WHERE
+            UsrNo = #{usrNo}
+    </update>
+
 </mapper>

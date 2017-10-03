@@ -5,7 +5,7 @@ import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.adaper.encryption.mdfive.MD5;
 import com.yueserver.enity.nodao.ForgotPassword;
 import com.yueserver.enity.nodao.ResultBean;
-import com.yueserver.database.LoginSqlInterface;
+import com.yueserver.database.dao.LoginMapper;
 import com.yueserver.enity.Merchant;
 import com.yueserver.service.LoginInterface;
 import net.sf.json.JSONObject;
@@ -24,19 +24,23 @@ public class LoginProcessService implements LoginInterface {
 
     @Autowired
     @Resource(name = "LoginSql")
-    private LoginSqlInterface loginSqlInterface;
+    private LoginMapper loginMapper;
 
     /**
      * 登录时根据用户名取出一个对象
      * @param username
      * @return
-     * @throws MethodNourtFoundException
      */
     @Override
-    public ResultBean<Object> getLoginObject(String username) throws MethodNourtFoundException {
-        Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
+    public ResultBean<Object> getLoginObject(String username) {
+        Base64 base64 = null;
+        try {
+            base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
+        } catch (MethodNourtFoundException e) {
+            e.printStackTrace();
+        }
         username = base64.Base64Encode(username);
-        return new ResultBean<>(loginSqlInterface.getLoginObject(username, username));
+        return new ResultBean<>(loginMapper.getLoginObject(username, username));
     }
 
     /**
@@ -48,7 +52,7 @@ public class LoginProcessService implements LoginInterface {
     @Override
     public ResultBean<JSONObject> ChangePasswordIsWork(ForgotPassword forgotPassword, HttpSession session) {
         JSONObject resultJson = new JSONObject();
-        if (loginSqlInterface.updatePassword(forgotPassword)){
+        if (loginMapper.updatePassword(forgotPassword)){
             resultJson.put("isWork", "yes");
             return new ResultBean<>(resultJson);
         }
@@ -75,7 +79,7 @@ public class LoginProcessService implements LoginInterface {
         if (TheMerchantExist(merchant.getMctaccount()).getData()) {
             return new ResultBean<>(false);
         }
-        return new ResultBean<>(loginSqlInterface.saveNewAccount(merchant));
+        return new ResultBean<>(loginMapper.saveNewAccount(merchant));
     }
 
     /**
@@ -85,7 +89,7 @@ public class LoginProcessService implements LoginInterface {
      */
     @Override
     public ResultBean<Boolean> TheMerchantExist(String username) {
-        return new ResultBean<>(loginSqlInterface.getExistUser(username));
+        return new ResultBean<>(loginMapper.getExistUser(username));
     }
 
 
