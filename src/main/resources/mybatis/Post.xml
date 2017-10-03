@@ -5,7 +5,7 @@
         <result column="PostNo" property="postno" jdbcType="INTEGER" />
         <result column="PostTitle" property="posttitle" jdbcType="VARCHAR" />
         <result column="PostMain" property="postmain" jdbcType="VARCHAR" />
-        <result column="PostTime" property="posttime" jdbcType="DATETIME" />
+        <result column="PostTime" property="posttime" javaType="java.util.Date" />
         <result column="PostLikeNum" property="postlikenum" jdbcType="INTEGER" />
         <result column="PostComNum" property="postcomnum" jdbcType="INTEGER" />
         <result column="PostShareNum" property="postsharenum" jdbcType="INTEGER" />

@@ -1,7 +1,7 @@
 package com.yueserver.controller;
 
 import com.yueserver.enity.Notice;
-import com.yueserver.enity.MerchantTicket;
+import com.yueserver.enity.Ticket;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.service.TicketInterface;
@@ -54,8 +54,8 @@ public class PublishCenterController {
     @Secured("ROLE_USER")
     @ResponseBody
     @RequestMapping(value = "/Ticket", method = RequestMethod.POST)
-    public ResultBean<Boolean> getMerchantTicket(@ModelAttribute MerchantTicket merchantTicket) {
-        return ticketInterface.addTicket(merchantTicket);
+    public ResultBean<Boolean> getMerchantTicket(@ModelAttribute Ticket ticket) {
+        return ticketInterface.addTicket(ticket);
     }
 
 }

@@ -2,16 +2,14 @@
 <module external.linked.project.id="YueWebServer:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="YueWebServer" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
-    </facet>
-    <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="099c0e30-f5cb-480a-9254-688ec562b5af" />
-          <unit-entry name="sessionFactory" value="0f474542-9c70-41ba-9a44-113bdd6da74e" />
-        </datasource-map>
-        <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/../../src/main/resources/hibernate.cfg.xml" />
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/config/spring-cache.xml</file>
+          <file>file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/config/spring-config.xml</file>
+          <file>file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/config/spring-mybatis.xml</file>
+          <file>file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/config/spring-redis.xml</file>
+          <file>file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/config/spring-security.xml</file>
+        </fileset>
       </configuration>
     </facet>
     <facet type="web" name="Web Gradle : YueWebServer-1.0-SNAPSHOT.war">
@@ -92,123 +90,6 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../java_api/mysql/mysql-connector-java-5.1.42-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/hibernate-c3p0-5.2.10.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/c3p0-0.9.5.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/mchange-commons-java-0.2.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/hibernate-commons-annotations-5.0.1.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/hibernate-core-5.2.10.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/jboss-logging-3.3.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/jboss-transaction-api_1.2_spec-1.0.1.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/antlr-2.7.7.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/classmate-1.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/dom4j-1.6.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/jandex-2.0.3.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../java_api/c3p0/javassist-3.20.0-GA.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -332,10 +213,13 @@
     <orderEntry type="library" name="Gradle: org.apache.activemq:activemq-core:5.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:1.8.6.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: redis.clients:jedis:2.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-dbcp2:2.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.4.2" level="project" />
     <orderEntry type="library" name="Gradle: com.janeluo:ikanalyzer:2012_u6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.mahout:mahout-core:0.9" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis-spring:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.4.5" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:4.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />

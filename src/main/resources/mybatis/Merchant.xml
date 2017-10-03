@@ -6,23 +6,23 @@
         <result column="MctAccount" property="mctaccount" jdbcType="VARCHAR" />
         <result column="MctPassword" property="mctpassword" jdbcType="VARCHAR" />
         <result column="MctAuthCode" property="mctauthcde" jdbcType="VARCHAR" />
-        <result column="MctTime" property="mcttime" jdbcType="DATETIME" />
+        <result column="MctTime" property="mcttime" javaType="java.util.Date" />
         <result column="MctState" property="mctstate" jdbcType="INTEGER" />
     </resultMap>
 
-    <select id="queryMctLogin" resultType="com.yueserver.enity.Merchant">
-        SELECT FROM Merchat WHERE MctAccount=#{MctAccount}
+    <select id="MerchantLogin" resultType="com.yueserver.enity.Merchant">
+        SELECT *FROM YueZhuang.Merchant WHERE MctAccount=#{account}
     </select>
 
     <select id="queryMctInfo" resultType="java.util.HashMap">
-        SELECT *FROM Merchat
+        SELECT *FROM Merchant
     </select>
 
     <insert id="insertNewMct" useGeneratedKeys="true" keyProperty="MctNo" parameterType="com.yueserver.enity.Merchant">
-        INSERT INTO Merchat
+        INSERT INTO Merchant
             (MctAccount, MctPassword, MctTime, MctState)
         VALUES
-            (#{MctAccount, jdbcType=VARCHAR}, #{MctPassword, jdbcType=VARCHAR}, #{MctTime, jdbcType=DATETIME}, #{MctState, jdbcType=INTEGER})
+            (#{MctAccount}, #{MctPassword}, #{MctTime}, #{MctState})
     </insert>
 
     <update id="updateMctInfo" parameterType="com.yueserver.enity.Merchant">

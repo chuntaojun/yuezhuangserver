@@ -7,17 +7,17 @@ import com.yueserver.adaper.conver.impl.AdminVid;
 import com.yueserver.adaper.conver.impl.MctPic;
 import com.yueserver.adaper.conver.impl.MctVid;
 import com.yueserver.adaper.encryption.base64.Base64;
+import com.yueserver.database.dao.*;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.UploadInterface;
-import com.yueserver.database.dao.BrandMapper;
-import com.yueserver.database.dao.MerchantMapper;
 
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 import static com.yueserver.controller.LoginController.getPrincipal;
@@ -35,12 +36,20 @@ import static com.yueserver.controller.LoginController.getPrincipal;
 public class UploadDataService implements UploadInterface {
 
     @Autowired
-    @Resource(name = "MerchantSql")
-    private MerchantMapper merchantSqlInterface;
+    @Resource(name = "ProductSql")
+    private ProductMapper productDao;
 
     @Autowired
     @Resource(name = "BrandSql")
-    private BrandMapper brandMapper;
+    private BrandMapper brandDao;
+
+    @Autowired
+    @Resource(name = "PrdPicSql")
+    private PrdPicMapper prdPicDao;
+
+    @Autowired
+    @Resource(name = "PrdVidSql")
+    private PrdVidMapper prdVidDao;
 
     private  UrlConverter urlConverter = (UrlConverter) getSingleAdaperFactory().getConverter("URL");
     private Base64 base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
@@ -56,7 +65,9 @@ public class UploadDataService implements UploadInterface {
     @Override
     @CacheEvict(value = "brdInfo", allEntries = true)
     public ResultBean<Boolean> AddBrandInfo(Brand brand) {
-        return new ResultBean<>(brandMapper.saveSingleBrand(brand));
+        List<Brand> brands = new ArrayList<>();
+        brands.add(brand);
+        return new ResultBean<>(brandDao.saveBatchBrand(brands));
     }
 
     /**
@@ -66,7 +77,11 @@ public class UploadDataService implements UploadInterface {
     @Override
     @CacheEvict(value = "prdInfo", allEntries = true)
     public ResultBean<Boolean> AddProductInfo(Product product, String brdname) {
-        return new ResultBean<>(merchantSqlInterface.saveSinglePrd(product, brdname));
+        int brdNo = brandDao.getBrand(brdname).getBrdno();
+        product.setBrdno(brdNo);
+        List<Product> products = new ArrayList<>();
+        products.add(product);
+        return new ResultBean<>(productDao.saveBatchPrd(products));
     }
 
     /**
@@ -76,7 +91,9 @@ public class UploadDataService implements UploadInterface {
     @Override
     @CacheEvict(value = "prdInfo", allEntries = true)
     public ResultBean<Boolean> UpdateProductInfo(Product product) {
-        return new ResultBean<>(merchantSqlInterface.updateSinglePrd(product));
+        List<Product> products = new ArrayList<>();
+        products.add(product);
+        return new ResultBean<>(productDao.updateBatchPrd(products));
     }
 
     /**
@@ -193,7 +210,7 @@ public class UploadDataService implements UploadInterface {
      * @return
      */
     private int getPrdNo(String prdname) {
-        Product product = merchantSqlInterface.getPrdInfo(prdname);
+        Product product = productDao.getPrdInfo(prdname);
         if (prdname != null)
             return product.getPrdno();
         return -1;
@@ -202,24 +219,18 @@ public class UploadDataService implements UploadInterface {
     /**
      * 上传多媒体文件的url信息存储至数据库，数据存储采用批处理节省处理时间
      * 获取多媒体文件与之相关的商品编号
-     * @param urllist
+     * @param urlList
      * @param type type = 1 图片url存储； type = -1 视频url存储
      * @return
      */
-    private boolean ImageStorageDatabase(ArrayList<String> urllist, int prdno, int type) {
-        String[] urls = new String[urllist.size()];
-        urllist.toArray(urls);
+    private boolean ImageStorageDatabase(ArrayList<String> urlList, int prdno, int type) {
+        String[] urls = new String[urlList.size()];
+        urlList.toArray(urls);
         switch (type){
             case 1:
-                HashMap<String, Object> prdpicMap = new HashMap();
-                prdpicMap.put("urls", urls);
-                prdpicMap.put("prdNo", prdno);
-                return merchantSqlInterface.saveBatchPrdPic(prdpicMap);
+                return prdPicDao.saveBatchPrdPic(prdno, urlList);
             case -1:
-                JSONObject prdvidJson = new JSONObject();
-                prdvidJson.put("urls", urls);
-                prdvidJson.put("prdNo", prdno);
-                return merchantSqlInterface.saveBatchPrdVid(prdvidJson);
+                return prdVidDao.saveBatchPrdVid(prdno, urlList);
             case 0:
         }
         return false;

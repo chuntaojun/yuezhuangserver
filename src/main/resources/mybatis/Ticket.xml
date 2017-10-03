@@ -4,11 +4,10 @@
     <resultMap id="TicketResult" type="com.yueserver.enity.Ticket">
         <result column="TctNo" property="tctno" jdbcType="INTEGER" />
         <result column="TctDiscount" property="tctdiscount" jdbcType="INTEGER" />
-        <result column="TctTime" property="tcttime" jdbcType="DATETIME" />
-        <result column="TctDeadline" property="tctdeadline" jdbcType="DATETIME" />
+        <result column="TctTime" property="tcttime" javaType="java.util.Date" />
+        <result column="TctDeadline" property="tctdeadline" javaType="java.util.Date" />
         <result column="TctSum" property="tctsum" jdbcType="INTEGER" />
         <result column="TctTypeNo" property="tcttypeno" jdbcType="INTEGER" />
-        <result column="" property="" jdbcType="" />
     </resultMap>
 
     <select id="queryTicketInfo" resultType="java.util.ArrayList">

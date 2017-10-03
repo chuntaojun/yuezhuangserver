@@ -36,6 +36,7 @@ public class UserDetailsLogin implements UserDetailsService {
         Login login = null;
         Object object = null;
         try {
+            System.out.println(username);
             object = loginservice.getLoginObject(username).getData();
         } catch (MethodNourtFoundException e) {
             e.printStackTrace();

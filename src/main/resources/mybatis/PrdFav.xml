@@ -3,7 +3,7 @@
 <mapper namespace="com.yueserver.database.dao.PrdFavMapper">
     <resultMap id="PrdFavMap" type="com.yueserver.enity.PrdFav">
         <result column="PrdFavNo" property="prdfavno" jdbcType="INTEGER" />
-        <result column="PrdFavTime" property="prdfavtime" jdbcType="DATETIME" />
+        <result column="PrdFavTime" property="prdfavtime" javaType="java.util.Date" />
         <result column="PrdLike" property="prdlike" jdbcType="DOUBLE" />
         <result column="UsrName" property="usrname" jdbcType="VARCHAR" />
         <result column="PrdNo" property="prdno" jdbcType="INTEGER" />

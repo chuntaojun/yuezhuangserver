@@ -8,9 +8,9 @@
         <result column="UsrPassword" property="usrpassword" jdbcType="VARCHAR" />
         <result column="UsrSex" property="usersex" jdbcType="INTEGER" />
         <result column="UsrImage" property="userimage" jdbcType="VARCHAR" />
-        <result column="UsrBirthday" property="userbirthday" jdbcType="DATETIME" />
+        <result column="UsrBirthday" property="userbirthday" javaType="java.util.Date" />
         <result column="UsrAge" property="userage" jdbcType="INTEGER" />
-        <result column="UsrTime" property="usertime" jdbcType="DATETIME" />
+        <result column="UsrTime" property="usertime" javaType="java.util.Date" />
         <result column="UsrQQ" property="userqq" jdbcType="VARCHAR" />
         <result column="UsrWeChat" property="userwechat" jdbcType="VARCHAR" />
         <result column="UsrFriendway" property="userfriendway" jdbcType="INTEGER" />

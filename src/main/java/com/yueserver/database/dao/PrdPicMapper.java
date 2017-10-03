@@ -9,7 +9,7 @@ import java.util.Map;
 @Repository
 public interface PrdPicMapper {
 
-    boolean saveBatchPrdPic(List<PrdPic> prdPics);
-    boolean deleBatchPrdPic(List<Integer> prdPics);
+    boolean saveBatchPrdPic(int prdNo, List<String> prdPics);
+    boolean deleBatchPrdPic(int prdNo, List<String> prdPics);
 
 }

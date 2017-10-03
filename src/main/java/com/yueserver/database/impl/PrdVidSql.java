@@ -1,12 +1,10 @@
 package com.yueserver.database.impl;
 
 import com.yueserver.database.dao.PrdVidMapper;
-import com.yueserver.enity.PrdVideo;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Service("PrdVidSql")
 public class PrdVidSql implements PrdVidMapper {
@@ -15,12 +13,12 @@ public class PrdVidSql implements PrdVidMapper {
     private PrdVidMapper prdVidMapper;
 
     @Override
-    public boolean saveBatchPrdVid(ArrayList<PrdVideo> prdVideos) {
-        return this.prdVidMapper.saveBatchPrdVid(prdVideos);
+    public boolean saveBatchPrdVid(int prdNo, List<String> prdVideos) {
+        return this.prdVidMapper.saveBatchPrdVid(prdNo, prdVideos);
     }
 
     @Override
-    public boolean deleBatchPrdVid(HashSet<Integer> prdVideos) {
-        return this.deleBatchPrdVid(prdVideos);
+    public boolean deleBatchPrdVid(int prdNo, Set<Integer> prdVideos) {
+        return this.deleBatchPrdVid(prdNo, prdVideos);
     }
 }

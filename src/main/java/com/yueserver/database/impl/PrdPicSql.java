@@ -1,7 +1,6 @@
 package com.yueserver.database.impl;
 
 import com.yueserver.database.dao.PrdPicMapper;
-import com.yueserver.enity.PrdPic;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,12 +14,12 @@ public class PrdPicSql implements PrdPicMapper {
 
 
     @Override
-    public boolean saveBatchPrdPic(List<PrdPic> prdPics) {
-        return this.prdPicMapper.saveBatchPrdPic(prdPics);
+    public boolean saveBatchPrdPic(int prdNo, List<String> prdPics) {
+        return this.prdPicMapper.saveBatchPrdPic(prdNo, prdPics);
     }
 
     @Override
-    public boolean deleBatchPrdPic(List<Integer> prdPics) {
-        return this.prdPicMapper.deleBatchPrdPic(prdPics);
+    public boolean deleBatchPrdPic(int prdNo, List<String> prdPics) {
+        return this.prdPicMapper.deleBatchPrdPic(prdNo, prdPics);
     }
 }

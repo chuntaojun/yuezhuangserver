@@ -3,7 +3,6 @@ package com.yueserver.service;
 
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.enity.nodao.ForgotPassword;
-import com.yueserver.enity.nodao.Login;
 import com.yueserver.enity.nodao.ResultBean;
 import net.sf.json.JSONObject;
 

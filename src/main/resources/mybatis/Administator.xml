@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yueserver.database.dao.AdminMapper">
     <resultMap id="AdminResult" type="com.yueserver.enity.Administator">
-        <result column="AdmNo" property="AdmNo" jdbcType="INTEGER" />
+        <id column="AdmNo" property="AdmNo" jdbcType="INTEGER" />
         <result column="AdmAccount" property="AdmAccount" jdbcType="VARCHAR" />
         <result column="AdmPassword" property="AdmPassword" jdbcType="VARCHAR" />
         <result column="AdmAuthCode" property="AdmAuthCode" jdbcType="VARCHAR" />
     </resultMap>
 
-    <select id="AdminLogin" resultType="com.yueserver.enity.nodao.Login">
-        SELECT Administrator.AdmAccount, Administrator.AdmPassword FROM Administator WHERE AdmAccount = #{account}
+    <select id="AdminLogin" resultType="com.yueserver.enity.Administator">
+        SELECT *FROM YueZhuang.Administrator WHERE AdmAccount=#{account}
     </select>
 
 </mapper>
