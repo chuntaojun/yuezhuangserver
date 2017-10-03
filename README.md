@@ -3,26 +3,25 @@
 
 ###
 #2017-7-18
->数据库方面用了hibernate c3p0连接池
+>数据库操作为mybatis半自动框架
+
 ###
 #2017-7-19
 >逐步转入spring mvc框架，初步登录校验跳转界面，spring超链接跳转
 
 ###
 #2017-8-27
->services 包的类，均有数据库数据处理操作
-
 >controller 包的类，为接受前端数据发送与将数据发送至前端进行数据展现
 
->dataadaper 包的类，为数据的格式转换，字符串的编码，数据加密处理
+>adaper 包的类，为数据的格式转换，字符串的编码，数据加密处理
 
 >security 包的类，为spring-security登录验证的实现类，关于spring-security的具体实现类将都在这个包中
 
->bean 包的类，为hibernate的持久对象层，存放POJO
+>bean 包的类，为mybatis的持久对象层，存放POJO
 
->sql 包的类，为数据库框架hibernate的实现与具体数据库数据操作的方法实现
+>database 包的类，为数据库框架mybatis的实现与具体数据库数据操作的方法实现
 
->service 到 sql 的数据传输据采用 Map 传输, service 到 controller 为J SONObject 传输
+>service 到 sql 的数据传输据采用 List或Map 传输, service 到 controller 为ResultBean 传输
 
 ###
 #2017-9-2
