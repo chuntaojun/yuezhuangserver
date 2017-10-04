@@ -1,8 +1,8 @@
 package com.yueserver.service.feedback;
 
-import com.yueserver.enity.nodao.IssueForMct;
-import com.yueserver.enity.nodao.IssueForUser;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.IssueForMct;
+import com.yueserver.enity.noenity.IssueForUser;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.EmailInterface;
 import com.yueserver.service.SolveIssueInterface;
 import org.springframework.beans.factory.annotation.Autowired;

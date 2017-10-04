@@ -5,7 +5,6 @@ public class PrdPic {
     private int prdpicno;
     private String prdpicurl;
     private int prdno;
-    private Product product;
 
     public PrdPic(){}
 
@@ -33,11 +32,12 @@ public class PrdPic {
         this.prdno = prdno;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
+    @Override
+    public String toString() {
+        return "PrdPic{" +
+                "prdpicno=" + prdpicno +
+                ", prdpicurl='" + prdpicurl + '\'' +
+                ", prdno=" + prdno +
+                '}';
     }
 }

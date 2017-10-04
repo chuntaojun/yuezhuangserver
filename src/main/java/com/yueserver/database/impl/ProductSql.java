@@ -22,13 +22,13 @@ public class ProductSql implements ProductMapper {
     }
 
     @Override
-    public List queryProductInfo(Integer mctNo) {
-        return this.productMapper.queryProductInfo(mctNo);
+    public List queryMerchantPrd(int mctNo) {
+        return this.productMapper.queryMerchantPrd(mctNo);
     }
 
     @Override
-    public List queryProductInfo(JSONArray prdIds) {
-        return this.productMapper.queryProductInfo(prdIds);
+    public List queryRecommendPrd(JSONArray prdIds) {
+        return this.productMapper.queryRecommendPrd(prdIds);
     }
 
     @Override
@@ -38,8 +38,8 @@ public class ProductSql implements ProductMapper {
 
 
     @Override
-    public List queryPrdName() {
-        return this.productMapper.queryPrdName();
+    public List queryPrdName(int mctNo) {
+        return this.productMapper.queryPrdName(mctNo);
     }
 
     @Override

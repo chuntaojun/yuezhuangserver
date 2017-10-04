@@ -4,9 +4,8 @@ import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.conver.JsonConverter;
 import com.yueserver.adaper.conver.ListConverter;
 import com.yueserver.database.dao.*;
-import com.yueserver.enity.Product;
-import com.yueserver.enity.nodao.Login;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.Login;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.ShowInterface;
 
 import net.sf.json.JSONObject;
@@ -50,41 +49,40 @@ public class ShowDataInfoService implements ShowInterface {
     /**
      * 显示商品数据
      * @param login
-     * @param session
      * @return
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @Override
     @Cacheable(value = "prdInfo")
-    public ResultBean<JSONObject> QueryProdInfo(Login login, HttpSession session) {
+    public ResultBean<JSONObject> QueryProdInfo(Login login) {
         JSONObject prdJson = getSingleJson();
-        if ("ROLE_USER".equals(login.getRole(login.getAuthorities()))){
-            List list = productDao.queryProductInfo(login.getMctno());
-            List infoList = getListConverter().setPrdList(list, session);
-            prdJson.put("prdList", getJsonConverter().setMessage(infoList));
-            return new ResultBean<>(prdJson);
-        } else {
-            /*
-                 管理员取出品牌与商品信息
-             */
-            List list = productDao.queryProductInfo();
-            List infoList = getListConverter().setPrdList(list, session);
-            prdJson.put("prdList", getJsonConverter().setMessage(infoList));
-            return new ResultBean<>(prdJson);
-        }
+        List list, infoList;
+        if ("ROLE_USER".equals(login.getRole(login.getAuthorities())))
+            list = productDao.queryMerchantPrd(login.getMctno());
+        else
+            list = productDao.queryProductInfo();
+        infoList = getListConverter().setPrdList(list);
+        prdJson.put("prdList", getJsonConverter().setMessage(infoList));
+        return new ResultBean<>(prdJson);
     }
 
     /**
      * 显示品牌数据(在查询商品数据时就已经一并查出)
-     * @param session
+     * @param login
      * @return
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @Cacheable(value = "brdInfo")
-    public ResultBean<JSONObject> QueryBrandInfo(HttpSession session){
+    public ResultBean<JSONObject> QueryBrandInfo(Login login){
         JSONObject brdJson = getSingleJson();
-        brdJson.put("brdList", getJsonConverter().setMessage((List) session.getAttribute("brdlist")));
-        session.removeAttribute("brdlist");
+        List list, infoList;
+        if ("ROLE_USER".equals(login.getRole(login.getAuthorities())))
+            list = brandDao.queryBrandInfo(login.getMctno());
+        else
+            list = brandDao.queryBrandInfoAdmin();
+        System.out.println(list);
+        infoList = getListConverter().setBrdList(list);
+        brdJson.put("brdList", getJsonConverter().setMessage(infoList));
         return new ResultBean<>(brdJson);
     }
 

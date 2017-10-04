@@ -13,7 +13,7 @@ $(window).on('resize', function() {
 })
 
 Dropzone.options.dropzone = {
-    url: "/uploadprdpicinfo",
+    url: "/user/upload/ProductPicture",
     method:'post',
     addRemoveLinks: true,
     autoProcessQueue: false,

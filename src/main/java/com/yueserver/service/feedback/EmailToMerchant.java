@@ -1,6 +1,6 @@
 package com.yueserver.service.feedback;
 
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.EmailInterface;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;

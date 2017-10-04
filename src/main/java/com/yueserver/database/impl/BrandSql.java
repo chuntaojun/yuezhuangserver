@@ -3,6 +3,7 @@ package com.yueserver.database.impl;
 import com.yueserver.database.dao.BrandMapper;
 import com.yueserver.enity.Brand;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,29 +21,36 @@ public class BrandSql implements BrandMapper {
         return this.brandMapper.getBrand(brdname);
     }
 
+    @Secured("ROLE_USER")
     @Override
-    public List queryBrd_PrdInfo() {
-        return null;
+    public List queryBrandInfo(int mctNo) {
+        return this.brandMapper.queryBrandInfo(mctNo);
+    }
+
+    @Secured("ROLE_ADMIN")
+    @Override
+    public List queryBrandInfoAdmin() {
+        return this.brandMapper.queryBrandInfoAdmin();
     }
 
     @Override
-    public List queryBrdName() {
-        return this.brandMapper.queryBrdName();
+    public List queryBrdName(int mctNo) {
+        return this.brandMapper.queryBrdName(mctNo);
     }
 
     @Override
-    public boolean saveBatchBrand(@Param("brands") List<Brand> brands) {
+    public boolean saveBatchBrand(List<Brand> brands) {
         return this.brandMapper.saveBatchBrand(brands);
     }
 
     @Override
-    public boolean delBatchBrand(@Param("brands") Set<Integer> brands) {
+    public boolean delBatchBrand(Set<Integer> brands) {
         return this.brandMapper.delBatchBrand(brands);
     }
 
     @Override
-    public boolean updateBatchBrand(@Param("brands") List<Brand> brands) {
-        return this.brandMapper.updateBatchBrand(brands);
+    public boolean updateBatchBrand(Brand brand) {
+        return this.brandMapper.updateBatchBrand(brand);
     }
 
 

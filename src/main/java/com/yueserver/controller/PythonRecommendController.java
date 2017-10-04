@@ -1,6 +1,6 @@
 package com.yueserver.controller;
 
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
 
 import net.sf.json.JSONArray;

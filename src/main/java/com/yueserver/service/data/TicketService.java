@@ -1,8 +1,7 @@
 package com.yueserver.service.data;
 
-import com.yueserver.enity.MerchantTicket;
 import com.yueserver.enity.Ticket;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.TicketInterface;
 import com.yueserver.database.dao.TicketMapper;
 

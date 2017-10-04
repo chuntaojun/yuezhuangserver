@@ -1,8 +1,8 @@
 package com.yueserver.service;
 
-import com.yueserver.enity.nodao.IssueForMct;
-import com.yueserver.enity.nodao.IssueForUser;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.IssueForMct;
+import com.yueserver.enity.noenity.IssueForUser;
+import com.yueserver.enity.noenity.ResultBean;
 
 public interface SolveIssueInterface {
 

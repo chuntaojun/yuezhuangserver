@@ -1,4 +1,4 @@
-package com.yueserver.enity.nodao;
+package com.yueserver.enity.noenity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;

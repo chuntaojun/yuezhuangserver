@@ -2,10 +2,7 @@ package com.yueserver.controller;
 
 import javax.servlet.http.HttpSession;
 
-import com.yueserver.enity.nodao.ResultBean;
 import com.yueserver.service.ShowInterface;
-
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import static com.yueserver.controller.LoginController.getPrincipal;
 
@@ -32,29 +28,26 @@ public class ShowDataController {
 
     /**
      * web端呈现商品信息
-     * @param session
      * @param refresh
      * @throws IOException
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
     @RequestMapping(value = "/Product", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
-    public String ReprotProductInfo(HttpSession session, boolean refresh) throws IOException {
-        return String.valueOf(showInterface.QueryProdInfo(getPrincipal(), session).getData().get("prdList"));
+    public String ReprotProductInfo(boolean refresh) throws IOException {
+        return String.valueOf(showInterface.QueryProdInfo(getPrincipal()).getData().get("prdList"));
     }
 
     /**
      * web端呈现品牌信息
-     * @param session
      * @param refresh
      * @throws IOException
      */
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @ResponseBody
     @RequestMapping(value = "/Brand", method = {RequestMethod.POST, RequestMethod.GET}, produces = "application/json;charset=utf-8")
-    public String ReportBrandInfo(HttpSession session, boolean refresh) throws IOException {
-        while (session.getAttribute("brdlist") == null){}
-        return String.valueOf(showInterface.QueryBrandInfo(session).getData().get("brdList"));
+    public String ReportBrandInfo(boolean refresh) throws IOException {
+        return String.valueOf(showInterface.QueryBrandInfo(getPrincipal()).getData().get("brdList"));
     }
 
     /**

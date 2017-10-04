@@ -2,6 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yueserver.database.dao.BrandMapper">
     <resultMap id="BrandResult" type="com.yueserver.enity.Brand">
-
+        <id column="BrdNo" property="brdno" />
+        <result column="BrdName" property="brdname" />
+        <result column="BrdIntro" property="brdintro" />
+        <result column="BrdLogo" property="brdlogo" />
     </resultMap>
+
+    <select id="queryBrandInfo" resultType="com.yueserver.enity.Brand">
+        SELECT Brand.BrdNo, BrdName, BrdIntro, BrdLogo FROM Brand, Manage WHERE Manage.MctNo=#{mctNo} AND Brand.BrdNo=Manage.BrdNo;
+    </select>
+
+    <select id="queryBrandInfoAdmin" resultType="com.yueserver.enity.Brand">
+        SELECT * FROM Brand;
+    </select>
+
+    <select id="queryBrdName" resultType="com.yueserver.enity.Brand">
+        SELECT BrdName FROM Brand, Manage WHERE Brand.BrdNo=Manage.BrdNo AND Manage.MctNo=#{mctNo}
+    </select>
+
+    <insert id="saveBatchBrand" keyColumn="BrdNo" keyProperty="brdno" useGeneratedKeys="true">
+        INSERT INTO
+            Brand (BrdName, BrdIntro, BrdLogo, MctNo)
+        VALUES
+            <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+                #{item.brdname}, #{item.brdintro}, #{item.brdlogo}, #{item.mctno}
+            </foreach>
+        ON DUPLICATE KEY UPDATE BrdName=VALUES(BrdName);
+    </insert>
+
+    <update id="updateBatchBrand" keyColumn="BrdNo" keyProperty="brdno" useGeneratedKeys="true">
+        UPDATE
+            Brand
+        SET
+            Brand.BrdName = #{brand.brdname},
+            Brand.BrdIntro = #{brand.brdintro},
+            Brand.BrdLogo = #{brand.brdlogo}
+        WHERE
+            Brand.BrdNo = #{brand.brdno};
+    </update>
+
+    <delete id="delBatchBrand" parameterType="java.util.Set">
+        DELETE FROM
+            Brand
+        WHERE
+        <foreach collection="java.util.Set" item="item" separator="OR">
+            BrdNo=#{item}
+        </foreach>
+    </delete>
 </mapper>

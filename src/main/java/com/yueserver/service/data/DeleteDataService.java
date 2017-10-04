@@ -1,9 +1,8 @@
 package com.yueserver.service.data;
 
 import com.yueserver.database.dao.*;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.DeleteInterface;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Service("DeleteData")

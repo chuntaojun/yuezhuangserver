@@ -1,8 +1,8 @@
 package com.yueserver.controller;
 
-import com.yueserver.enity.nodao.IssueForMct;
-import com.yueserver.enity.nodao.IssueForUser;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.IssueForMct;
+import com.yueserver.enity.noenity.IssueForUser;
+import com.yueserver.enity.noenity.ResultBean;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

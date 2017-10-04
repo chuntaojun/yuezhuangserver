@@ -10,11 +10,12 @@ import java.util.Set;
 public interface BrandMapper {
 
     Brand getBrand(String brdname);
-    List queryBrd_PrdInfo();
-    List queryBrdName();
+    List queryBrandInfo(int mctNo);
+    List queryBrandInfoAdmin();
+    List queryBrdName(int mctNo);
 
     boolean saveBatchBrand(List<Brand> brands);
     boolean delBatchBrand(Set<Integer> brands);
-    boolean updateBatchBrand(List<Brand> brands);
+    boolean updateBatchBrand(Brand brand);
 
 }

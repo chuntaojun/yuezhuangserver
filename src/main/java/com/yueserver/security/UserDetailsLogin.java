@@ -3,7 +3,7 @@ package com.yueserver.security;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.enity.Administator;
-import com.yueserver.enity.nodao.Login;
+import com.yueserver.enity.noenity.Login;
 import com.yueserver.enity.Merchant;
 import com.yueserver.security.excption.AccountNotFoundException;
 import com.yueserver.security.excption.PendingReviewException;
@@ -36,7 +36,6 @@ public class UserDetailsLogin implements UserDetailsService {
         Login login = null;
         Object object = null;
         try {
-            System.out.println(username);
             object = loginservice.getLoginObject(username).getData();
         } catch (MethodNourtFoundException e) {
             e.printStackTrace();

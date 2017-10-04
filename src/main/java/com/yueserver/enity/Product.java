@@ -1,7 +1,6 @@
 package com.yueserver.enity;
 
-
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by liaochuntao on 17-7-12.
@@ -17,8 +16,7 @@ public class Product {
     private double prdcapacity;
     private int prdtypeno;
     private int brdno;
-    private Brand brand;
-    private Set<PrdPic> prdpics;
+    private List<PrdPic> prdPics;
 
     public Product(){}
 
@@ -86,20 +84,12 @@ public class Product {
         this.brdno = brdno;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public List<PrdPic> getPrdPics() {
+        return prdPics;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
-
-    public Set<PrdPic> getPrdpics() {
-        return prdpics;
-    }
-
-    public void setPrdpics(Set<PrdPic> prdpics) {
-        this.prdpics = prdpics;
+    public void setPrdPics(List<PrdPic> prdPics) {
+        this.prdPics = prdPics;
     }
 
     @Override
@@ -113,6 +103,7 @@ public class Product {
                 ", prdcapacity=" + prdcapacity +
                 ", prdtypeno=" + prdtypeno +
                 ", brdno=" + brdno +
+                ", prdPics=" + prdPics +
                 '}';
     }
 }

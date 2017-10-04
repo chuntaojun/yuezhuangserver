@@ -7,24 +7,28 @@
         <result column="PrdCode" property="prdcode" jdbcType="INTEGER" />
         <result column="PrdIntro" property="prdintro" jdbcType="VARCHAR" />
         <result column="PrdPrice" property="prdprice" jdbcType="DOUBLE" />
-        <result column="PrdCapacity" property="prdcapcaity" jdbcType="DOUBLE" />
+        <result column="PrdCapacity" property="prdcapacity" jdbcType="DOUBLE" />
         <result column="PrdTypeNo" property="prdtypeno" jdbcType="INTEGER" />
         <result column="BrdNo" property="brdno" jdbcType="INTEGER" />
-        <association property="Brand" javaType="com.yueserver.enity.Brand">
-            <id column="BrdNo" property="brdno" jdbcType="INTEGER" />
-            <result column="MctNo" property="mctno" jdbcType="INTEGER" />
-        </association>
+        <collection property="prdPics" ofType="com.yueserver.enity.PrdPic">
+            <!--<id column="PrdPicNo" property="prdpicno" />-->
+            <result column="PrdPicUrl" property="prdpicurl" />
+        </collection>
     </resultMap>
 
-    <select id="queryPrdInfo" resultType="java.util.ArrayList">
-        SELECT *FROM Product
+    <select id="queryProductInfo" resultMap="ProductResult">
+        SELECT * FROM Product p, PrdPic pic WHERE p.PrdNo=pic.PrdNo;
     </select>
 
-    <select id="queryMctPrd" resultType="java.util.ArrayList">
-        SELECT *FROM Product p, Brand b WHERE p.BrdNo=b.BrdNo AND b.MctNo=#{MctNo}
+    <select id="queryMerchantPrd" resultMap="ProductResult" parameterType="java.lang.Integer">
+        SELECT * FROM Product p, Brand b, PrdPic pic WHERE p.BrdNo=b.BrdNo AND p.PrdNo=pic.PrdNo AND b.MctNo=#{mctNo}
     </select>
 
-    <insert id="insertNewPrd" keyColumn="PrdNo" useGeneratedKeys="true">
+    <select id="queryPrdName" resultType="com.yueserver.enity.Product">
+        SELECT PrdName FROM Product, Manage WHERE Product.BrdNo=Manage.BrdNo AND Manage.MctNo=#{mctNo}
+    </select>
+
+    <insert id="saveBatchPrd" keyColumn="PrdNo" useGeneratedKeys="true" parameterType="java.util.List">
         INSERT INTO Product
             (PrdName, PrdCode, PrdIntro, PrdPrice, PrdCapacity, PrdTypeNo, BrdNo)
         VALUES

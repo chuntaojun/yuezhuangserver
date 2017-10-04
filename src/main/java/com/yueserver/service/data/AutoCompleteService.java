@@ -1,6 +1,6 @@
 package com.yueserver.service.data;
 
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.AutoCompleteServiceInterface;
 import com.yueserver.database.dao.BrandMapper;
 import com.yueserver.database.dao.ProductMapper;
@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.yueserver.controller.LoginController.getPrincipal;
+
 @Service("AutoCompleteService")
 public class AutoCompleteService implements AutoCompleteServiceInterface {
 
@@ -19,15 +21,15 @@ public class AutoCompleteService implements AutoCompleteServiceInterface {
 
     @Autowired
     @Resource(name = "BrandSql")
-    private BrandMapper brandMapper;
+    private BrandMapper brandDao;
 
     @Autowired
     @Resource(name = "ProductSql")
-    private ProductMapper productSqlInterface;
+    private ProductMapper productDao;
 
     @Override
     public ResultBean<HashMap<String, List>> AutoCompleteBrdName() {
-        ArrayList<String> nameList = (ArrayList) brandMapper.queryBrdName();
+        ArrayList<String> nameList = (ArrayList) brandDao.queryBrdName( getPrincipal().getMctno());
         if (!cacheMap.containsKey("brdMap")) {
             HashMap hashMap = new HashMap();
             hashMap.put("brdName", nameList);
@@ -38,7 +40,7 @@ public class AutoCompleteService implements AutoCompleteServiceInterface {
 
     @Override
     public ResultBean<HashMap<String, List>> AutoCompletePrdName() {
-        ArrayList<String> nameList = (ArrayList) productSqlInterface.queryPrdName();
+        ArrayList<String> nameList = (ArrayList) productDao.queryPrdName( getPrincipal().getMctno());
         if (!cacheMap.containsKey("prdMap")) {
             HashMap<String, List> prdnameMap = new HashMap<>();
             prdnameMap.put("prdName", nameList);

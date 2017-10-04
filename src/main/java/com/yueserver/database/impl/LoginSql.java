@@ -4,7 +4,7 @@ import com.yueserver.database.dao.AdminMapper;
 import com.yueserver.database.dao.LoginMapper;
 import com.yueserver.database.dao.MerchantMapper;
 import com.yueserver.enity.Administator;
-import com.yueserver.enity.nodao.ForgotPassword;
+import com.yueserver.enity.noenity.ForgotPassword;
 import com.yueserver.enity.Merchant;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,14 +32,11 @@ public class LoginSql implements LoginMapper {
 
     @Override
     public Object getLoginObject(String mctaccount, String adminaccount) {
-        System.out.println(mctaccount + "," + adminaccount);
         Administator admin = this.adminDao.AdminLogin(adminaccount);
         Merchant merchant = this.merchantDao.MerchantLogin(mctaccount);
         if (admin != null) {
-            System.out.println("admin:" + admin);
             return admin;
         }
-        System.out.println("merchant" + merchant);
         return merchant;
     }
 

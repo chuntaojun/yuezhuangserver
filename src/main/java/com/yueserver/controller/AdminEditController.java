@@ -5,8 +5,8 @@ import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
 
-import com.yueserver.enity.nodao.EventInfo;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.EventInfo;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.EditInterface;
 import com.yueserver.service.EmailInterface;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -9,7 +9,6 @@ import com.yueserver.enity.PrdPic;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.Post;
 
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
@@ -20,44 +19,35 @@ public class ListConverter {
     /**
      * 格式化 productlist
      * @param productlist
-     * @param session
      * @return
      */
-    public List setPrdList(List productlist, HttpSession session){
+    public List setPrdList(List productlist){
         ArrayList jsonlist = new ArrayList();
-        List brandlist = new ArrayList();
-        for (Iterator<Object> iterator = productlist.iterator(); iterator.hasNext();){
-            Brand brand = (Brand) iterator.next();
-            brandlist.add(brand);
-            Iterator<Product> productIterator = brand.getProducts().iterator();
-            while (productIterator.hasNext()){
-                HashMap prdmap = new HashMap();
-                if (getPrincipal().getAuthorities().equals("ROLE_ADMIN")) {
-                    Product product = productIterator.next();
-                    prdmap.put("no", product.getPrdno());
-                    prdmap.put("prdname", product.getPrdname());
-                    prdmap.put("prdcapacity", product.getPrdcapacity());
-                    prdmap.put("brdname", product.getBrand().getBrdname());
-                    prdmap.put("prdcode", product.getPrdcode());
-                    prdmap.put("prdprice", product.getPrdprice());
-                    prdmap.put("prdintro", product.getPrdintro());
-                    prdmap.put("prdpic", setPrdPicList(product.getPrdpics()));
-                }
-                else {
-                    Product product = productIterator.next();
-                    prdmap.put("no", product.getPrdno());
-                    prdmap.put("prdname", product.getPrdname());
-                    prdmap.put("prdcapacity", product.getPrdcapacity());
-                    prdmap.put("brdname", product.getBrand().getBrdname());
-                    prdmap.put("prdcode", product.getPrdcode());
-                    prdmap.put("prdpic", setPrdPicList(product.getPrdpics()));
-                    prdmap.put("prdintro", product.getPrdintro());
-                    prdmap.put("prdprice", product.getPrdprice());
-                }
-                jsonlist.add(prdmap);
+        Iterator<Product> productIterator = productlist.iterator();
+        while (productIterator.hasNext()){
+            HashMap prdmap = new HashMap();
+            if (getPrincipal().getAuthorities().equals("ROLE_ADMIN")) {
+                Product product = productIterator.next();
+                prdmap.put("no", product.getPrdno());
+                prdmap.put("prdname", product.getPrdname());
+                prdmap.put("prdcapacity", product.getPrdcapacity());
+                prdmap.put("prdcode", product.getPrdcode());
+                prdmap.put("prdprice", product.getPrdprice());
+                prdmap.put("prdintro", product.getPrdintro());
+                prdmap.put("prdpic", setPrdPicList(product.getPrdPics()));
             }
+            else {
+                Product product = productIterator.next();
+                prdmap.put("no", product.getPrdno());
+                prdmap.put("prdname", product.getPrdname());
+                prdmap.put("prdcapacity", product.getPrdcapacity());
+                prdmap.put("prdcode", product.getPrdcode());
+                prdmap.put("prdpic", setPrdPicList(product.getPrdPics()));
+                prdmap.put("prdintro", product.getPrdintro());
+                prdmap.put("prdprice", product.getPrdprice());
+            }
+            jsonlist.add(prdmap);
         }
-        session.setAttribute("brdlist", setBrdList(brandlist));
         return jsonlist;
     }
 
@@ -66,7 +56,7 @@ public class ListConverter {
      * @param prdpicset
      * @return
      */
-    public String setPrdPicList(Set<PrdPic> prdpicset){
+    public String setPrdPicList(List<PrdPic> prdpicset){
         PrdPic[] prdPics = prdpicset.toArray(new PrdPic[prdpicset.size()]);
         String prdpicurl = "<img class=\"img-rounded\" width=\"150em\" height=\"auto\" src=\"";
         for (int i = 0; i < prdPics.length; i ++){

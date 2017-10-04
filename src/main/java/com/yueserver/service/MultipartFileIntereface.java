@@ -1,6 +1,6 @@
 package com.yueserver.service;
 
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;

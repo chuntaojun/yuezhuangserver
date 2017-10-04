@@ -1,6 +1,6 @@
 package com.yueserver.database.redisutil;
 
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 
 import java.util.List;
 import java.util.Map;

@@ -10,14 +10,11 @@ import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.database.dao.*;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.UploadInterface;
-
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -132,7 +132,7 @@
         <div class="col-lg-12">
             <label style="color: palevioletred">品牌信息</label>
             <div class="panel panel-default">
-                <form id="brdInfo" action="/uploadBrdInfo" method="post" onsubmit="return false" enctype="multipart/form-data">
+                <form id="brdInfo" action="/user/upload/Brand" method="post" onsubmit="return false" enctype="multipart/form-data">
                 <div class="panel-body">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -158,7 +158,7 @@
     </div>
     </sec:authorize>
     <sec:authorize access="hasRole('USER') or hasRole('ADMIN')">
-        <form id="disabledjump" name="form1" method="post" action="/uploadprdinfo" onsubmit="return disabledjump();">
+        <form id="disabledjump" name="form1" method="post" action="/user/upload/Product" onsubmit="return disabledjump();">
             <fieldset>
                 <div class="row">
                     <div class="col-lg-12">
@@ -268,7 +268,7 @@
                 <label style="color: palevioletred">上传商品视频信息</label>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form id="vid_form" action="" method="post" enctype="multipart/form-data" onsubmit="return vid_submit();">
+                        <form id="vid_form" action="/user/upload/ProductVideos" method="post" enctype="multipart/form-data" onsubmit="return vid_submit();">
                             <div class="form-group">
                                 <label>商品品牌</label>
                                 <input id="brd" name="brdname" type="text" class="form-control" placeholder="品牌名称">
@@ -323,7 +323,6 @@
         })
     })
 </script>
-<%--<script src="/resources/js/jquery-1.11.1.min.js"></script>--%>
 <script src="/resources/js/dropzone.js"></script>
 <script src="/resources/js/dateanddropzone.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>

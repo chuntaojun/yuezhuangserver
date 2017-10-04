@@ -83,7 +83,7 @@ dependencies {
 }
 
 dependencies {
-    def tomcatVersion = '8.5.16'
+    def tomcatVersion = '8.5.23'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2",
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"

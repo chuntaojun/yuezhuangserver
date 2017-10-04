@@ -1,4 +1,4 @@
-package com.yueserver.enity.nodao;
+package com.yueserver.enity.noenity;
 
 /**
  * 用于商家注册临时对象,进行数据传输

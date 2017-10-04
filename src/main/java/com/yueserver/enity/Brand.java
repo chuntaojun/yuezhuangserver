@@ -10,7 +10,6 @@ public class Brand {
     private String brdintro;
     private String brdlogo;
     private int mctno;
-    private Set<Product> products;
 
     public Brand() {}
 
@@ -52,14 +51,6 @@ public class Brand {
 
     public void setMctno(int mctno) {
         this.mctno = mctno;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
     }
 
     @Override

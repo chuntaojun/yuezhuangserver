@@ -1,7 +1,7 @@
 package com.yueserver.service.data;
 
 import com.yueserver.enity.Notice;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PublishServiceInterface;
 import com.yueserver.database.dao.NoticeMapper;
 import org.springframework.beans.factory.annotation.Autowired;

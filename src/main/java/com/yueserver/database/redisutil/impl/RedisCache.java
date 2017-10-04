@@ -1,7 +1,7 @@
 package com.yueserver.database.redisutil.impl;
 
 import com.yueserver.database.redisutil.RedisCacheInterface;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

@@ -1,11 +1,8 @@
 package com.yueserver.database.dao;
 
 import com.yueserver.enity.Merchant;
-import com.yueserver.enity.nodao.ForgotPassword;
-import com.yueserver.enity.nodao.Login;
+import com.yueserver.enity.noenity.ForgotPassword;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface LoginMapper {

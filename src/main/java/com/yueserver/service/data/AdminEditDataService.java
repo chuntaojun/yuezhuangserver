@@ -8,7 +8,7 @@ import com.yueserver.enity.Brand;
 import com.yueserver.enity.Merchant;
 import com.yueserver.enity.Product;
 import com.yueserver.enity.User;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.EditInterface;
 
 import net.sf.json.JSONObject;
@@ -105,9 +105,7 @@ public class AdminEditDataService implements EditInterface {
     @CacheEvict(value = "brdInfo", allEntries = true)
     public JSONObject updateBrandInfo(ResultBean<Brand> resultBean) {
         JSONObject resultJson = new JSONObject();
-        List resultList = new ArrayList();
-        resultList.add(resultBean.getData());
-        if (brandDao.updateBatchBrand(resultList)) {
+        if (brandDao.updateBatchBrand(resultBean.getData())) {
             resultJson.put("result", true);
             return resultJson;
         }

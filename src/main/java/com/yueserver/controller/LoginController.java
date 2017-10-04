@@ -6,9 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import com.yueserver.adaper.MethodNourtFoundException;
-import com.yueserver.enity.nodao.ForgotPassword;
-import com.yueserver.enity.nodao.Login;
-import com.yueserver.enity.nodao.ResigterLogin;
+import com.yueserver.enity.noenity.ForgotPassword;
+import com.yueserver.enity.noenity.Login;
+import com.yueserver.enity.noenity.ResigterLogin;
 import com.yueserver.service.EmailInterface;
 import com.yueserver.service.LoginInterface;
 

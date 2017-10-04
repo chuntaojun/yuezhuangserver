@@ -3,7 +3,7 @@ package com.yueserver.service;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;

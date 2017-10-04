@@ -3,7 +3,7 @@ package com.yueserver.controller;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.enity.Brand;
 import com.yueserver.enity.Product;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -16,6 +16,8 @@ import java.io.*;
 
 import com.yueserver.service.UploadInterface;
 import org.springframework.web.multipart.MultipartFile;
+
+import static com.yueserver.controller.LoginController.getPrincipal;
 
 /**
  * Created by liaochuntao on 17-7-18.
@@ -38,6 +40,7 @@ public class UploadController {
         if ("".equals(brdLogo) || brdLogo == null)
             return new ResultBean<>(false);
         brand.setBrdlogo(brdLogo);
+        brand.setMctno( getPrincipal().getMctno());
         return uploadInterface.AddBrandInfo(brand);
     }
 

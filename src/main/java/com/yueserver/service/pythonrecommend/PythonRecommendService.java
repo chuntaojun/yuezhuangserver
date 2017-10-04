@@ -2,7 +2,7 @@ package com.yueserver.service.pythonrecommend;
 
 import com.yueserver.database.dao.PostMapper;
 import com.yueserver.database.redisutil.RedisCacheInterface;
-import com.yueserver.enity.nodao.ResultBean;
+import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
 import com.yueserver.database.dao.PrdFavMapper;
 import com.yueserver.database.dao.ProductMapper;
@@ -95,7 +95,7 @@ public class PythonRecommendService implements PythonRecommendInterface {
         JSONArray prdId = resultBean.getData()[0];
         JSONArray nearUser = resultBean.getData()[1];
         if (redisCacheInterface.getListCache("recommend-" + username).size() == 0) {
-            List cacheList = productSqlInterface.queryProductInfo(prdId);
+            List cacheList = productSqlInterface.queryRecommendPrd(prdId);
             if (cacheList.size() != 0)
                 redisCacheInterface.ListCache(new ResultBean<>(cacheList), "recommend-" + username);
             return new ResultBean<>(true);
