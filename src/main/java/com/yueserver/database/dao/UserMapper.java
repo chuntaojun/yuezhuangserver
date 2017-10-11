@@ -10,5 +10,5 @@ public interface UserMapper {
 
     List queryUserInfo();
 
-    boolean updateUserStatus(Integer status, Integer usrNo);
+    boolean updateUserStatus(int status, int usrNo);
 }

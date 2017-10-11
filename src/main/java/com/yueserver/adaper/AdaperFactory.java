@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class AdaperFactory {
 
-    //缓冲池Map
+    //方法缓冲池Map
     Map<String, Object> adaperMap;
 
     public static AdaperFactory adaperFactory = new AdaperFactory();

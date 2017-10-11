@@ -32,4 +32,9 @@ public class MerchantSql implements MerchantMapper {
     public boolean updateMerchant(Merchant merchant) {
         return this.merchantMapper.updateMerchant(merchant);
     }
+
+    @Override
+    public boolean updateMctStates(Merchant merchant) {
+        return this.merchantMapper.updateMctStates(merchant);
+    }
 }

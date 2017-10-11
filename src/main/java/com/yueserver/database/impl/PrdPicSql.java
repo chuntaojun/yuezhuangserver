@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
 
 @Service("PrdPicSql")
 public class PrdPicSql implements PrdPicMapper {
@@ -19,7 +20,7 @@ public class PrdPicSql implements PrdPicMapper {
     }
 
     @Override
-    public boolean deleBatchPrdPic(int prdNo, List<String> prdPics) {
-        return this.prdPicMapper.deleBatchPrdPic(prdNo, prdPics);
+    public boolean deleBatchPrdPic(Set<Integer> prdNos) {
+        return this.prdPicMapper.deleBatchPrdPic(prdNos);
     }
 }

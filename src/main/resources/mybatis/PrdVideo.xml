@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yueserver.database.dao.PrdVidMapper">
+    <resultMap id="PrdVidResult" type="com.yueserver.enity.PrdVideo">
+        <id column="PrdVidNo" property="prdvidno" />
+        <result column="PrdVidUrl" property="prdvidurl" />
+        <result column="PrdNo" property="prdno" />
+    </resultMap>
+
+    <insert id="saveBatchPrdVid" keyColumn="PrdVidNo" keyProperty="prdvidno" useGeneratedKeys="true">
+        INSERT INTO
+            PrdVideo (PrdVidUrl, PrdNo)
+        VALUES
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            #{item}, #{prdno}
+        </foreach>
+    </insert>
+
+    <delete id="deleBatchPrdVid">
+        DELETE FROM
+            PrdVideo
+        WHERE
+        <foreach collection="set" item="item" separator="OR">
+            PrdNo=#{item}
+        </foreach>
+    </delete>
+
+</mapper>

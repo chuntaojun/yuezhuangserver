@@ -2,6 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yueserver.database.dao.PrdPicMapper">
     <resultMap id="PrdPicResult" type="com.yueserver.enity.PrdPic">
-
+        <id column="PrdPicNo" property="prdpicno" jdbcType="INTEGER" />
+        <result column="PrdPicUrl" property="prdpicurl" jdbcType="VARCHAR" />
+        <result column="PrdNo" property="prdno" jdbcType="INTEGER" />
     </resultMap>
+
+    <insert id="saveBatchPrdPic" keyColumn="PrdPicNo" keyProperty="prdpicno" useGeneratedKeys="true">
+        INSERT INTO
+            PrdPic (PrdPicUrl, PrdNo)
+        VALUES
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            #{item}, #{prdno}
+        </foreach>
+    </insert>
+
+    <delete id="deleBatchPrdPic">
+        DELETE FROM
+            PrdPic
+        WHERE
+        <foreach collection="set" item="item" separator="OR">
+            PrdNo=#{item}
+        </foreach>
+    </delete>
+
 </mapper>

@@ -1,5 +1,6 @@
 package com.yueserver.database.impl;
 
+import com.yueserver.database.dao.PrdPicMapper;
 import com.yueserver.database.dao.ProductMapper;
 import com.yueserver.enity.Product;
 
@@ -15,6 +16,9 @@ public class ProductSql implements ProductMapper {
 
     @Resource
     private ProductMapper productMapper;
+
+    @Resource
+    private PrdPicMapper prdPicMapper;
 
     @Override
     public Product getPrdInfo(String prdName) {
@@ -49,6 +53,7 @@ public class ProductSql implements ProductMapper {
 
     @Override
     public boolean deleBatchPrd(HashSet<Integer> products) {
+        this.prdPicMapper.deleBatchPrdPic(products);
         return this.productMapper.deleBatchPrd(products);
     }
 

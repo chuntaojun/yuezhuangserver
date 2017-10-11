@@ -18,7 +18,7 @@ public class UserSql implements UserMapper {
     }
 
     @Override
-    public boolean updateUserStatus(Integer status, Integer usrNo) {
+    public boolean updateUserStatus(int status, int usrNo) {
         return this.userMapper.updateUserStatus(status, usrNo);
     }
 }

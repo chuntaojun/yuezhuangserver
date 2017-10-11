@@ -20,6 +20,10 @@
         SELECT BrdName FROM Brand, Manage WHERE Brand.BrdNo=Manage.BrdNo AND Manage.MctNo=#{mctNo}
     </select>
 
+    <select id="getBrand" resultType="com.yueserver.enity.Brand">
+        SELECT * FROM Brand WHERE BrdName=#{brdname};
+    </select>
+
     <insert id="saveBatchBrand" keyColumn="BrdNo" keyProperty="brdno" useGeneratedKeys="true">
         INSERT INTO
             Brand (BrdName, BrdIntro, BrdLogo, MctNo)

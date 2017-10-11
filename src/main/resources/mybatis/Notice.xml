@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yueserver.database.dao.NoticeMapper">
+    <resultMap id="NoticeResult" type="com.yueserver.enity.Notice">
+        <id column="NtcNo" property="nctno" jdbcType="INTEGER" />
+        <result column="NtcMain" property="ntcmain" jdbcType="VARCHAR" />
+        <result column="NtcTitle" property="ntctitle" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="SaveNotice" keyColumn="NtcNo" keyProperty="ntcno" useGeneratedKeys="true" parameterType="com.yueserver.enity.Notice">
+        INSERT INTO
+            Notice (NtcTitle, NtcMain)
+        VALUES
+            (#{ntctitle}, #{ntcmain})
+    </insert>
+</mapper>

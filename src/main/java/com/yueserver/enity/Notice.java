@@ -3,7 +3,7 @@ package com.yueserver.enity;
 public class Notice {
 
     private long ntcno;
-    private String ncttitle;
+    private String ntctitle;
     private String ntcmain;
 
     public Notice(){}
@@ -16,12 +16,12 @@ public class Notice {
         this.ntcno = ntcno;
     }
 
-    public String getNcttitle() {
-        return ncttitle;
+    public String getNtctitle() {
+        return ntctitle;
     }
 
-    public void setNcttitle(String ncttitle) {
-        this.ncttitle = ncttitle;
+    public void setNtctitle(String ntctitle) {
+        this.ntctitle = ntctitle;
     }
 
     public String getNtcmain() {
@@ -36,7 +36,7 @@ public class Notice {
     public String toString() {
         return "Notice{" +
                 "ntcno=" + ntcno +
-                ", ncttitle='" + ncttitle + '\'' +
+                ", ncttitle='" + ntctitle + '\'' +
                 ", ntcmain='" + ntcmain + '\'' +
                 '}';
     }

@@ -14,5 +14,6 @@ public interface MerchantMapper {
     Merchant MerchantLogin(String account);
     boolean insertMerchant(@Param("Merchant") Merchant merchant);
     boolean updateMerchant(@Param("Merchant") Merchant merchant);
+    boolean updateMctStates(Merchant merchant);
 
 }

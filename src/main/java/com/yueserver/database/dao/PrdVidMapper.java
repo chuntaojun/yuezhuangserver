@@ -1,15 +1,14 @@
 package com.yueserver.database.dao;
 
-import com.yueserver.enity.PrdVideo;
 import org.springframework.stereotype.Repository;
-
-import java.util.*;
+import java.util.Set;
+import java.util.List;
 
 @Repository
 public interface PrdVidMapper {
 
     boolean saveBatchPrdVid(int prdNo, List<String> prdVideos);
 
-    boolean deleBatchPrdVid(int prdNo, Set<Integer> prdVideos);
+    boolean deleBatchPrdVid(Set<Integer> prdNos);
 
 }

@@ -58,4 +58,13 @@
             PrdNo = #{PrdNo}
     </update>
 
+    <delete id="deleBatchPrd">
+        DELETE FROM
+            Product
+        WHERE
+        <foreach collection="set" item="item" separator="OR">
+            PrdNo=#{item}
+        </foreach>
+    </delete>
+
 </mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yueserver.database.dao.PrdLikeMapper">
+    <resultMap id="PrdLikeResult" type="com.yueserver.enity.PrdLike">
+        <id column="PrdLikeNo" property="prdfavno" jdbcType="INTEGER" />
+        <result column="PrdNo" property="prdno" jdbcType="INTEGER" />
+        <result column="UsrName" property="usrname" jdbcType="VARCHAR" />
+        <result column="LikeScore" property="likescore" jdbcType="DOUBLE" />
+    </resultMap>
+
+    <select id="queryPrdLikeData" resultType="com.yueserver.enity.PrdLike">
+        SELECT PrdNo, LikeScore, UsrName FROM PrdLike;
+    </select>
+
+    <insert id="savePrdLike" keyColumn="PrdLikeNo" keyProperty="prdlikeno" useGeneratedKeys="true">
+        INSERT INTO
+            PrdLike (PrdNo, UsrName, LikeScore)
+        VALUES
+            (#{prdno}, #{usrname}, #{likescore})
+    </insert>
+
+</mapper>

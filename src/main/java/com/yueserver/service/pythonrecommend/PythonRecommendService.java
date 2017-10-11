@@ -4,7 +4,7 @@ import com.yueserver.database.dao.PostMapper;
 import com.yueserver.database.redisutil.RedisCacheInterface;
 import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
-import com.yueserver.database.dao.PrdFavMapper;
+import com.yueserver.database.dao.PrdLikeMapper;
 import com.yueserver.database.dao.ProductMapper;
 
 import net.sf.json.JSONArray;
@@ -24,16 +24,16 @@ public class PythonRecommendService implements PythonRecommendInterface {
     private RedisCacheInterface redisCacheInterface;
 
     @Autowired
-    @Resource(name = "PrdFavSql")
-    private PrdFavMapper prdFavSqlInterface;
+    @Resource(name = "PrdLikeSql")
+    private PrdLikeMapper prdLikeDao;
 
     @Autowired
     @Resource(name = "ProductSql")
-    private ProductMapper productSqlInterface;
+    private ProductMapper productDao;
 
     @Autowired
     @Resource(name = "PostSql")
-    private PostMapper postSqlInterface;
+    private PostMapper postDao;
 
     private String username;
 
@@ -47,9 +47,9 @@ public class PythonRecommendService implements PythonRecommendInterface {
     @Override
     public ResultBean getUserToRecommend(String useraccount) throws IOException {
         username = useraccount;
-        if (redisCacheInterface.getListCache("prdFav-" + useraccount).size() == 0)
-            redisCacheInterface.ListCache(new ResultBean<>(prdFavSqlInterface.queryPrdFavData()), "prdFav" + useraccount);
-        return new ResultBean<>(redisCacheInterface.getListCache("prdFav-" + useraccount));
+        if (redisCacheInterface.getListCache("prdLike-" + useraccount).size() == 0)
+            redisCacheInterface.ListCache(new ResultBean<>(prdLikeDao.queryPrdLikeData()), "prdLike" + useraccount);
+        return new ResultBean<>(redisCacheInterface.getListCache("prdLike-" + useraccount));
     }
 
     /**
@@ -69,20 +69,18 @@ public class PythonRecommendService implements PythonRecommendInterface {
     @Override
     public ResultBean<List<List>> getHotPostToRecommend() {
         if (redisCacheInterface.getListCache("postHot").size() == 0)
-            redisCacheInterface.ListCache(new ResultBean<>(postSqlInterface.queryPostInfo2HotRecommend()), "postHot");
+            redisCacheInterface.ListCache(new ResultBean<>(postDao.queryPostInfo2HotRecommend()), "postHot");
         List<List> hotList = redisCacheInterface.getListCache("postHot");
-        System.out.println(hotList);
         return new ResultBean<>(hotList);
     }
 
     /**
      * 获取帖子数据  获取媒介 redis 缓存服务
-     * 帖子的热度排序实现， 将结果存到redis缓存中
-     * @return
+     * @return new ResultBean<List<List>>()
      */
     @Override
     public ResultBean<List<List>> getHotPostDataInfo() {
-        return null;
+        return new ResultBean<>(postDao.queryPostInfo2HotRecommend());
     }
 
     /**
@@ -95,7 +93,7 @@ public class PythonRecommendService implements PythonRecommendInterface {
         JSONArray prdId = resultBean.getData()[0];
         JSONArray nearUser = resultBean.getData()[1];
         if (redisCacheInterface.getListCache("recommend-" + username).size() == 0) {
-            List cacheList = productSqlInterface.queryRecommendPrd(prdId);
+            List cacheList = productDao.queryRecommendPrd(prdId);
             if (cacheList.size() != 0)
                 redisCacheInterface.ListCache(new ResultBean<>(cacheList), "recommend-" + username);
             return new ResultBean<>(true);

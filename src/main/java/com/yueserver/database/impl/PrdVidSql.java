@@ -18,7 +18,7 @@ public class PrdVidSql implements PrdVidMapper {
     }
 
     @Override
-    public boolean deleBatchPrdVid(int prdNo, Set<Integer> prdVideos) {
-        return this.deleBatchPrdVid(prdNo, prdVideos);
+    public boolean deleBatchPrdVid(Set<Integer> prdNos) {
+        return this.deleBatchPrdVid(prdNos);
     }
 }

@@ -41,3 +41,7 @@
 #2017-9-14
 >加入单例、原型设计模式，其中，adaper包中的AdaperFactory类中的方法进行获取adaper.conver和adaper.encryption的方法
 >通过输入对应的MD5，Base64获取encryption；list，json，url获取convert（不限大小写）
+
+###
+#2017-10-4
+>url接口说明

@@ -8,9 +8,11 @@ public class Post {
     private String posttitle;
     private String postmain;
     private Date posttime;
+    private int usrno;
+    private int posttypeno;
     private int postlikenum;
     private int postcomnum;
-    private int postsharenum;
+    private int postfavnum;
 
     public Post(){}
 
@@ -46,6 +48,22 @@ public class Post {
         this.posttime = posttime;
     }
 
+    public int getUsrno() {
+        return usrno;
+    }
+
+    public void setUsrno(int usrno) {
+        this.usrno = usrno;
+    }
+
+    public int getPosttypeno() {
+        return posttypeno;
+    }
+
+    public void setPosttypeno(int posttypeno) {
+        this.posttypeno = posttypeno;
+    }
+
     public int getPostlikenum() {
         return postlikenum;
     }
@@ -62,12 +80,12 @@ public class Post {
         this.postcomnum = postcomnum;
     }
 
-    public int getPostsharenum() {
-        return postsharenum;
+    public int getPostfavnum() {
+        return postfavnum;
     }
 
-    public void setPostsharenum(int postsharenum) {
-        this.postsharenum = postsharenum;
+    public void setPostfavnum(int postfavnum) {
+        this.postfavnum = postfavnum;
     }
 
     @Override
@@ -77,9 +95,11 @@ public class Post {
                 ", posttitle='" + posttitle + '\'' +
                 ", postmain='" + postmain + '\'' +
                 ", posttime=" + posttime +
+                ", usrno=" + usrno +
+                ", posttypeno=" + posttypeno +
                 ", postlikenum=" + postlikenum +
                 ", postcomnum=" + postcomnum +
-                ", postsharenum=" + postsharenum +
+                ", postfavnum=" + postfavnum +
                 '}';
     }
 }

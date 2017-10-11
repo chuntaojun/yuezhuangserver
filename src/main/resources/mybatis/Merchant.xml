@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yueserver.database.dao.MerchantMapper">
     <resultMap id="MerchantResult" type="com.yueserver.enity.Merchant">
-        <result column="MctNo" property="mctno" jdbcType="INTEGER" />
+        <id column="MctNo" property="mctno" jdbcType="INTEGER" />
         <result column="MctAccount" property="mctaccount" jdbcType="VARCHAR" />
         <result column="MctPassword" property="mctpassword" jdbcType="VARCHAR" />
         <result column="MctAuthCode" property="mctauthcde" jdbcType="VARCHAR" />
@@ -11,14 +11,14 @@
     </resultMap>
 
     <select id="MerchantLogin" resultType="com.yueserver.enity.Merchant">
-        SELECT *FROM YueZhuang.Merchant WHERE MctAccount=#{account}
+        SELECT * FROM YueZhuang.Merchant WHERE MctAccount=#{account}
     </select>
 
-    <select id="queryMctInfo" resultType="java.util.HashMap">
-        SELECT *FROM Merchant
+    <select id="queryMerchantInfo" resultType="java.util.HashMap">
+        SELECT * FROM Merchant
     </select>
 
-    <insert id="insertNewMct" useGeneratedKeys="true" keyProperty="MctNo" parameterType="com.yueserver.enity.Merchant">
+    <insert id="insertMerchant" keyColumn="MctNo" keyProperty="mctno" useGeneratedKeys="true">
         INSERT INTO Merchant
             (MctAccount, MctPassword, MctTime, MctState)
         VALUES
