@@ -41,11 +41,15 @@ public class PythonRecommendController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/receive/recommend/answer", method = RequestMethod.POST)
-    public ResultBean<Boolean> CacheRecommendInfo(@RequestBody String json) {
+    @RequestMapping(value = "/receive/recommend/answer/{useraccount}", method = RequestMethod.POST)
+    public ResultBean<Boolean> CacheRecommendInfo(@RequestBody String json, @PathVariable String useraccount) {
         JSONObject jsonObject = JSONObject.fromObject(json);
         JSONArray[] jsonData = new JSONArray[]{(JSONArray) jsonObject.get("prdId"), (JSONArray) jsonObject.get("nearUser")};
-        return pythonRecommendInterface.RedisCacheData(new ResultBean<>(jsonData));
+        ResultBean<Boolean> resultBean = pythonRecommendInterface.RedisCacheData(new ResultBean<>(jsonData[0]), "recommend-" + useraccount);
+        ResultBean<Boolean> resultBean2 = pythonRecommendInterface.RedisCacheData(new ResultBean<>(jsonData[1]), "nearuser-" + useraccount);
+        if (resultBean.getData() && resultBean2.getData())
+            return new ResultBean<>(true);
+        return new ResultBean<>(false);
     }
 
     /**
@@ -57,8 +61,9 @@ public class PythonRecommendController {
     @RequestMapping(value = "/receive/recommend/HotPost", method = RequestMethod.POST)
     public ResultBean<Boolean> CacheHotPostInfo(@RequestBody String json) {
         JSONObject jsonObject = JSONObject.fromObject(json);
-        JSONArray[] jsonData = new JSONArray[]{(JSONArray) jsonObject.get("hotPost")};
-        return pythonRecommendInterface.RedisCacheData(new ResultBean<>(jsonData));
+        JSONArray jsonData = JSONArray.fromObject(jsonObject.get("hotPost"));
+        System.out.println(jsonData);
+        return null;
     }
 
 

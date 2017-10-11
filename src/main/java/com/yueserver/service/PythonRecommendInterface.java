@@ -12,6 +12,6 @@ public interface PythonRecommendInterface {
     ResultBean<List> getRecommendDataInfo(String useraccount);
     ResultBean<List<List>> getHotPostToRecommend();
     ResultBean<List<List>> getHotPostDataInfo();
-    ResultBean<Boolean> RedisCacheData(ResultBean<JSONArray[]> resultBean);
+    ResultBean<Boolean> RedisCacheData(ResultBean<JSONArray> resultBean, String key);
 
 }

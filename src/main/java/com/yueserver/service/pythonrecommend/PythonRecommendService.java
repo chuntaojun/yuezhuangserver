@@ -89,22 +89,13 @@ public class PythonRecommendService implements PythonRecommendInterface {
      * @param resultBean
      */
     @Override
-    public ResultBean<Boolean> RedisCacheData(ResultBean<JSONArray[]> resultBean) {
-        JSONArray prdId = resultBean.getData()[0];
-        JSONArray nearUser = resultBean.getData()[1];
-        if (redisCacheInterface.getListCache("recommend-" + username).size() == 0) {
-            List cacheList = productDao.queryRecommendPrd(prdId);
+    public ResultBean<Boolean> RedisCacheData(ResultBean<JSONArray> resultBean, String key) {
+        if (redisCacheInterface.getListCache(key).size() == 0) {
+            List cacheList = productDao.queryRecommendPrd(resultBean.getData());
             if (cacheList.size() != 0)
-                redisCacheInterface.ListCache(new ResultBean<>(cacheList), "recommend-" + username);
-            return new ResultBean<>(true);
-        }
-        if (redisCacheInterface.getListCache("nearUser-" + username).size() == 0) {
-            redisCacheInterface.ListCache(new ResultBean<>(), "nearUser-" + username);
+                redisCacheInterface.ListCache(new ResultBean<>(cacheList), key);
             return new ResultBean<>(true);
         }
         return new ResultBean<>(false);
     }
-
-
-
 }
