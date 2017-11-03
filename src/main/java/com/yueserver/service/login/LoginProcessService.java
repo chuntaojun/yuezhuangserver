@@ -32,7 +32,7 @@ public class LoginProcessService implements LoginInterface {
      * @return
      */
     @Override
-    public ResultBean<Object> getLoginObject(String username) {
+    public ResultBean<Object> getLoginObject(String username, String advice) {
         Base64 base64 = null;
         try {
             base64 = (Base64) getSingleAdaperFactory().getEncryption("Base64");
@@ -40,7 +40,7 @@ public class LoginProcessService implements LoginInterface {
             e.printStackTrace();
         }
         username = base64.Base64Encode(username);
-        return new ResultBean<>(loginMapper.getLoginObject(username, username));
+        return new ResultBean<>(loginMapper.getLoginObject(username, advice));
     }
 
     /**

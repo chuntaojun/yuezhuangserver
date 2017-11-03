@@ -7,6 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * spring 日期格式统一
+ */
 public class DateFormatter implements Formatter<Date> {
 
     private String dateParttern;

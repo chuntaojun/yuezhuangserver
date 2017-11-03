@@ -13,7 +13,7 @@ public interface LoginInterface {
 
     ResultBean<Boolean> TheMerchantExist(String username);
     ResultBean<Boolean> AddNewMerchant(String mctaccount, String password) throws MethodNourtFoundException;
-    ResultBean<Object> getLoginObject(String username) throws MethodNourtFoundException;
+    ResultBean<Object> getLoginObject(String username, String advice) throws MethodNourtFoundException;
     ResultBean<JSONObject> ChangePasswordIsWork(ForgotPassword forgotPassword, HttpSession session) throws ParseException;
 
 }

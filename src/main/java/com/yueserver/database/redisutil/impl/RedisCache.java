@@ -19,13 +19,24 @@ public class RedisCache implements RedisCacheInterface {
 
 
     @Override
-    public void ListCache(ResultBean<List> resultBean, String key) {
-        redisTemplate.opsForList().rightPushAll(key, resultBean.getData());
+    public ResultBean<Boolean> ListCache(ResultBean<List> resultBean, String key) {
+        boolean ans = resultBean.getData().size() == redisTemplate.opsForList().rightPushAll(key, resultBean.getData());
+        return new ResultBean<>(ans);
     }
 
     @Override
-    public void MapCache(ResultBean<Map> resultBean, String key) {
+    public ResultBean<Boolean> NumberCache(ResultBean<Integer> resultBean, String key) {
+        boolean ans = 1 == redisTemplate.opsForValue().append(key, resultBean.getData().toString());
+        return new ResultBean<>(ans);
+    }
 
+    @Override
+    public ResultBean<Boolean> DeleteValueCache(String key) {
+        if (redisTemplate.opsForValue().get(key) != null) {
+            redisTemplate.delete(key);
+            return new ResultBean<>(true);
+        }
+        return new ResultBean<>(false);
     }
 
     /**

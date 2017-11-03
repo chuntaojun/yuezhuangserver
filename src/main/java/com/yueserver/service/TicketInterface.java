@@ -11,5 +11,6 @@ public interface TicketInterface {
     ResultBean<Boolean> cancleTicket(Ticket ticket);
     ResultBean<Map> getRemainTicket(Ticket ticket);
     ResultBean<Boolean> VoucherTicket(Ticket ticket);
+    ResultBean<Boolean> VoucharTimeIsDead();
 
 }

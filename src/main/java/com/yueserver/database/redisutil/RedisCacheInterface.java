@@ -7,9 +7,9 @@ import java.util.Map;
 
 public interface RedisCacheInterface {
 
-    void ListCache(ResultBean<List> resultBean, String key);
-    void MapCache(ResultBean<Map> resultBean, String key);
-
+    ResultBean<Boolean> ListCache(ResultBean<List> resultBean, String key);
+    ResultBean<Boolean> NumberCache(ResultBean<Integer> resultBean, String key);
+    ResultBean<Boolean> DeleteValueCache(String key);
     List getListCache(String key);
 
 }

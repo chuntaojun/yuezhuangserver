@@ -1,4 +1,4 @@
-package com.yueserver.controller;
+package com.yueserver.controller.web;
 
 import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.DeleteInterface;

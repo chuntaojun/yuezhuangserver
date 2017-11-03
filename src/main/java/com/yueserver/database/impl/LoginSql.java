@@ -31,9 +31,9 @@ public class LoginSql implements LoginMapper {
     }
 
     @Override
-    public Object getLoginObject(String mctaccount, String adminaccount) {
-        Administator admin = this.adminDao.AdminLogin(adminaccount);
-        Merchant merchant = this.merchantDao.MerchantLogin(mctaccount);
+    public Object getLoginObject(String usrname, String advice) {
+        Administator admin = this.adminDao.AdminLogin(usrname);
+        Merchant merchant = this.merchantDao.MerchantLogin(usrname);
         if (admin != null) {
             return admin;
         }

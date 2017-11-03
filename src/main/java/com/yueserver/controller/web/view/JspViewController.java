@@ -1,10 +1,11 @@
-package com.yueserver.controller.view;
+package com.yueserver.controller.web.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by liaochuntao on 17-7-18.
+ * web页面的跳转
  */
 
 @Controller

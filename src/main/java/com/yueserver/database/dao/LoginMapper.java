@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface LoginMapper {
 
     boolean getExistUser(String mctaccount);
-    Object getLoginObject(String mctaccount, String adminaccount);
+    Object getLoginObject(String usrname, String advice);
     boolean updatePassword(ForgotPassword forgotPassword);
     boolean saveNewAccount(Merchant merchant);
 

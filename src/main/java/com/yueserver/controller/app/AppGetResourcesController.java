@@ -1,4 +1,4 @@
-package com.yueserver.controller;
+package com.yueserver.controller.app;
 
 import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;
@@ -44,34 +44,34 @@ public class AppGetResourcesController {
     }
 
     /**
-     * App端发起获取商品数据的请求
+     * App端发起获取某件商品数据的请求
      * @param accessToken
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/get/resource/product", method = RequestMethod.POST)
-    public ResultBean<List<List>> getProductInfo(String accessToken) {
+    @RequestMapping(value = "/get/resource/product?id={prdId}", method = RequestMethod.POST)
+    public ResultBean<List<List>> getProductInfo(String accessToken, @PathVariable int prdId) {
         return null;
     }
 
     /**
-     * App端发起获取品牌数据的请求
+     * App端发起获取某品牌数据的请求
      * @param accessToken
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/get/resources/brand", method = RequestMethod.POST)
+    @RequestMapping(value = "/get/resources/brand?id={brdId}", method = RequestMethod.POST)
     public ResultBean<List<List>> getBrandInfo(String accessToken) {
         return null;
     }
 
     /**
-     * App端发起获取商家信息的请求，请求参数为merchantId
+     * App端发起获取某商家信息的请求，请求参数为merchantId
      * @param merchantId
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/get/resources/merchant/info/{merchantId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/get/resources/merchant/info？id={merchantId}", method = RequestMethod.POST)
     public ResultBean<List<List>> getMerchantInfo(@PathVariable String merchantId) {
         return null;
     }

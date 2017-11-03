@@ -1,4 +1,4 @@
-package com.yueserver.controller;
+package com.yueserver.controller.app;
 
 import com.yueserver.enity.noenity.ResultBean;
 import com.yueserver.service.PythonRecommendInterface;

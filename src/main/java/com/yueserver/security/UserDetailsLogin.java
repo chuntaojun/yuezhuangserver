@@ -3,6 +3,7 @@ package com.yueserver.security;
 import com.yueserver.adaper.MethodNourtFoundException;
 import com.yueserver.adaper.encryption.base64.Base64;
 import com.yueserver.enity.Administator;
+import com.yueserver.enity.User;
 import com.yueserver.enity.noenity.Login;
 import com.yueserver.enity.Merchant;
 import com.yueserver.security.excption.AccountNotFoundException;
@@ -24,9 +25,6 @@ import static com.yueserver.adaper.AdaperFactory.getSingleAdaperFactory;
 
 public class UserDetailsLogin implements UserDetailsService {
 
-    private Merchant merchant;
-    private Administator administator;
-
     @Autowired
     @Resource(name = "LoginProcessService")
     private LoginInterface loginservice;
@@ -36,32 +34,35 @@ public class UserDetailsLogin implements UserDetailsService {
         Login login = null;
         Object object = null;
         try {
-            object = loginservice.getLoginObject(username).getData();
+            object = loginservice.getLoginObject(username, "web").getData();
+            if (object == null)
+                throw new AccountNotFoundException("用户名或密码错误");
         } catch (MethodNourtFoundException e) {
             e.printStackTrace();
         }
-        if (object == null)
-            throw new AccountNotFoundException("用户名或密码错误");
-        else {
-            if (object instanceof Merchant) {
-                merchant = (Merchant) object;
-                if (getBase64().Base64Decode(merchant.getMctaccount()).equals(username)) {
-                    login = new Login(username, merchant.getMctpassword(), AccountStatus(merchant),
-                            true, true, true, getGrantedAuthorities(merchant));
-                    if (merchant.getMctstate() == 0)
-                        throw new PendingReviewException("账户待审核");
-                    if (merchant.getMctstate() == -1)
-                        throw new ProhibitLandingException("当前账户被禁止");
-                    login.setMctno(merchant.getMctno());
-                    login.setStatus(merchant.getMctstate());
-                }
+        if (object instanceof Merchant) {
+            Merchant merchant = (Merchant) object;
+            if (getBase64().Base64Decode(merchant.getMctaccount()).equals(username)) {
+                login = new Login(username, merchant.getMctpassword(), AccountStatus(merchant),
+                        true, true, true, getGrantedAuthorities(merchant));
+                if (merchant.getMctstate() == 0)
+                    throw new PendingReviewException("账户待审核");
+                if (merchant.getMctstate() == -1)
+                    throw new ProhibitLandingException("当前账户被禁止");
+                login.setMctno(merchant.getMctno());
+                login.setStatus(merchant.getMctstate());
             }
-            if (object instanceof Administator) {
-                administator = (Administator) object;
-                if (getBase64().Base64Decode(administator.getAdmaccount()).equals(username))
-                    login = new Login(username, administator.getAdmpassword(), true, true, true,
-                            true, getGrantedAuthorities(administator));
-            }
+        }
+        else if (object instanceof Administator) {
+            Administator administator = (Administator) object;
+            if (getBase64().Base64Decode(administator.getAdmaccount()).equals(username))
+                login = new Login(username, administator.getAdmpassword(), true, true, true,
+                        true, getGrantedAuthorities(administator));
+        }
+        else if (object instanceof User) {
+            User user = (User) object;
+            login = new Login(username, user.getUsrpassword(), true, true, true, true,
+                    getGrantedAuthorities(user));
         }
         return login;
     }
@@ -72,11 +73,12 @@ public class UserDetailsLogin implements UserDetailsService {
      */
     private List<GrantedAuthority> getGrantedAuthorities(Object o){
         List<GrantedAuthority> authorities = new ArrayList<>();
-        if (o instanceof Merchant) {
+        if (o instanceof Merchant)
             authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        }
-        if (o instanceof Administator)
+        else if (o instanceof Administator)
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        else if (o instanceof User)
+            authorities.add(new SimpleGrantedAuthority("ROLE_APP"));
         return authorities;
     }
 

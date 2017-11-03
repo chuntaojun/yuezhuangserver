@@ -28,6 +28,8 @@
         <if test="TctSum != null">
             Ticket.TctSum = #{Ticket.TctSum}
         </if>
+        WHERE
+            TctNo=#{ticket.tctNo}
     </update>
 
 </mapper>

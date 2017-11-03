@@ -50,4 +50,7 @@
     <!--开启方法用户权限-->
     <security:global-method-security secured-annotations="enabled"/>
 
+    <!--多端口登录配置-->
+
+
 </beans>

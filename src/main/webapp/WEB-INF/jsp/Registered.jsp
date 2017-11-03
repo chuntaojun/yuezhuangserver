@@ -35,16 +35,24 @@
             <div class="panel-body">
                 <form action="/registere" method="post" id="disabledjump">
                     <div class="form-group">
-                        <input class="form-control" placeholder="商家名称" name="username" type="text" />
+                        <input id="username" class="form-control" placeholder="商家名称" name="username" type="text" value="" onkeyup="check_user_name()" />
+                        <span id="user_error" style="color: #ff0000;"></span>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="企业邮箱" name="email" type="email" />
+                        <input id="useremail" class="form-control" placeholder="企业邮箱" name="email" type="email" value="" onkeyup="check_user_email()" />
+                        <span id="email_error" style="color: #ff0000"></span>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="账户" name="mctaccount" type="text" />
+                        <input id="useraccount" class="form-control" placeholder="账户" name="mctaccount" type="text" value="" onkeyup="check_user_account()" />
+                        <span id="account_error" style="color: #ff0000"></span>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="密码" name="password" type="password" />
+                        <input id="userpassword" class="form-control" placeholder="密码" name="password" type="password" value="" onkeyup="check_user_password()" />
+                        <span id="password_error" style="color: #ff0000;"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="userpassword-again" class="form-control" placeholder="再次输入密码" name="password-again" value="" type="password" onkeyup="check_user_password_again()">
+                        <span id="password_error_again" style="color: #ff0000"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">注册</button>
                 </form>
@@ -63,7 +71,8 @@
 <script src="/resources/js/easypiechart.js"></script>
 <script src="/resources/js/easypiechart-data.js"></script>
 <script src="/resources/js/bootstrap-datepicker.js"></script>
-<script src="resources/js/yuezhuang.js"></script>
+<script src="/resources/js/yuezhuang.js"></script>
+<script src="/resources/js/check_Info.js"></script>
 <script>
 
     ! function($) {
