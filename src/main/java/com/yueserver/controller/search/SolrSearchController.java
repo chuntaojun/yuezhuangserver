@@ -1,8 +1,13 @@
 package com.yueserver.controller.search;
 
+import com.yueserver.service.SolrSearchInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -13,9 +18,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/app/search")
 public class SolrSearchController {
 
+    @Autowired
+    @Resource(name = "SolrSearchService")
+    private SolrSearchInterface solrSearchInterface;
+
+    @ResponseBody
     @RequestMapping(value = "/product", method = RequestMethod.GET)
-    public String getParams(String params, String id) {
-        return null;
+    public String getParams(int start, int rows, String params) {
+        return solrSearchInterface.getSearchAnsForProduct(start, rows, params).getData();
     }
 
 }

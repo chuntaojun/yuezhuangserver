@@ -17,38 +17,22 @@ import java.util.Map;
 /**
  * solr 搜索引擎的基础功能-->索引的建立与用户搜索结果的响应
  */
-@Service("SolrSearch")
+@Service("SolrSearchEngine")
 public class SolrSearchEngineBasic implements SearchEngineBasicInterface {
 
     protected CloudSolrClient solrClient = null;
 
-    public SolrSearchEngineBasic(Map<String, Object> serverParams) {
+    public SolrSearchEngineBasic() {
         try {
             //获取zookeeper设置
-            String zkHost = serverParams.get("zkHost").toString();
+            String zkHost = "192.168.31.106:9983";
             //读取solr Collection 文档的配置
-            String collection = serverParams.get("collection").toString();
+            String collection = "listing_collection";
             //根据上述配置，初始化 CloudSolrClient
             solrClient = new CloudSolrClient.Builder().withZkHost(zkHost).build();
             solrClient.setDefaultCollection(collection);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    /**
-     * 关闭CloudSolrClient的连接
-     */
-    public void cleanup() {
-        if (solrClient != null) {
-            try {
-                solrClient.close();
-                solrClient = null;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                solrClient = null;
-            }
         }
     }
 
@@ -116,6 +100,7 @@ public class SolrSearchEngineBasic implements SearchEngineBasicInterface {
             //获取查询结果
             response = solrClient.query(solrQuery);
             SolrDocumentList solrDocuments = response.getResults();
+            System.out.println(solrDocuments.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

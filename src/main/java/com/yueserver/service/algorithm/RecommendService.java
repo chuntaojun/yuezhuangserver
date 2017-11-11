@@ -1,4 +1,4 @@
-package com.yueserver.service.pythonrecommend;
+package com.yueserver.service.algorithm;
 
 import com.yueserver.database.dao.PostMapper;
 import com.yueserver.database.redisutil.RedisCacheInterface;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service("Recommend2UserLink")
-public class PythonRecommendService implements PythonRecommendInterface {
+public class RecommendService implements PythonRecommendInterface {
 
     @Autowired
     @Resource(name = "RedisCache")
